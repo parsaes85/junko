@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import Banner from "../../components/IndexPage/Banner/Banner";
 
 function Index() {
   return (
     <div>
-      صفحه نخست
+      <Banner />
     </div>
-  )
+  );
 }
 
-export default Index
+export default Index;
