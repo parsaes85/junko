@@ -1,0 +1,29 @@
+.active {
+    border-bottom: 2px solid  #fff;
+}
+
+li {
+  display: table-cell;
+  position: relative;
+}
+.link {
+  letter-spacing: 0.5px;
+  position: relative;
+  padding: 2px 0px;
+}
+.link:after {
+  content: "";
+  background: none repeat scroll 0 0 transparent;
+  bottom: -2px;
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.link:hover:after {
+  width: 100%;
+  left: 0;
+}
