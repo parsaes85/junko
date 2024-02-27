@@ -10,7 +10,8 @@ export default {
         primaryBlue: "#0063d1"
       },
       fontFamily: {
-        Yekan: ["Yekan"]
+        Yekan: ["Yekan"],
+        IRANSans: ["IRANSans"],
       }
     },
   },

@@ -15,7 +15,7 @@ function Banner() {
       Array.from(e.target.children).forEach((child) => {
         const targetChild =
           child.firstElementChild.firstElementChild.firstElementChild;
-
+        console.log(targetChild)
         if (child.className === "swiper-slide-next") {
           if (targetChild.classList.contains("banner-content-active")) {
             targetChild.classList.remove("banner-content-active");
@@ -44,13 +44,13 @@ function Banner() {
 
   return (
     <section>
-      <div className="w-full h-[490px]">
+      <div className="w-full h-[490px] font-IRANSans">
         <swiper-container
           ref={swiperElRef}
           class="mySwiper"
           pagination="true"
           loop="true"
-          autoplay="true"
+          autoplay-delay="6000"
         >
           <swiper-slide>
             <div className="swiper-slide-1">
@@ -72,7 +72,7 @@ function Banner() {
           <swiper-slide>
             <div className="swiper-slide-2">
               <div className="flex items-center h-full text-right">
-                <div className="banner-content">
+                <div className="banner-content z-50">
                   <h2 className="text-5xl">دوربین دوگانه</h2>
                   <h1 className="text-6xl pb-8 pt-6">کیفیت ۲۰MP</h1>
                   <p>
