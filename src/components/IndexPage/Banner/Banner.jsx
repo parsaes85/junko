@@ -43,7 +43,6 @@ function Banner() {
   }, []);
 
   return (
-    <section>
       <div className="w-full h-[490px] font-IRANSans">
         <swiper-container
           ref={swiperElRef}
@@ -105,7 +104,6 @@ function Banner() {
           </swiper-slide>
         </swiper-container>
       </div>
-    </section>
   );
 }
 
