@@ -15,7 +15,6 @@ function Banner() {
       Array.from(e.target.children).forEach((child) => {
         const targetChild =
           child.firstElementChild.firstElementChild.firstElementChild;
-        console.log(targetChild)
         if (child.className === "swiper-slide-next") {
           if (targetChild.classList.contains("banner-content-active")) {
             targetChild.classList.remove("banner-content-active");
@@ -46,7 +45,7 @@ function Banner() {
       <div className="w-full h-[490px] font-IRANSans">
         <swiper-container
           ref={swiperElRef}
-          class="mySwiper"
+          class="bannerSwiper"
           pagination="true"
           loop="true"
           autoplay-delay="6000"
@@ -57,7 +56,7 @@ function Banner() {
                 <div className="banner-content" ref={bannerContentRef}>
                   <h2 className="text-5xl">طراحی زیبا</h2>
                   <h1 className="text-6xl pb-8 pt-6">تلویزیون ۸۵ اینچ</h1>
-                  <p>
+                  <p className="text-lg">
                     پشنهاد ویژه{" "}
                     <span className="text-primaryBlue">۲۰% تخفیف</span> این هفته
                   </p>
@@ -74,7 +73,7 @@ function Banner() {
                 <div className="banner-content z-50">
                   <h2 className="text-5xl">دوربین دوگانه</h2>
                   <h1 className="text-6xl pb-8 pt-6">کیفیت ۲۰MP</h1>
-                  <p>
+                  <p className="text-lg">
                     پشنهاد ویژه{" "}
                     <span className="text-primaryBlue">۲۰% تخفیف</span> این هفته
                   </p>
@@ -91,7 +90,7 @@ function Banner() {
                 <div className="banner-content">
                   <h2 className="text-5xl">عجله کنید!</h2>
                   <h1 className="text-6xl pb-8 pt-6">محصولات برتر سال</h1>
-                  <p>
+                  <p className="text-lg">
                     پشنهاد ویژه{" "}
                     <span className="text-primaryBlue">۲۰% تخفیف</span> این هفته
                   </p>

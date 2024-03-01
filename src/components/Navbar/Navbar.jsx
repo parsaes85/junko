@@ -18,7 +18,7 @@ function Navbar() {
                 <MenuIcon />
               </span>
             </div>
-            <div className="hidden absolute w-72 bg-white py-4 top-14 right-0 border">
+            <div className="hidden z-50 absolute w-72 bg-white py-4 top-14 right-0 border">
               <ul className="flex flex-col [&>li]:px-4">
                 <NavbarCategoriesItem hasSubmenu={true}/>
                 <NavbarCategoriesItem hasSubmenu={false}/>
