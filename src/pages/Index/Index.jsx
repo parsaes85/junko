@@ -5,6 +5,7 @@ import Banner from "../../components/IndexPage/Banner/Banner";
 import FeatureBox from "../../components/IndexPage/FeatureBox/FeatureBox";
 import ProductBox from "../../components/IndexPage/ProductBox/ProductBox";
 import CategoryBox from "../../components/IndexPage/CategoryBox/CategoryBox";
+import SpecialProductBox from "../../components/IndexPage/SpecialProductBox/SpecialProductBox";
 
 import "./Index.css";
 
@@ -15,7 +16,7 @@ function Index() {
         <Banner />
       </section>
 
-      <section className="mx-24 mt-16">
+      <section className="px-24 mt-16">
         <div className="flex justify-between items-start gap-4">
           <FeatureBox
             img={"/images/shipping1.png"}
@@ -40,7 +41,7 @@ function Index() {
         </div>
       </section>
 
-      <section className="mx-24 mt-16">
+      <section className="px-24 mt-16">
         <div className="flex justify-between gap-4">
           <div>
             <img src="/images/banner1.jpg" alt="" />
@@ -54,7 +55,7 @@ function Index() {
         </div>
       </section>
 
-      <section className="mx-24 mt-16">
+      <section className="px-24 mt-16">
         <div>
           <div className="border-b pb-4 mb-6">
             <h1 className="text-2xl tracking-tight">پیشنهاد های ویژه</h1>
@@ -92,7 +93,7 @@ function Index() {
         </div>
       </section>
 
-      <section className="mx-24 mt-16">
+      <section className="px-24 mt-16">
         <div className="flex gap-4 justify-between">
           <div className="overflow-hidden">
             <img
@@ -111,7 +112,7 @@ function Index() {
         </div>
       </section>
 
-      <section className="mx-24 mt-16">
+      <section className="px-24 mt-16">
         <div className="grid grid-cols-5 gap-11">
           <div className="space-y-4">
             <h1 className="text-2xl">محبوب ترین دسته های این هفته</h1>
@@ -129,19 +130,40 @@ function Index() {
               slides-per-view="5"
               loop="true"
             >
-              <swiper-slide><CategoryBox /></swiper-slide>
-              <swiper-slide><CategoryBox /></swiper-slide>
-              <swiper-slide><CategoryBox /></swiper-slide>
-              <swiper-slide><CategoryBox /></swiper-slide>
-              <swiper-slide><CategoryBox /></swiper-slide>
-              <swiper-slide><CategoryBox /></swiper-slide>
-              <swiper-slide><CategoryBox /></swiper-slide>
+              <swiper-slide>
+                <CategoryBox />
+              </swiper-slide>
+              <swiper-slide>
+                <CategoryBox />
+              </swiper-slide>
+              <swiper-slide>
+                <CategoryBox />
+              </swiper-slide>
+              <swiper-slide>
+                <CategoryBox />
+              </swiper-slide>
+              <swiper-slide>
+                <CategoryBox />
+              </swiper-slide>
+              <swiper-slide>
+                <CategoryBox />
+              </swiper-slide>
+              <swiper-slide>
+                <CategoryBox />
+              </swiper-slide>
             </swiper-container>
           </div>
         </div>
       </section>
 
-      <section className="mx-24 mt-16"></section>
+      <section className="px-24 mt-16 py-16 bg-gray-50">
+        <div className="border-b pb-4 mb-6">
+          <h1 className="text-2xl tracking-tight">محصولات ویژه</h1>
+        </div>
+        <div>
+          <SpecialProductBox />
+        </div>
+      </section>
     </div>
   );
 }
