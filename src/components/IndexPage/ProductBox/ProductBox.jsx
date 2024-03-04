@@ -6,7 +6,7 @@ import SearchIcon from "@mui/icons-material/Search";
 
 function ProductBox() {
   return (
-    <div className="min-w-56 p-4 rounded border border-transparent transition hover:border-gray-300 group/item">
+    <div className="p-4 rounded border border-transparent transition hover:border-gray-300 group/item">
       <div className="relative">
         <span className="absolute top-3 left-4 text-gray-100 bg-[#5fa403] px-1.5 py-[11px] rounded-full text-xs">
           فروش
