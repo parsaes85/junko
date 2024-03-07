@@ -8,6 +8,7 @@ import CategoryBox from "../../components/IndexPage/CategoryBox/CategoryBox";
 import SpecialProductBox from "../../components/IndexPage/SpecialProductBox/SpecialProductBox";
 
 import "./Index.css";
+import TestimonialBox from "../../components/IndexPage/TestimonialBox/TestimonialBox";
 
 function Index() {
   return (
@@ -309,13 +310,33 @@ function Index() {
             <div className="border-b pb-4 mb-6">
               <h1 className="text-2xl tracking-tight">دیدگاه مشتریان</h1>
             </div>
-            <div></div>
+            <div>
+              <swiper-container
+                class="testimonialSwiper"
+                pagination="true"
+                loop="true"
+              >
+                <swiper-slide>
+                  <TestimonialBox />
+                </swiper-slide>
+                <swiper-slide>
+                  <TestimonialBox />
+                </swiper-slide>
+                <swiper-slide>
+                  <TestimonialBox />
+                </swiper-slide>
+              </swiper-container>
+            </div>
           </div>
         </div>
       </section>
 
       {/* blogs */}
-      <section className="px-24 mt-16 py-16 bg-gray-50"></section>
+      <section className="px-24 mt-16 py-16 bg-gray-50">
+        <div className="border-b pb-4 mb-6">
+          <h1 className="text-2xl tracking-tight">بلاگ</h1>
+        </div>
+      </section>
     </div>
   );
 }
