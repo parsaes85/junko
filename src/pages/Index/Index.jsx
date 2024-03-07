@@ -9,6 +9,7 @@ import SpecialProductBox from "../../components/IndexPage/SpecialProductBox/Spec
 
 import "./Index.css";
 import TestimonialBox from "../../components/IndexPage/TestimonialBox/TestimonialBox";
+import BlogBox from "../../components/IndexPage/BlogBox/BlogBox";
 
 function Index() {
   return (
@@ -335,6 +336,36 @@ function Index() {
       <section className="px-24 mt-16 py-16 bg-gray-50">
         <div className="border-b pb-4 mb-6">
           <h1 className="text-2xl tracking-tight">بلاگ</h1>
+        </div>
+        <div>
+          <swiper-container
+            class="productSwiper"
+            space-between="30"
+            slides-per-view="4"
+            loop="true"
+          >
+            <swiper-slide>
+              <BlogBox />
+            </swiper-slide>
+            <swiper-slide>
+              <BlogBox />
+            </swiper-slide>
+            <swiper-slide>
+              <BlogBox />
+            </swiper-slide>
+            <swiper-slide>
+              <BlogBox />
+            </swiper-slide>
+            <swiper-slide>
+              <BlogBox />
+            </swiper-slide>
+            <swiper-slide>
+              <BlogBox />
+            </swiper-slide>
+            <swiper-slide>
+              <BlogBox />
+            </swiper-slide>
+          </swiper-container>
         </div>
       </section>
     </div>
