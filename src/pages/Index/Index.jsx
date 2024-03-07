@@ -10,6 +10,7 @@ import SpecialProductBox from "../../components/IndexPage/SpecialProductBox/Spec
 import "./Index.css";
 import TestimonialBox from "../../components/IndexPage/TestimonialBox/TestimonialBox";
 import BlogBox from "../../components/IndexPage/BlogBox/BlogBox";
+import BrandBox from "../../components/IndexPage/BrandBox/BrandBox";
 
 function Index() {
   return (
@@ -364,6 +365,60 @@ function Index() {
             </swiper-slide>
             <swiper-slide>
               <BlogBox />
+            </swiper-slide>
+          </swiper-container>
+        </div>
+      </section>
+
+      {/* brands */}
+      <section className="px-24 my-16">
+        <div>
+          <swiper-container
+            class="brandsSwiper"
+            slides-per-view="5"
+            loop="true"
+          >
+            <swiper-slide>
+              <BrandBox
+                firstImgSrc="/images/brand1.jpg"
+                secondImgSrc="/images/brand2.jpg"
+              />
+            </swiper-slide>
+            <swiper-slide>
+              <BrandBox
+                firstImgSrc="/images/brand3.jpg"
+                secondImgSrc="/images/brand4.jpg"
+              />
+            </swiper-slide>
+            <swiper-slide>
+              <BrandBox
+                firstImgSrc="/images/brand5.jpg"
+                secondImgSrc="/images/brand6.jpg"
+              />
+            </swiper-slide>
+            <swiper-slide>
+              <BrandBox
+                firstImgSrc="/images/brand7.jpg"
+                secondImgSrc="/images/brand8.jpg"
+              />
+            </swiper-slide>
+            <swiper-slide>
+              <BrandBox
+                firstImgSrc="/images/brand1.jpg"
+                secondImgSrc="/images/brand2.jpg"
+              />
+            </swiper-slide>
+            <swiper-slide>
+              <BrandBox
+                firstImgSrc="/images/brand3.jpg"
+                secondImgSrc="/images/brand4.jpg"
+              />
+            </swiper-slide>
+            <swiper-slide>
+              <BrandBox
+                firstImgSrc="/images/brand5.jpg"
+                secondImgSrc="/images/brand6.jpg"
+              />
             </swiper-slide>
           </swiper-container>
         </div>
