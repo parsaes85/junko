@@ -24,7 +24,7 @@ function Topbar() {
 
       <div className="px-24 py-7 flex justify-between items-center">
         <div>
-          <img src="images/logo.png" alt="junko logo" className="w-40" />
+          <img src="images/logo.png" alt="junko logo" className="max-w-40" />
         </div>
         <div className="flex items-center gap-12">
           <div className="flex">

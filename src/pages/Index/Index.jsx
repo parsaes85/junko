@@ -6,19 +6,19 @@ import FeatureBox from "../../components/IndexPage/FeatureBox/FeatureBox";
 import ProductBox from "../../components/IndexPage/ProductBox/ProductBox";
 import CategoryBox from "../../components/IndexPage/CategoryBox/CategoryBox";
 import SpecialProductBox from "../../components/IndexPage/SpecialProductBox/SpecialProductBox";
-
-import "./Index.css";
 import TestimonialBox from "../../components/IndexPage/TestimonialBox/TestimonialBox";
 import BlogBox from "../../components/IndexPage/BlogBox/BlogBox";
 import BrandBox from "../../components/IndexPage/BrandBox/BrandBox";
+
+import "./Index.css";
 
 function Index() {
   return (
     <div>
       {/* header banner */}
-      <header>
+      <section>
         <Banner />
-      </header>
+      </section>
 
       {/* features */}
       <section className="px-24 mt-16">
