@@ -5,6 +5,7 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+
     extend: {
       colors: {
         primaryBlue: "#0063d1"
@@ -12,6 +13,9 @@ export default {
       fontFamily: {
         Yekan: ["Yekan"],
         IRANSans: ["IRANSans"],
+      },
+      screens: {
+        "lg": "960px"
       }
     },
   },

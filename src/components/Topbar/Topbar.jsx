@@ -4,11 +4,12 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import TopbarCartProduct from "./TopbarCartProduct/TopbarCartProduct";
+import MenuIcon from "@mui/icons-material/Menu";
 
 function Topbar() {
   return (
     <div>
-      <div className="py-3 flex justify-between text-sm bg-gray-100 px-24">
+      <div className="hidden py-3 lg:flex justify-between text-sm bg-gray-100 px-24">
         <p>تلفن تماس: ۷۸۹ ۴۵۶ ۱۲۳(۹۸)+</p>
 
         <div className="flex items-center gap-5">
@@ -26,11 +27,14 @@ function Topbar() {
         <div>
           <img src="images/logo.png" alt="junko logo" className="max-w-40" />
         </div>
-        <div className="flex items-center gap-12">
-          <div className="flex">
-            <div className="flex items-center border p-2 border-gray-300 rounded-r-md w-full">
+        <div className="lg:hidden border p-2 transition duration-200 cursor-pointer hover:text-primaryBlue">
+          <MenuIcon />
+        </div>
+        <div className="hidden lg:flex justify-end items-center w-full gap-12">
+          <div className="flex flex-1">
+            <div className="flex w-2/3 xl:w-1/2 mr-auto items-center border p-2 border-gray-300 rounded-r-md">
               <div className="relative">
-                <select className="w-36 text-[15px] h-full focus:outline-none appearance-none bg-transparent">
+                <select className="cursor-pointer w-32 text-[15px] h-full focus:outline-none appearance-none bg-transparent">
                   <option value="all">همه دسته ها</option>
                   <option value="">لوازم جانبی</option>
                   <option value="">قطعات کامپیوتر</option>
@@ -44,7 +48,7 @@ function Topbar() {
               <input
                 type="text"
                 placeholder="جستجوی محصول ..."
-                className="w-72 text-gray-500 placeholder:text-sm placeholder:text-gray-500 focus:outline-none"
+                className="text-gray-500 placeholder:text-sm placeholder:text-gray-500 focus:outline-none"
               />
             </div>
             <button className="bg-primaryBlue text-white rounded-l-md py-3 px-10 hover:bg-gray-800 transition duration-300">

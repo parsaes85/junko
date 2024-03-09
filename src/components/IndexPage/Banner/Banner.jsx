@@ -42,7 +42,7 @@ function Banner() {
   }, []);
 
   return (
-      <div className="w-full h-[490px] font-IRANSans">
+      <div className="w-full h-[340px] lg:h-[490px] font-IRANSans">
         <swiper-container
           ref={swiperElRef}
           class="bannerSwiper"
@@ -54,13 +54,13 @@ function Banner() {
             <div className="swiper-slide-1">
               <div className="flex items-center h-full text-right">
                 <div className="banner-content" ref={bannerContentRef}>
-                  <h2 className="text-5xl">طراحی زیبا</h2>
-                  <h1 className="text-6xl pb-8 pt-6">تلویزیون ۸۵ اینچ</h1>
+                  <h2 className="text-3xl lg:text-4xl xl:text-5xl">طراحی زیبا</h2>
+                  <h1 className="text-4xl lg:text-5xl xl:text-6xl pb-6 lg:pb-8 pt-4 lg:pt-6">تلویزیون ۸۵ اینچ</h1>
                   <p className="text-lg">
                     پشنهاد ویژه{" "}
                     <span className="text-primaryBlue">۲۰% تخفیف</span> این هفته
                   </p>
-                  <button className="text-white bg-primaryBlue text-sm py-4 px-9 rounded-md mt-16">
+                  <button className="text-white bg-primaryBlue text-sm py-2.5 lg:py-3 xl:py-4 px-4 lg:px-6 xl:px-9 rounded-md mt-10 lg:mt-16">
                     اکنون بخرید
                   </button>
                 </div>
@@ -71,13 +71,13 @@ function Banner() {
             <div className="swiper-slide-2">
               <div className="flex items-center h-full text-right">
                 <div className="banner-content z-50">
-                  <h2 className="text-5xl">دوربین دوگانه</h2>
-                  <h1 className="text-6xl pb-8 pt-6">کیفیت ۲۰MP</h1>
+                  <h2 className="text-3xl lg:text-4xl xl:text-5xl">دوربین دوگانه</h2>
+                  <h1 className="text-4xl lg:text-5xl xl:text-6xl pb-6 lg:pb-8 pt-4 lg:pt-6">کیفیت ۲۰MP</h1>
                   <p className="text-lg">
                     پشنهاد ویژه{" "}
                     <span className="text-primaryBlue">۲۰% تخفیف</span> این هفته
                   </p>
-                  <button className="text-white bg-primaryBlue text-sm py-4 px-9 rounded-md mt-16">
+                  <button className="text-white bg-primaryBlue text-sm py-2.5 lg:py-3 xl:py-4 px-4 lg:px-6 xl:px-9 rounded-md mt-10 lg:mt-16">
                     اکنون بخرید
                   </button>
                 </div>
@@ -88,13 +88,13 @@ function Banner() {
             <div className="swiper-slide-3">
               <div className="flex items-center h-full text-right">
                 <div className="banner-content">
-                  <h2 className="text-5xl">عجله کنید!</h2>
-                  <h1 className="text-6xl pb-8 pt-6">محصولات برتر سال</h1>
+                  <h2 className="text-3xl lg:text-4xl xl:text-5xl">عجله کنید!</h2>
+                  <h1 className="text-4xl lg:text-5xl xl:text-6xl pb-6 lg:pb-8 pt-4 lg:pt-6">محصولات برتر سال</h1>
                   <p className="text-lg">
                     پشنهاد ویژه{" "}
                     <span className="text-primaryBlue">۲۰% تخفیف</span> این هفته
                   </p>
-                  <button className="text-white bg-primaryBlue text-sm py-4 px-9 rounded-md mt-16">
+                  <button className="text-white bg-primaryBlue text-sm py-2.5 lg:py-3 xl:py-4 px-4 lg:px-6 xl:px-9 rounded-md mt-10 lg:mt-16">
                     اکنون بخرید
                   </button>
                 </div>
