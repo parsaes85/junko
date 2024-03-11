@@ -15,6 +15,7 @@ export default {
         IRANSans: ["IRANSans"],
       },
       screens: {
+        "xs": "500px",
         "lg": "960px"
       }
     },

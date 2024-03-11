@@ -9,7 +9,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 function Topbar() {
   return (
     <div>
-      <div className="hidden py-3 lg:flex justify-between text-sm bg-gray-100 px-24">
+      <div className="hidden py-3 lg:flex justify-between text-sm bg-gray-100 px-4 xs:px-24">
         <p>تلفن تماس: ۷۸۹ ۴۵۶ ۱۲۳(۹۸)+</p>
 
         <div className="flex items-center gap-5">
@@ -23,7 +23,7 @@ function Topbar() {
         </div>
       </div>
 
-      <div className="px-24 py-7 flex justify-between items-center">
+      <div className="px-4 xs:px-24 py-7 flex justify-between items-center">
         <div>
           <img src="images/logo.png" alt="junko logo" className="max-w-40" />
         </div>

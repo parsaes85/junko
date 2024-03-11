@@ -20,7 +20,7 @@ function SpecialProductBox() {
         <Link className="block text-[15px] hover:text-primaryBlue transition">
           ساعت هوشمند سامسونگ Gear
         </Link>
-        <button className="text-sm bg-primaryBlue px-4 py-2 w-full rounded-md text-white transition duration-300 opacity-0 group-hover:opacity-100">
+        <button className="text-sm bg-primaryBlue px-4 xs:py-2 w-full rounded-md text-white transition duration-300 opacity-0 group-hover:opacity-100">
           افزودن به سبد
         </button>
       </div>

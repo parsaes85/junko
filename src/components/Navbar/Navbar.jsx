@@ -18,7 +18,7 @@ function Navbar() {
 
   return (
     <div>
-      <div className="lg:bg-primaryBlue px-24">
+      <div className="lg:bg-primaryBlue px-4 xs:px-24">
         <div className="lg:flex items-center gap-12">
           <div className="relative">
             <div className="bg-[#1953b4] flex items-center justify-between text-white w-full py-3 px-5 mb-8 cursor-pointer lg:w-52 lg:mb-0 lg:py-4 xl:w-72" onClick={categoriesDropdownClickHandler}>

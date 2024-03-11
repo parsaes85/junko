@@ -65,3 +65,21 @@
 .banner-content-active button {
   transition: all 1s ease;
 }
+
+@media (max-width: 500px) {
+  .bannerSwiper swiper-slide > div {
+    padding: 0px 16px;
+  }
+  .swiper-slide-1 {
+    background-size: auto;
+    background-position: right;
+  }
+  .swiper-slide-2 {
+    background-size: auto;
+    background-position: right;
+  }
+  .swiper-slide-3 {
+    background-size: auto;
+    background-position: right;
+  }
+}

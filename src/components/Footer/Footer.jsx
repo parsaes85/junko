@@ -7,9 +7,9 @@ import RssFeedIcon from "@mui/icons-material/RssFeed";
 function Footer() {
   return (
     <>
-      <footer className="px-24 py-16 bg-gray-50">
-        <div className="flex items-end gap-16 [&_a:hover]:text-primaryBlue text-[15px]">
-          <div className="w-[350px] space-y-5 [&_span]:text-primaryBlue">
+      <footer className="px-4 xs:px-24 py-16 bg-gray-50">
+        <div className="flex flex-wrap items-end gap-16 [&_a:hover]:text-primaryBlue text-[15px]">
+          <div className="w-full md:w-[350px] space-y-5 [&_span]:text-primaryBlue">
             <div>
               <img src="/images/logo.png" alt="" className="w-40" />
             </div>
@@ -126,8 +126,8 @@ function Footer() {
           </div>
         </div>
       </footer>
-      <div className="px-24 py-8">
-        <div className="flex justify-between items-center">
+      <div className="px-4 xs:px-24 py-8">
+        <div className="flex flex-col gap-4 items-center justify-center md:flex-row md:justify-between md:gap-0">
           <p>
             ارائه شده در وبسایت <a href="">راست‌چین</a>
           </p>

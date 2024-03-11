@@ -3,12 +3,15 @@ import { Link } from "react-router-dom";
 
 import Banner from "../../components/IndexPage/Banner/Banner";
 import FeatureBox from "../../components/IndexPage/FeatureBox/FeatureBox";
-import ProductBox from "../../components/IndexPage/ProductBox/ProductBox";
-import CategoryBox from "../../components/IndexPage/CategoryBox/CategoryBox";
-import SpecialProductBox from "../../components/IndexPage/SpecialProductBox/SpecialProductBox";
-import TestimonialBox from "../../components/IndexPage/TestimonialBox/TestimonialBox";
-import BlogBox from "../../components/IndexPage/BlogBox/BlogBox";
-import BrandBox from "../../components/IndexPage/BrandBox/BrandBox";
+
+import ProductsSwiper from "../../components/IndexPage/ProductsSwiper/ProductsSwiper";
+import CategoriesSwiper from "../../components/IndexPage/CategoriesSwiper/CategoriesSwiper";
+import SpecialProductsSwiper from "../../components/IndexPage/SpecialProductsSwiper/SpecialProductsSwiper";
+import TestimonialsSwiper from "../../components/IndexPage/TestimonialsSwiper/TestimonialsSwiper";
+import BlogsSwiper from "../../components/IndexPage/BlogsSwiper/BlogsSwiper";
+import BrandsSwiper from "../../components/IndexPage/BrandsSwiper/BrandsSwiper";
+import ComputerProductsSwiper from "../../components/IndexPage/ComputerProductsSwiper/ComputerProductsSwiper";
+import MobileProductsSwiper from "../../components/IndexPage/MobileProductsSwiper/MobileProductsSwiper";
 
 import "./Index.css";
 
@@ -21,8 +24,8 @@ function Index() {
       </section>
 
       {/* features */}
-      <section className="px-24 mt-16">
-        <div className="flex justify-between items-start gap-4">
+      <section className="px-4 xs:px-24 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-4">
           <FeatureBox
             img={"/images/shipping1.png"}
             title="ارسال رایگان"
@@ -47,264 +50,131 @@ function Index() {
       </section>
 
       {/* news images */}
-      <section className="px-24 mt-16">
-        <div className="flex justify-between gap-4">
-          <div>
-            <img src="/images/banner1.jpg" alt="" />
+      <section className="px-4 xs:px-24 mt-16">
+        <div className="flex flex-col md:flex-row justify-between gap-4">
+          <div className="overflow-hidden">
+            <img
+              src="/images/banner1.jpg"
+              className="w-full transition duration-500 hover:scale-105"
+              alt=""
+            />
           </div>
-          <div>
-            <img src="/images/banner2.jpg" alt="" />
+          <div className="overflow-hidden">
+            <img
+              src="/images/banner2.jpg"
+              className="w-full transition duration-500 hover:scale-105"
+              alt=""
+            />
           </div>
-          <div>
-            <img src="/images/banner3.jpg" alt="" />
+          <div className="overflow-hidden">
+            <img
+              src="/images/banner3.jpg"
+              className="w-full transition duration-500 hover:scale-105"
+              alt=""
+            />
           </div>
         </div>
       </section>
 
       {/* // special offers */}
-      <section className="px-24 mt-16">
+      <section className="px-4 xs:px-24 mt-16">
         <div>
           <div className="border-b pb-4 mb-6">
             <h1 className="text-2xl tracking-tight">پیشنهاد های ویژه</h1>
           </div>
           <div>
-            <swiper-container
-              class="productSwiper"
-              space-between="30"
-              slides-per-view="5"
-              loop="true"
-            >
-              <swiper-slide>
-                <ProductBox />
-              </swiper-slide>
-              <swiper-slide>
-                <ProductBox />
-              </swiper-slide>
-              <swiper-slide>
-                <ProductBox />
-              </swiper-slide>
-              <swiper-slide>
-                <ProductBox />
-              </swiper-slide>
-              <swiper-slide>
-                <ProductBox />
-              </swiper-slide>
-              <swiper-slide>
-                <ProductBox />
-              </swiper-slide>
-              <swiper-slide>
-                <ProductBox />
-              </swiper-slide>
-            </swiper-container>
+            <ProductsSwiper />
           </div>
         </div>
       </section>
 
       {/* news images */}
-      <section className="px-24 mt-16">
-        <div className="flex gap-4 justify-between">
+      <section className="px-4 xs:px-24 mt-16">
+        <div className="flex flex-col md:flex-row justify-between gap-4">
           <div className="overflow-hidden">
             <img
               src="/images/banner4.jpg"
               alt=""
-              className="transition duration-500 hover:scale-105"
+              className="w-full transition duration-500 hover:scale-105"
             />
           </div>
           <div className="overflow-hidden">
             <img
               src="/images/banner5.jpg"
               alt=""
-              className="transition duration-500 hover:scale-105"
+              className="w-full transition duration-500 hover:scale-105"
             />
           </div>
         </div>
       </section>
 
       {/* popular categories */}
-      <section className="px-24 mt-16">
-        <div className="grid grid-cols-5 gap-11">
-          <div className="space-y-4">
-            <h1 className="text-2xl">محبوب ترین دسته های این هفته</h1>
-            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</p>
+      <section className="px-4 xs:px-24 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-11">
+          <div className="space-y-4 text-center md:text-start">
+            <h1 className="text-xl xl:text-2xl">محبوب ترین دسته های این هفته</h1>
+            <p className="text-sm lg:text-base">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</p>
             <Link className="block">
-              <button className="bg-primaryBlue px-4 py-2 rounded text-white">
+              <button className="bg-primaryBlue px-3 py-2 rounded text-white">
                 نمایش همه دسته ها
               </button>
             </Link>
           </div>
-          <div className="col-span-4">
-            <swiper-container
-              className="categorySwiper"
-              space-between="30"
-              slides-per-view="5"
-              loop="true"
-            >
-              <swiper-slide>
-                <CategoryBox />
-              </swiper-slide>
-              <swiper-slide>
-                <CategoryBox />
-              </swiper-slide>
-              <swiper-slide>
-                <CategoryBox />
-              </swiper-slide>
-              <swiper-slide>
-                <CategoryBox />
-              </swiper-slide>
-              <swiper-slide>
-                <CategoryBox />
-              </swiper-slide>
-              <swiper-slide>
-                <CategoryBox />
-              </swiper-slide>
-              <swiper-slide>
-                <CategoryBox />
-              </swiper-slide>
-            </swiper-container>
+          <div className="md:col-span-4">
+            <CategoriesSwiper />
           </div>
         </div>
       </section>
 
       {/* special products */}
-      <section className="px-24 mt-16 py-16 bg-gray-50">
+      <section className="px-4 xs:px-24 mt-16 py-16 bg-gray-50">
         <div className="border-b pb-4 mb-6">
           <h1 className="text-2xl tracking-tight">محصولات ویژه</h1>
         </div>
         <div className="h-96">
-          <swiper-container
-            class="specialProductsSwiper"
-            slides-per-view="3"
-            grid-rows="2"
-            space-between="30"
-            loop="true"
-          >
-            <swiper-slide>
-              <SpecialProductBox />
-            </swiper-slide>
-            <swiper-slide>
-              <SpecialProductBox />
-            </swiper-slide>
-            <swiper-slide>
-              <SpecialProductBox />
-            </swiper-slide>
-            <swiper-slide>
-              <SpecialProductBox />
-            </swiper-slide>
-            <swiper-slide>
-              <SpecialProductBox />
-            </swiper-slide>
-            <swiper-slide>
-              <SpecialProductBox />
-            </swiper-slide>
-            <swiper-slide>
-              <SpecialProductBox />
-            </swiper-slide>
-            <swiper-slide>
-              <SpecialProductBox />
-            </swiper-slide>
-            <swiper-slide>
-              <SpecialProductBox />
-            </swiper-slide>
-            <swiper-slide>
-              <SpecialProductBox />
-            </swiper-slide>
-          </swiper-container>
+          <SpecialProductsSwiper />
         </div>
       </section>
 
       {/* computer and laptop products */}
-      <section className="px-24 mt-16">
+      <section className="px-4 xs:px-24 mt-16">
         <div className="border-b pb-4 mb-6">
           <h1 className="text-2xl tracking-tight">کامپیوتر و لپتاپ</h1>
         </div>
         <div>
-          <swiper-container
-            class="productSwiper"
-            space-between="30"
-            slides-per-view="5"
-            loop="true"
-          >
-            <swiper-slide>
-              <ProductBox />
-            </swiper-slide>
-            <swiper-slide>
-              <ProductBox />
-            </swiper-slide>
-            <swiper-slide>
-              <ProductBox />
-            </swiper-slide>
-            <swiper-slide>
-              <ProductBox />
-            </swiper-slide>
-            <swiper-slide>
-              <ProductBox />
-            </swiper-slide>
-            <swiper-slide>
-              <ProductBox />
-            </swiper-slide>
-            <swiper-slide>
-              <ProductBox />
-            </swiper-slide>
-          </swiper-container>
+          <ComputerProductsSwiper />
         </div>
       </section>
 
       {/* news images */}
-      <section className="px-24 mt-16">
-        <div className="flex gap-4 justify-between">
+      <section className="px-4 xs:px-24 mt-16">
+        <div className="flex flex-col md:flex-row justify-between gap-4">
           <div className="overflow-hidden">
             <img
               src="/images/banner6.jpg"
               alt=""
-              className="transition duration-500 hover:scale-105"
+              className="w-full transition duration-500 hover:scale-105"
             />
           </div>
           <div className="overflow-hidden">
             <img
               src="/images/banner7.jpg"
               alt=""
-              className="transition duration-500 hover:scale-105"
+              className="w-full transition duration-500 hover:scale-105"
             />
           </div>
         </div>
       </section>
 
       {/* phone and tablet products */}
-      <section className="px-24 mt-16">
-        <div className="grid grid-cols-4 gap-6">
-          <div className="col-span-3">
+      <section className="px-4 xs:px-24 mt-16">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+          <div className="lg:col-span-3">
             <div className="border-b pb-4 mb-6">
               <h1 className="text-2xl tracking-tight">موبایل و تبلت</h1>
             </div>
             <div>
-              <swiper-container
-                class="productSwiper"
-                space-between="30"
-                slides-per-view="4"
-                loop="true"
-              >
-                <swiper-slide>
-                  <ProductBox />
-                </swiper-slide>
-                <swiper-slide>
-                  <ProductBox />
-                </swiper-slide>
-                <swiper-slide>
-                  <ProductBox />
-                </swiper-slide>
-                <swiper-slide>
-                  <ProductBox />
-                </swiper-slide>
-                <swiper-slide>
-                  <ProductBox />
-                </swiper-slide>
-                <swiper-slide>
-                  <ProductBox />
-                </swiper-slide>
-                <swiper-slide>
-                  <ProductBox />
-                </swiper-slide>
-              </swiper-container>
+              <MobileProductsSwiper />
             </div>
           </div>
 
@@ -313,114 +183,26 @@ function Index() {
               <h1 className="text-2xl tracking-tight">دیدگاه مشتریان</h1>
             </div>
             <div>
-              <swiper-container
-                class="testimonialSwiper"
-                pagination="true"
-                loop="true"
-              >
-                <swiper-slide>
-                  <TestimonialBox />
-                </swiper-slide>
-                <swiper-slide>
-                  <TestimonialBox />
-                </swiper-slide>
-                <swiper-slide>
-                  <TestimonialBox />
-                </swiper-slide>
-              </swiper-container>
+              <TestimonialsSwiper />
             </div>
           </div>
         </div>
       </section>
 
       {/* blogs */}
-      <section className="px-24 mt-16 py-16 bg-gray-50">
+      <section className="px-4 xs:px-24 mt-16 py-16 bg-gray-50">
         <div className="border-b pb-4 mb-6">
           <h1 className="text-2xl tracking-tight">بلاگ</h1>
         </div>
         <div>
-          <swiper-container
-            class="productSwiper"
-            space-between="30"
-            slides-per-view="4"
-            loop="true"
-          >
-            <swiper-slide>
-              <BlogBox />
-            </swiper-slide>
-            <swiper-slide>
-              <BlogBox />
-            </swiper-slide>
-            <swiper-slide>
-              <BlogBox />
-            </swiper-slide>
-            <swiper-slide>
-              <BlogBox />
-            </swiper-slide>
-            <swiper-slide>
-              <BlogBox />
-            </swiper-slide>
-            <swiper-slide>
-              <BlogBox />
-            </swiper-slide>
-            <swiper-slide>
-              <BlogBox />
-            </swiper-slide>
-          </swiper-container>
+          <BlogsSwiper />
         </div>
       </section>
 
       {/* brands */}
-      <section className="px-24 my-16">
+      <section className="px-4 xs:px-24 my-16">
         <div>
-          <swiper-container
-            class="brandsSwiper"
-            slides-per-view="5"
-            loop="true"
-          >
-            <swiper-slide>
-              <BrandBox
-                firstImgSrc="/images/brand1.jpg"
-                secondImgSrc="/images/brand2.jpg"
-              />
-            </swiper-slide>
-            <swiper-slide>
-              <BrandBox
-                firstImgSrc="/images/brand3.jpg"
-                secondImgSrc="/images/brand4.jpg"
-              />
-            </swiper-slide>
-            <swiper-slide>
-              <BrandBox
-                firstImgSrc="/images/brand5.jpg"
-                secondImgSrc="/images/brand6.jpg"
-              />
-            </swiper-slide>
-            <swiper-slide>
-              <BrandBox
-                firstImgSrc="/images/brand7.jpg"
-                secondImgSrc="/images/brand8.jpg"
-              />
-            </swiper-slide>
-            <swiper-slide>
-              <BrandBox
-                firstImgSrc="/images/brand1.jpg"
-                secondImgSrc="/images/brand2.jpg"
-              />
-            </swiper-slide>
-            <swiper-slide>
-              <BrandBox
-                firstImgSrc="/images/brand3.jpg"
-                secondImgSrc="/images/brand4.jpg"
-              />
-            </swiper-slide>
-            <swiper-slide>
-              <BrandBox
-                firstImgSrc="/images/brand5.jpg"
-                secondImgSrc="/images/brand6.jpg"
-              />
-            </swiper-slide>
-          </swiper-container>
+          <BrandsSwiper />
         </div>
       </section>
     </div>
