@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import CloseIcon from "@mui/icons-material/Close";
 
-function TopbarCartProduct() {
+function SidebarCartProduct() {
   return (
     <div className="flex gap-2 border-b py-2">
       <div className="border border-transparent hover:border-primaryBlue">
@@ -10,11 +10,11 @@ function TopbarCartProduct() {
           <img src="images/product.jpg" alt="" className="w-28" />
         </Link>
       </div>
-      <div className="space-y-2">
+      <div className="space-y-2 text-sm">
         <Link className="hover:text-primaryBlue transition duration-300">
           لورم ایپسوم متن ساختگی با تولید سادگی
         </Link>
-        <p className="text-sm">
+        <p className="text-xs">
           تعداد:{" "}
           <span className="font-bold">
             <span>۱</span> <CloseIcon fontSize="" className="text-xs" />{" "}
@@ -31,4 +31,4 @@ function TopbarCartProduct() {
   );
 }
 
-export default TopbarCartProduct;
+export default SidebarCartProduct;
