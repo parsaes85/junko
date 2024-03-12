@@ -13,8 +13,6 @@ import BrandsSwiper from "../../components/IndexPage/BrandsSwiper/BrandsSwiper";
 import ComputerProductsSwiper from "../../components/IndexPage/ComputerProductsSwiper/ComputerProductsSwiper";
 import MobileProductsSwiper from "../../components/IndexPage/MobileProductsSwiper/MobileProductsSwiper";
 
-import "./Index.css";
-
 function Index() {
   return (
     <div>

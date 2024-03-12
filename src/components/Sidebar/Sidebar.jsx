@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHref, useLocation, useParams } from "react-router-dom";
 import CloseIcon from "@mui/icons-material/Close";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
@@ -9,12 +9,14 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import RssFeedIcon from "@mui/icons-material/RssFeed";
-import PinterestIcon from '@mui/icons-material/Pinterest';
+import PinterestIcon from "@mui/icons-material/Pinterest";
 
 import SidebarCartProduct from "./SidebarCartProduct/SidebarCartProduct";
 
 function Sidebar({ isSidebarShow, setIsSidebarShow }) {
   const [isSidebarCartShow, setIsSidebarCartShow] = useState(false);
+
+  const href = useHref();
 
   useEffect(() => {
     const closeSidebar = (e) => {
@@ -27,6 +29,7 @@ function Sidebar({ isSidebarShow, setIsSidebarShow }) {
       document.removeEventListener("click", closeSidebar);
     };
   }, []);
+  useEffect(() => setIsSidebarShow(false), [href]);
 
   const sidebarCartClickHandler = () => {
     if (isSidebarCartShow) {
@@ -165,61 +168,58 @@ function Sidebar({ isSidebarShow, setIsSidebarShow }) {
           <div>
             <ul className="flex flex-col transition [&>li]:border-b [&>li:hover]:text-primaryBlue">
               <li>
-                <Link className="block py-2.5" to="/">خانه</Link>
+                <Link className="block py-2.5" to="/">
+                  خانه
+                </Link>
               </li>
               <li>
-                <Link className="block py-2.5" to="/shop">فروشگاه</Link>
+                <Link className="block py-2.5" to="/shop">
+                  فروشگاه
+                </Link>
               </li>
               <li>
-                <Link className="block py-2.5" to="/blog">بلاگ</Link>
+                <Link className="block py-2.5" to="/blog">
+                  بلاگ
+                </Link>
               </li>
               <li>
-                <Link className="block py-2.5" to="/my-account">حساب کاربری</Link>
+                <Link className="block py-2.5" to="/my-account">
+                  حساب کاربری
+                </Link>
               </li>
               <li>
-                <Link className="block py-2.5" to="/about">درباره ما</Link>
+                <Link className="block py-2.5" to="/about">
+                  درباره ما
+                </Link>
               </li>
               <li>
-                <Link className="block py-2.5" to="/contact">تماس با ما</Link>
+                <Link className="block py-2.5" to="/contact">
+                  تماس با ما
+                </Link>
               </li>
             </ul>
           </div>
           <div className="my-10 space-y-4">
             <p className="text-sm text-center">
-              <MailOutlineIcon fontSize=""/> info@yourdomain.com
+              <MailOutlineIcon fontSize="" /> info@yourdomain.com
             </p>
             <div className="flex justify-center gap-2 text-white [&>a]:rounded-full [&>a]:py-0.5 [&>a]:px-1.5 [&_a:hover]:text-white">
-                <a
-                  href=""
-                  className=" bg-[#00aced] hover:bg-[#31BBEF]"
-                >
-                  <TwitterIcon fontSize="" />
-                </a>
-                <a
-                  href=""
-                  className="bg-[#bc2a8d] hover:bg-[#C753A2]"
-                >
-                  <InstagramIcon fontSize="" />
-                </a>
-                <a
-                  href=""
-                  className="bg-[#bd081b] hover:bg-[#bd3232]"
-                >
-                  <PinterestIcon fontSize="" />
-                </a>
-                <a
-                  href=""
-                  className="bg-[#419fd9] hover:bg-[#65B0DF]"
-                >
-                  <TelegramIcon fontSize="" />
-                </a>
-                <a
-                  href=""
-                  className="bg-[#f26522] hover:bg-[#F3824C]"
-                >
-                  <RssFeedIcon fontSize="" />
-                </a>
-              </div>
+              <a href="" className=" bg-[#00aced] hover:bg-[#31BBEF]">
+                <TwitterIcon fontSize="" />
+              </a>
+              <a href="" className="bg-[#bc2a8d] hover:bg-[#C753A2]">
+                <InstagramIcon fontSize="" />
+              </a>
+              <a href="" className="bg-[#bd081b] hover:bg-[#bd3232]">
+                <PinterestIcon fontSize="" />
+              </a>
+              <a href="" className="bg-[#419fd9] hover:bg-[#65B0DF]">
+                <TelegramIcon fontSize="" />
+              </a>
+              <a href="" className="bg-[#f26522] hover:bg-[#F3824C]">
+                <RssFeedIcon fontSize="" />
+              </a>
+            </div>
           </div>
         </div>
       </div>

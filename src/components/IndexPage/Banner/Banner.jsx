@@ -32,13 +32,6 @@ function Banner() {
       "swiperslidechange",
       slideChangeHandler
     );
-
-    return () => {
-      swiperElRef.current.removeEventListener(
-        "swiperslidechange",
-        slideChangeHandler
-      );
-    };
   }, []);
 
   return (
