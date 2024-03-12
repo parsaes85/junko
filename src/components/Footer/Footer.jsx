@@ -129,7 +129,7 @@ function Footer() {
       <div className="px-4 xs:px-24 py-8">
         <div className="flex flex-col gap-4 items-center justify-center md:flex-row md:justify-between md:gap-0">
           <p>
-            ارائه شده در وبسایت <a href="">راست‌چین</a>
+            توسعه داده شده توسط <a href="https://github.com/parsaes85" className="hover:text-primaryBlue transition underline">پارسا اسماعیلی</a>
           </p>
           <a href="">
             <img src="/images/payment.png" alt="" />
