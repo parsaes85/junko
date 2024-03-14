@@ -34,7 +34,11 @@ function Topbar() {
 
         <div className="px-4 xs:px-24 py-5 lg:py-7 flex justify-between items-center">
           <div>
-            <img src="images/logo.png" alt="junko logo" className="max-w-32 md:max-w-40" />
+            <img
+              src="images/logo.png"
+              alt="junko logo"
+              className="max-w-32 md:max-w-40"
+            />
           </div>
           <div
             className="lg:hidden border p-1 md:p-2 transition duration-200 cursor-pointer hover:text-primaryBlue"
@@ -79,8 +83,8 @@ function Topbar() {
                   <FavoriteBorderIcon />
                 </span>
               </div>
-              <div className="relative">
-                <div className="relative group">
+              <div className="relative group">
+                <div className="relative">
                   <span className="absolute -top-2 -right-3 text-sm bg-primaryBlue text-white rounded-full w-5 flex justify-center">
                     ۲
                   </span>
@@ -91,34 +95,36 @@ function Topbar() {
                     <KeyboardArrowDownIcon fontSize="" />
                   </span>
                 </div>
-                <div className="absolute hidden z-50 top-9 -right-[300px] w-[340px] border bg-white border-gray-300 p-6 space-y-6">
-                  <div>
-                    <TopbarCartProduct />
-                    <TopbarCartProduct />
-                  </div>
-                  <div>
-                    <div className="flex items-center justify-between">
-                      <p>جمع اجزا:</p>
-                      <h1 className="font-bold">۱۳۸,۰۰۰ تومان</h1>
+                <div className="transition-all overflow-hidden duration-1000 invisible absolute z-50 max-h-0 top-9 -right-[300px] w-[340px] border bg-white border-gray-300 group-hover:visible group-hover:max-h-[100rem]">
+                  <div className="p-6 space-y-6">
+                    <div>
+                      <TopbarCartProduct />
+                      <TopbarCartProduct />
                     </div>
-                    <div className="flex items-center justify-between">
-                      <p>جمع کل:</p>
-                      <h1 className="font-bold">۱۳۸,۰۰۰ تومان</h1>
+                    <div>
+                      <div className="flex items-center justify-between">
+                        <p>جمع اجزا:</p>
+                        <h1 className="font-bold">۱۳۸,۰۰۰ تومان</h1>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <p>جمع کل:</p>
+                        <h1 className="font-bold">۱۳۸,۰۰۰ تومان</h1>
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex flex-col gap-4">
-                    <Link
-                      to="/cart"
-                      className="bg-gray-100 py-3 text-center text-sm rounded hover:bg-primaryBlue hover:text-white transition duration-300"
-                    >
-                      مشاهده سبد
-                    </Link>
-                    <Link
-                      to="/checkout"
-                      className="bg-gray-100 py-3 text-center text-sm rounded hover:bg-primaryBlue hover:text-white transition duration-300"
-                    >
-                      پرداخت
-                    </Link>
+                    <div className="flex flex-col gap-4">
+                      <Link
+                        to="/cart"
+                        className="bg-gray-100 py-3 text-center text-sm rounded hover:bg-primaryBlue hover:text-white transition duration-300"
+                      >
+                        مشاهده سبد
+                      </Link>
+                      <Link
+                        to="/checkout"
+                        className="bg-gray-100 py-3 text-center text-sm rounded hover:bg-primaryBlue hover:text-white transition duration-300"
+                      >
+                        پرداخت
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>

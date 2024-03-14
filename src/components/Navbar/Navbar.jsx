@@ -28,8 +28,8 @@ function Navbar() {
                 <MenuIcon />
               </span>
             </div>
-            <div className={`${!isShowCategoriesDropdown && "hidden"} z-50 absolute w-full lg:w-72 bg-white py-4 top-12 lg:top-14 right-0 border`}>
-              <ul className="flex flex-col [&>li]:px-4">
+            <div className={`transition-all duration-1000 overflow-hidden ${isShowCategoriesDropdown ? "max-h-[100rem] z-50" : "max-h-0 z-0"} absolute  w-full lg:w-72 bg-white top-12 lg:top-14 right-0 border`}>
+              <ul className="flex flex-col  py-4 [&>li]:px-4">
                 <NavbarCategoriesItem hasSubmenu={true} />
                 <NavbarCategoriesItem hasSubmenu={false} />
               </ul>
