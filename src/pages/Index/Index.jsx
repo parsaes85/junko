@@ -15,7 +15,7 @@ import MobileProductsSwiper from "../../components/IndexPage/MobileProductsSwipe
 
 function Index() {
   return (
-    <div>
+    <>
       {/* header banner */}
       <section>
         <Banner />
@@ -203,7 +203,7 @@ function Index() {
           <BrandsSwiper />
         </div>
       </section>
-    </div>
+    </>
   );
 }
 

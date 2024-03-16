@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
+import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
 
 function Shop() {
   return (
-    <div>Shop</div>
-  )
+    <>
+      {/* Breedcrumb */}
+      <section>
+        <Breadcrumb page="فروشگاه"/>
+      </section>
+
+      
+    </>
+  );
 }
 
-export default Shop
+export default Shop;
