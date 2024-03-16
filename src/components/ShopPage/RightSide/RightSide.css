@@ -1,0 +1,18 @@
+.range-input input[type="range"]::-webkit-slider-thumb {
+    height: 20px;
+    width: 20px;
+    background: #fff;
+    border: 5px solid #0063d1;
+    border-radius: 50%;
+    appearance: none;
+    pointer-events: auto;
+}
+.range-input input[type="range"]::-moz-range-thumb {
+    height: 20px;
+    width: 20px;
+    background: #fff;
+    border: 5px solid #0063d1;
+    border-radius: 50%;
+    appearance: none;
+    pointer-events: auto;
+}
