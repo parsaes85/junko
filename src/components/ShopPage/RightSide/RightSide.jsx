@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import "./RightSide.css";
+import RightSideProductBox from "../RightSideProductBox/RightSideProductBox";
 
 function RightSide() {
   const [rangeInputMinValue, setRangeInputMinValue] = useState("0");
@@ -40,9 +41,11 @@ function RightSide() {
 
   return (
     <div className="bg-[#f8f8f8] flex-1 py-12 px-5 space-y-14">
-      {/* product categories */}
+      {/* products categories */}
       <div>
-        <h1 className="text-xl font-IRANSans mb-4">دسته های محصولات</h1>
+        <h1 className="text-xl font-IRANSans mb-4 tracking-tighter">
+          دسته های محصولات
+        </h1>
 
         <div>
           <ul className="flex flex-col text-[15px] [&>li]:transition [&>li:hover]:text-primaryBlue">
@@ -75,7 +78,9 @@ function RightSide() {
 
       {/* price filter */}
       <div>
-        <h1 className="text-xl font-IRANSans mb-8">فیلتر با قیمت</h1>
+        <h1 className="text-xl font-IRANSans mb-8 tracking-tighter">
+          فیلتر با قیمت
+        </h1>
 
         <div>
           <div>
@@ -114,6 +119,33 @@ function RightSide() {
               فیلتر
             </button>
           </Link>
+        </div>
+      </div>
+
+      {/* products comparison */}
+      <div>
+        <h1 className="text-xl font-IRANSans mb-4 tracking-tighter">
+          مقایسه محصولات
+        </h1>
+
+        <div>
+          <RightSideProductBox />
+          <RightSideProductBox />
+          <RightSideProductBox />
+        </div>
+      </div>
+
+      {/* products lables */}
+      <div>
+        <h1 className="text-xl font-IRANSans mb-4 tracking-tighter">
+          برچسب های محصولات
+        </h1>
+        <div className="flex flex-wrap gap-2">
+            <Link className="bg-white border py-2 px-4 rounded text-sm transition duration-300 hover:text-white hover:bg-primaryBlue tr">بلوز</Link>
+            <Link className="bg-white border py-2 px-4 rounded text-sm transition duration-300 hover:text-white hover:bg-primaryBlue tr">لورم ایپسوم</Link>
+            <Link className="bg-white border py-2 px-4 rounded text-sm transition duration-300 hover:text-white hover:bg-primaryBlue tr">مد و زیبایی</Link>
+            <Link className="bg-white border py-2 px-4 rounded text-sm transition duration-300 hover:text-white hover:bg-primaryBlue tr">لورم ایپسوم</Link>
+            <Link className="bg-white border py-2 px-4 rounded text-sm transition duration-300 hover:text-white hover:bg-primaryBlue tr">لپتاپ</Link>
         </div>
       </div>
     </div>
