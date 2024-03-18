@@ -40,7 +40,7 @@ function RightSide() {
   }, []);
 
   return (
-    <div className="bg-[#f8f8f8] flex-1 py-12 px-5 space-y-14">
+    <div className="bg-[#f8f8f8] flex-1 py-12 px-5 space-y-14 h-fit">
       {/* products categories */}
       <div>
         <h1 className="text-xl font-IRANSans mb-4 tracking-tighter">
