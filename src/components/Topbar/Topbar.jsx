@@ -52,14 +52,14 @@ function Topbar() {
             <div className="flex flex-1">
               <div className="flex w-2/3 xl:w-1/2 mr-auto items-center border p-2 border-gray-300 rounded-r-md">
                 <div className="relative">
-                  <select className="cursor-pointer w-32 text-[15px] h-full focus:outline-none appearance-none bg-transparent">
+                  <select className="cursor-pointer w-32 text-[15px] h-full focus:outline-none appearance-none bg-transparent peer">
                     <option value="all">همه دسته ها</option>
                     <option value="">لوازم جانبی</option>
                     <option value="">قطعات کامپیوتر</option>
                   </select>
                   <KeyboardArrowDownIcon
                     fontSize=""
-                    className="absolute left-0 top-1 text-gray-500 -z-10"
+                    className="absolute left-0 top-1 text-gray-500 -z-10 peer-focus:duration-300 peer-focus:transition-all peer-focus:rotate-180"
                   />
                 </div>
                 <div className="w-[1px] h-4 bg-gray-400 mr-2 ml-5"></div>
