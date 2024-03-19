@@ -9,7 +9,7 @@ function LeftSideColProductBox() {
   return (
     <div className="p-4 rounded border border-transparent transition hover:border-gray-300 group/item">
       <div className="relative">
-        <span className="absolute top-3 left-4 text-gray-100 bg-[#5fa403] px-1.5 py-[11px] rounded-full text-xs">
+        <span className="absolute top-3 left-4 text-gray-100 bg-[#5fa403] px-1.5 py-[9px] xs:py-[11px] rounded-full text-[10px] xs:text-xs">
           فروش
         </span>
         <Link>
@@ -33,7 +33,7 @@ function LeftSideColProductBox() {
             </div>
           </div>
         </div>
-        <button className="absolute bottom-0 left-1/2 -translate-x-1/2 text-white bg-primaryBlue text-sm tracking-tighter py-2.5 w-[60%] rounded-md duration-300 invisible opacity-0 group-hover/item:visible group-hover/item:opacity-100 hover:bg-[#1953b4]">
+        <button className="absolute bottom-0 left-1/2 -translate-x-1/2 text-white bg-primaryBlue text-sm tracking-tighter py-2.5 w-[60%] rounded-md duration-300 invisible opacity-0 group-hover/item:visible group-hover/item:opacity-100 hover:bg-[#1953b4] hidden xs:block">
             افزودن به سبد
         </button>
       </div>

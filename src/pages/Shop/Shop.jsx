@@ -12,7 +12,7 @@ function Shop() {
         <Breadcrumb page="فروشگاه" />
       </section>
 
-      <main className="flex gap-8 px-4 xs:px-24 my-16">
+      <main className="flex flex-col-reverse lg:flex-row gap-8 px-4 xs:px-24 my-16">
         <RightSide />
         <LeftSide />
       </main>

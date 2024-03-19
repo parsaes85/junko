@@ -2,18 +2,45 @@ import React from "react";
 
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
-function LeftSideHeader() {
+function LeftSideHeader({ setProductsShownType, productsShownType }) {
   return (
-    <div className="flex justify-between items-center border px-3 py-2">
-      <div className="flex gap-4">
-        <div className="cursor-pointer">
-          <img src="/images/bkg_grid.png" alt="" className="brightness-[0.1]" />
+    <div className="flex flex-col justify-between items-center border px-3 py-5 sm:flex-row sm:py-2 gap-6 sm:gap-0">
+      <div className="flex items-center gap-4">
+        <div
+          className="cursor-pointer"
+          onClick={() => {
+            setProductsShownType("col-3");
+          }}
+        >
+          <img
+            src="/images/bkg_grid.png"
+            alt=""
+            className={`${productsShownType === "col-3" && "brightness-[0.1]"}`}
+          />
         </div>
-        <div className="cursor-pointer">
-          <img src="/images/bkg_grid4.png" alt="" />
+        <div
+          className="cursor-pointer"
+          onClick={() => {
+            setProductsShownType("col-4");
+          }}
+        >
+          <img
+            src="/images/bkg_grid4.png"
+            alt=""
+            className={`${productsShownType === "col-4" && "brightness-[0.1]"}`}
+          />
         </div>
-        <div className="cursor-pointer">
-          <img src="/images/bkg_list.png" alt="" />
+        <div
+          className="cursor-pointer"
+          onClick={() => {
+            setProductsShownType("row");
+          }}
+        >
+          <img
+            src="/images/bkg_list.png"
+            alt=""
+            className={`${productsShownType === "row" && "brightness-[0.1]"}`}
+          />
         </div>
       </div>
       <div className="flex items-center gap-1">

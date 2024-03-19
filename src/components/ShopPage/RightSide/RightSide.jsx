@@ -128,7 +128,7 @@ function RightSide() {
           مقایسه محصولات
         </h1>
 
-        <div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-1 md:gap-6 lg:gap-0">
           <RightSideProductBox />
           <RightSideProductBox />
           <RightSideProductBox />

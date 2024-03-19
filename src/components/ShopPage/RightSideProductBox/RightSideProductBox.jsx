@@ -5,7 +5,7 @@ import StarBorderIcon from "@mui/icons-material/StarBorder";
 
 function RightSideProductBox() {
   return (
-    <div className="flex gap-4 border-b py-4">
+    <div className="flex gap-4 border-b md:border lg:border-b lg:border-0 py-4 md:pr-4 lg:pr-0">
       <Link>
         <img src="/images/product2.jpg" className="w-[70px]" alt="" />
       </Link>
