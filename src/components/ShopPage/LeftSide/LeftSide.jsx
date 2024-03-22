@@ -14,7 +14,7 @@ function LeftSide() {
       <div
         className={`grid ${
           productsShownType === "row"
-            ? "grid-cols-1"
+            ? "grid-cols-1 sm:grid-cols-2 md:grid-cols-1"
             : productsShownType === "col-3"
             ? "grid-cols-1 sm:grid-cols-2 xl:grid-cols-3"
             : "grid-cols-2 sm:grid-cols-3 xl:grid-cols-4"

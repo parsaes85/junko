@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import "./RightSide.css";
 import RightSideProductBox from "../RightSideProductBox/RightSideProductBox";
+
+import "./RightSide.css";
 
 function RightSide() {
   const [rangeInputMinValue, setRangeInputMinValue] = useState("0");
