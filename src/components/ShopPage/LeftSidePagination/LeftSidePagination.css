@@ -1,4 +1,4 @@
 .pagination-active {
-    color: #fff;
-    background-color: #0063d1;
+    color: #fff !important;
+    background-color: #0063d1 !important;
 }

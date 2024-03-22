@@ -1,21 +1,27 @@
-import React from "react";
-import { useRoutes } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useHref, useRoutes } from "react-router-dom";
 
 import routes from "./routes";
 import Topbar from "./components/Topbar/Topbar";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
-
-import "./App.css";
+import StickyNavbar from "./components/StickyNavbar/StickyNavbar";
 
 function App() {
   const router = useRoutes(routes);
+
+  const href = useHref();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [href]);
 
   return (
     <div className="font-Yekan">
       <header>
         <Topbar />
         <Navbar />
+        <StickyNavbar />
       </header>
       {router}
       <Footer />

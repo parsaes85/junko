@@ -36,7 +36,7 @@ function Navbar() {
             </div>
           </div>
           <div className="hidden lg:block">
-            <ul className="flex gap-12 text-white text-[15px] xl:text-base">
+            <ul id="navbar" className="flex gap-12 text-white text-[15px] xl:text-base">
               <li>
                 <NavLink to="/" className="link">
                   خانه
