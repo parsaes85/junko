@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useHref, useLocation, useParams } from "react-router-dom";
+import { Link, useHref } from "react-router-dom";
 import CloseIcon from "@mui/icons-material/Close";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
@@ -11,10 +11,10 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 import RssFeedIcon from "@mui/icons-material/RssFeed";
 import PinterestIcon from "@mui/icons-material/Pinterest";
 
-import SidebarCartProduct from "./SidebarCartProduct/SidebarCartProduct";
+import SidebarMiniCart from "../SidebarMiniCart/SidebarMiniCart"
 
 function Sidebar({ isSidebarShow, setIsSidebarShow }) {
-  const [isSidebarCartShow, setIsSidebarCartShow] = useState(false);
+  const [isSidebarMiniCartShow, setIsSidebarMiniCartShow] = useState(false);
 
   const href = useHref();
 
@@ -31,11 +31,11 @@ function Sidebar({ isSidebarShow, setIsSidebarShow }) {
   }, []);
   useEffect(() => setIsSidebarShow(false), [href]);
 
-  const sidebarCartClickHandler = () => {
-    if (isSidebarCartShow) {
-      setIsSidebarCartShow(false);
+  const sidebarCartIconClickHandler = () => {
+    if (isSidebarMiniCartShow) {
+      setIsSidebarMiniCartShow(false);
     } else {
-      setIsSidebarCartShow(true);
+      setIsSidebarMiniCartShow(true);
     }
   };
 
@@ -108,10 +108,10 @@ function Sidebar({ isSidebarShow, setIsSidebarShow }) {
                   <FavoriteBorderIcon />
                 </span>
               </div>
-              <div className="relative">
+              <div className="relative group">
                 <div
-                  className="relative group"
-                  onClick={sidebarCartClickHandler}
+                  className="relative"
+                  onClick={sidebarCartIconClickHandler}
                 >
                   <span className="absolute -top-2 -right-3 text-sm bg-primaryBlue text-white rounded-full w-5 flex justify-center">
                     ۲
@@ -123,44 +123,7 @@ function Sidebar({ isSidebarShow, setIsSidebarShow }) {
                     <KeyboardArrowDownIcon fontSize="" />
                   </span>
                 </div>
-                <div
-                  className={`transition-all duration-1000 ease-in absolute top-9 -right-[140px] w-[260px] border bg-white border-gray-300 text-start z-30 overflow-hidden ${
-                    isSidebarCartShow
-                      ? "visible max-h-[100rem]"
-                      : "invisible max-h-0"
-                  }`}
-                >
-                  <div className="px-3 py-4 space-y-6">
-                    <div>
-                      <SidebarCartProduct />
-                      <SidebarCartProduct />
-                    </div>
-                    <div>
-                      <div className="flex items-center justify-between text-sm">
-                        <p>جمع اجزا:</p>
-                        <h1 className="font-bold">۱۳۸,۰۰۰ تومان</h1>
-                      </div>
-                      <div className="flex items-center justify-between text-sm">
-                        <p>جمع کل:</p>
-                        <h1 className="font-bold">۱۳۸,۰۰۰ تومان</h1>
-                      </div>
-                    </div>
-                    <div className="flex flex-col gap-4">
-                      <Link
-                        to="/cart"
-                        className="bg-gray-100 py-3 text-center text-sm rounded hover:bg-primaryBlue hover:text-white transition duration-300"
-                      >
-                        مشاهده سبد
-                      </Link>
-                      <Link
-                        to="/checkout"
-                        className="bg-gray-100 py-3 text-center text-sm rounded hover:bg-primaryBlue hover:text-white transition duration-300"
-                      >
-                        پرداخت
-                      </Link>
-                    </div>
-                  </div>
-                </div>
+                <SidebarMiniCart isSidebarMiniCartShow={isSidebarMiniCartShow} />
               </div>
             </div>
           </div>

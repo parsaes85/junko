@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import NavbarCategoriesItem from "./NavbarCategoriesItem/NavbarCategoriesItem";
 import "./Navbar.css";
@@ -61,9 +61,6 @@ function Navbar() {
                 <NavLink to="/contact" className="link">
                   تماس با ما
                 </NavLink>
-              </li>
-              <li>
-                <NavLink></NavLink>
               </li>
             </ul>
           </div>
