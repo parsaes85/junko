@@ -7,12 +7,9 @@ import LeftSide from "../../components/ShopPage/LeftSide/LeftSide";
 function Shop() {
   return (
     <>
-      {/* Breedcrumb */}
-      <section>
-        <Breadcrumb page="فروشگاه" />
-      </section>
+      <Breadcrumb page="فروشگاه" />
 
-      <main className="flex flex-col-reverse lg:flex-row gap-8 px-4 xs:px-24 my-16">
+      <main className="flex flex-col-reverse lg:flex-row gap-8 px-4 xs:px-24 mb-16">
         <RightSide />
         <LeftSide />
       </main>

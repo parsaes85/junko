@@ -11,7 +11,7 @@ function ProductBox() {
         <span className="absolute top-3 left-4 text-gray-100 bg-[#5fa403] px-1.5 py-[11px] rounded-full text-xs">
           فروش
         </span>
-        <Link>
+        <Link to="/product-details/1">
           <img src="/images/product2.jpg" alt="" />
         </Link>
         <div className="absolute top-4 right-4 space-y-4 transition duration-300 invisible opacity-0 group-hover/item:visible group-hover/item:opacity-100">
@@ -56,7 +56,7 @@ function ProductBox() {
           <p className="text-gray-500 line-through text-[15px]">۸۶,۰۰۰ تومان</p>
           <p className="text-primaryBlue text-[17px]">۷۹,۰۰۰ تومان</p>
         </div>
-        <Link className="text-[15px] hover:text-primaryBlue transition">
+        <Link to="/product-details/1" className="text-[15px] hover:text-primaryBlue transition">
           گوشی موبایل شیائومی مدل MI ۹ Lite
         </Link>
       </div>
