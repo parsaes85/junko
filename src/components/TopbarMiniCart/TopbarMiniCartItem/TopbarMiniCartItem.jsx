@@ -7,7 +7,7 @@ function TopbarMiniCartItem() {
     <div className="flex gap-2 border-b py-2">
     <div className="border border-transparent hover:border-primaryBlue">
       <Link>
-        <img src="images/product.jpg" alt="" className="w-28" />
+        <img src="/images/product.jpg" alt="" className="w-28" />
       </Link>
     </div>
     <div className="space-y-2">
