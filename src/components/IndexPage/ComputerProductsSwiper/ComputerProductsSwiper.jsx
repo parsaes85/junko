@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import ProductBox from "../ProductBox/ProductBox";
+import ProductBox from "../../ProductBox/ProductBox";
 
 function ComputerProductsSwiper() {
   useEffect(() => {
