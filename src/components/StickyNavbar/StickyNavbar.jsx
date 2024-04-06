@@ -12,7 +12,6 @@ function StickyNavbar() {
   const [scrollPosition, setScrollPosition] = useState(0);
 
   const handleScroll = () => {
-    console.log(scrollY)
     setScrollPosition(scrollY);
   };
 

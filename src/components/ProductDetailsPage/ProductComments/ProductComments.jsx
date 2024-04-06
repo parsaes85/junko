@@ -9,22 +9,22 @@ function ProductComments() {
   return (
     <section>
       <div className="px-4 xs:px-24 mb-16">
-        <div className="border py-6 px-8">
-          <div className="border-b pb-5 flex gap-8 text-xl text-gray-700 [&>*]:cursor-pointer [&>*:hover]:text-gray-900 [&>*:hover]:transition">
+        <div className="border py-6 px-4 md:px-8">
+          <div className="border-b pb-5 flex flex-wrap gap-6 gap-y-2 md:gap-8 text-lg md:text-xl text-gray-700 [&>*]:cursor-pointer [&>*:hover]:text-gray-900 [&>*:hover]:transition">
             <h1
-              className={`${sectionTitle === "desc" && "text-gray-950"}`}
+              className={`${sectionTitle === "desc" && "text-black"}`}
               onClick={() => setSectionTitle("desc")}
             >
               توضیحات
             </h1>
             <h1
-              className={`${sectionTitle === "infos" && "text-gray-950"}`}
+              className={`${sectionTitle === "infos" && "text-black"}`}
               onClick={() => setSectionTitle("infos")}
             >
               مشخصات فنی
             </h1>
             <h1
-              className={`${sectionTitle === "comments" && "text-gray-950"}`}
+              className={`${sectionTitle === "comments" && "text-black"}`}
               onClick={() => setSectionTitle("comments")}
             >
               نقد و بررسی (۱)
@@ -86,7 +86,7 @@ function ProductComments() {
             {sectionTitle === "comments" && (
               <div>
                 <div className="mb-8">
-                  <h1 className="text-xl font-IRANSans tracking-tighter mb-6">
+                  <h1 className="text-[17px] md:text-xl font-IRANSans tracking-tighter mb-6">
                     ۱ نقد و بررسی برای این محصول
                   </h1>
                   <div className="space-y-6">
@@ -95,7 +95,7 @@ function ProductComments() {
                   </div>
                 </div>
                 <div>
-                  <h1 className="text-xl font-IRANSans tracking-tighter mb-6">
+                  <h1 className="text-[17px] md:text-xl font-IRANSans tracking-tighter mb-6">
                     یک نقد و بررسی بنویسید
                   </h1>
                   <div className="space-y-5">
@@ -124,7 +124,7 @@ function ProductComments() {
                           className="border w-full text-sm p-2 resize-none focus:outline-none"
                         ></textarea>
                       </div>
-                      <div className="grid grid-cols-2 gap-8 mt-4">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mt-2 md:mt-4">
                         <div>
                           <label htmlFor="name" className="block">
                             نام

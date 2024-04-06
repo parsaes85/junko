@@ -10,44 +10,45 @@ import PinterestIcon from "@mui/icons-material/Pinterest";
 
 function ProductMainDetails() {
   const [productNumber, setProductNumber] = useState(1);
+
   return (
     <main>
-      <div className="grid grid-cols-2 gap-8 px-4 xs:px-24 mb-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 xs:px-24 mb-16">
         <div>
           <div className="border">
             <img src="/images/productbig5.jpg" className="w-full" alt="" />
           </div>
           <div className="flex justify-center gap-4 mt-5 px-14">
-            <div className="border w-fit cursor-pointer">
-              <img src="/images/product2.jpg" className="w-24" alt="" />
+            <div className="border cursor-pointer">
+              <img src="/images/product2.jpg" className="" alt="" />
             </div>
-            <div className="border w-fit cursor-pointer">
-              <img src="/images/product2.jpg" className="w-24" alt="" />
+            <div className="border cursor-pointer">
+              <img src="/images/product2.jpg" className="" alt="" />
             </div>
-            <div className="border w-fit cursor-pointer">
-              <img src="/images/product2.jpg" className="w-24" alt="" />
+            <div className="border cursor-pointer">
+              <img src="/images/product2.jpg" className="" alt="" />
             </div>
           </div>
         </div>
 
         <div className="space-y-5">
           <div className="space-y-5 border-b pb-5">
-            <h1 className="text-2xl">ماشین ظرف شویی سامسونگ DM2019</h1>
+            <h1 className="text-xl sm:text-[22px] lg:text-2xl">ماشین ظرف شویی سامسونگ DM2019</h1>
             <div className="flex gap-2 items-center">
-              <div className="text-primaryBlue ">
-                <StarIcon fontSize="small" />
-                <StarIcon fontSize="small" />
-                <StarIcon fontSize="small" />
-                <StarIcon fontSize="small" />
-                <StarIcon fontSize="small" />
+              <div className="text-primaryBlue sm:text-xl">
+                <StarIcon fontSize="" />
+                <StarIcon fontSize="" />
+                <StarIcon fontSize="" />
+                <StarIcon fontSize="" />
+                <StarIcon fontSize="" />
               </div>
               <p className="text-gray-600">(امتیاز مشتریان)</p>
             </div>
             <div className="flex items-center gap-2">
-              <p className="text-primaryBlue tracking-tighter text-[24px]">
+              <p className="text-primaryBlue tracking-tighter text-[20px] sm:text-[24px]">
                 ۷۰,۰۰۰ تومان
               </p>
-              <p className="text-gray-500 tracking-tighter line-through text-[22px]">
+              <p className="text-gray-500 tracking-tighter line-through text-[18px] sm:text-[22px]">
                 ۸۰,۰۰۰ تومان
               </p>
             </div>
@@ -83,13 +84,13 @@ function ProductMainDetails() {
               <input
                 type="number"
                 id="product-number"
-                className="outline-none border w-32 px-2 py-2 mx-4 rounded text-sm"
+                className="outline-none border w-1/4 px-2 py-2 mx-4 rounded text-sm"
                 value={productNumber}
                 onChange={(e) => {
                   setProductNumber(e.target.value);
                 }}
               />
-              <button className="bg-primaryBlue text-white py-2 px-20 rounded hover:bg-gray-700 transition">
+              <button className="bg-primaryBlue text-white py-2 w-2/4 rounded hover:bg-gray-700 transition">
                 افزودن به سبد
               </button>
             </div>
@@ -103,7 +104,7 @@ function ProductMainDetails() {
                 <span>دسته:</span>
                 <p>پوشاک</p>
             </div>
-            <div className="flex gap-2 text-[13px] text-white [&>a]:rounded [&>a]:py-0.5 [&>a]:px-2 [&>a]:flex [&>a]:gap-1 [&>a]:items-center [&>a]:opacity-90">
+            <div className="flex flex-wrap gap-2 text-[13px] text-white [&>a]:rounded [&>a]:py-0.5 [&>a]:px-1 sm:[&>a]:px-2 [&>a]:flex [&>a]:gap-1 [&>a]:items-center [&>a]:opacity-90">
               <a href="" className="bg-[#bc2a8d] hover:bg-[#C753A2]">
                 <InstagramIcon fontSize="" />
                 لایک

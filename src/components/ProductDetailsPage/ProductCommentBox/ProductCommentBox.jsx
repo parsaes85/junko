@@ -8,10 +8,10 @@ function ProductCommentBox() {
       <div>
         <img src="/images/comment2.jpg" alt="" />
       </div>
-      <div className="w-full border p-4 space-y-4 relative after:absolute after:w-2.5 after:h-2.5 after:bg-white after:border-t after:border-r after:-right-1.5 after:top-2 after:rotate-45">
+      <div className="w-full border p-3 xs:p-4 space-y-4 relative after:absolute after:w-2.5 after:h-2.5 after:bg-white after:border-t after:border-r after:-right-1.5 after:top-2 after:rotate-45">
         <div className="flex items-center justify-between">
           <div className="tracking-tighter">مدیر - ۱۲ آذر ۱۳۹۸</div>
-          <div className="text-primaryBlue text-sm">
+          <div className="text-primaryBlue text-sm flex">
             <StarIcon fontSize="" />
             <StarIcon fontSize="" />
             <StarIcon fontSize="" />
