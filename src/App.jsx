@@ -6,6 +6,7 @@ import Topbar from "./components/Topbar/Topbar";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import StickyNavbar from "./components/StickyNavbar/StickyNavbar";
+import ScrollToTopBtn from "./components/ScrollToTopBtn/ScrollToTopBtn";
 
 function App() {
   const router = useRoutes(routes);
@@ -17,15 +18,18 @@ function App() {
   }, [href]);
 
   return (
-    <div className="font-Yekan">
-      <header>
-        <Topbar />
-        <Navbar />
-        <StickyNavbar />
-      </header>
-      {router}
-      <Footer />
-    </div>
+    <>
+      <div className="font-Yekan">
+        <header>
+          <Topbar />
+          <Navbar />
+          <StickyNavbar />
+        </header>
+        {router}
+        <Footer />
+      </div>
+      <ScrollToTopBtn />
+    </>
   );
 }
 

@@ -33,13 +33,13 @@ function Topbar() {
         </div>
 
         <div className="px-4 xs:px-24 py-5 lg:py-7 flex justify-between items-center">
-          <div>
+          <Link to="/">
             <img
               src="/images/logo.png"
               alt="junko logo"
               className="max-w-32 md:max-w-40"
             />
-          </div>
+          </Link>
           <div
             className="lg:hidden border p-1 md:p-2 transition duration-200 cursor-pointer hover:text-primaryBlue"
             onClick={() => {

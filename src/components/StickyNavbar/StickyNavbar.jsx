@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
@@ -25,9 +25,9 @@ function StickyNavbar() {
 
   return (
     <div className={`fixed ${scrollPosition > 100 ? "top-0 visible opacity-100 transition-all duration-[400ms]" : "-top-8 opacity-0 invisible"} left-0 z-[99] w-full bg-white bg-opacity-95 shadow hidden lg:flex items-center justify-between  px-4 py-3 xs:px-24`}>
-      <div>
+      <Link to="/">
         <img src="/images/logo.png" alt="" className="max-w-32 md:max-w-40" />
-      </div>
+      </Link>
 
       <div className="flex items-center gap-12">
         <ul id="sticky-navbar" className="flex gap-12 text-[15px] xl:text-base">
