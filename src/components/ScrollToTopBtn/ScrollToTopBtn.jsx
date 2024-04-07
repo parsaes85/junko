@@ -13,7 +13,7 @@ function ScrollToTopBtn() {
 
   return (
     <div
-      className="fixed bottom-3 left-3 cursor-pointer"
+      className="fixed bottom-3 left-3 cursor-pointer z-[99]"
       onClick={scrollToTopHandler}
     >
       <div className="bg-primaryBlue px-2 py-[7px] rounded-full text-white">

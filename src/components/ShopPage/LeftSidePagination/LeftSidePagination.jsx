@@ -7,7 +7,7 @@ import "./LeftSidePagination.css"
 
 function LeftSidePagination() {
   return (
-    <div className="border p-3 flex justify-center gap-2 [&>*]:transition [&>*]:duration-300 [&>*]:rounded [&>*:hover]:text-white [&>*:hover]:bg-primaryBlue">
+    <div className="mb-16 border p-3 flex justify-center gap-2 [&>*]:transition [&>*]:duration-300 [&>*]:rounded [&>*:hover]:text-white [&>*:hover]:bg-primaryBlue">
       <Link className="text-black bg-[#f0f0f0] flex items-center justify-center px-2">
         <KeyboardDoubleArrowRightIcon fontSize="" />
       </Link>
