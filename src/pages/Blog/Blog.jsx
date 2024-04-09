@@ -1,22 +1,24 @@
-import React from 'react'
-import Breadcrumb from '../../components/Breadcrumb/Breadcrumb'
-import RightSide from '../../components/BlogPage/RightSide/RightSide'
-import LeftSide from '../../components/BlogPage/LeftSide/LeftSide'
-import LeftSidePagination from '../../components/ShopPage/LeftSidePagination/LeftSidePagination'
+import React from "react";
+import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
+import RightSide from "../../components/BlogPage/RightSide/RightSide";
+import LeftSide from "../../components/BlogPage/LeftSide/LeftSide";
+import LeftSidePagination from "../../components/ShopPage/LeftSidePagination/LeftSidePagination";
 
 function Blog() {
   return (
     <>
-    <Breadcrumb page="بلاگ" />
+      <Breadcrumb page="بلاگ" />
 
-    <main className="flex flex-col-reverse lg:flex-row gap-8 px-4 xs:px-24 mb-16">
-      <RightSide />
-      <LeftSide />
-    </main>
+      <main className="flex flex-col lg:flex-row gap-8 px-4 xs:px-24 mb-16">
+        <RightSide />
+        <LeftSide />
+      </main>
 
-    <LeftSidePagination />
-  </>
-  )
+      <div className="px-4 xs:px-24">
+        <LeftSidePagination />
+      </div>
+    </>
+  );
 }
 
-export default Blog
+export default Blog;
