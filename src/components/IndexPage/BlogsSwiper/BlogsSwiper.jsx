@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import BlogBox from "../BlogBox/BlogBox";
+import BlogBox from "../../BlogBox/BlogBox";
 
 function BlogsSwiper() {
   useEffect(() => {
