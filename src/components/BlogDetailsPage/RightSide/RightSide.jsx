@@ -2,6 +2,7 @@ import React from "react";
 import RightSideMainDetails from "../RightSideMainDetails/RightSideMainDetails";
 import RightSideRelatedBlogs from "../RightSideRelatedBlogs/RightSideRelatedBlogs";
 import RightSideComments from "../RightSideComments/RightSideComments";
+import RightSideCreateComment from "../RightSideCreateComment/RightSideCreateComment";
 
 function RightSide() {
   return (
@@ -9,6 +10,7 @@ function RightSide() {
         <RightSideMainDetails />
         <RightSideRelatedBlogs />
         <RightSideComments />
+        <RightSideCreateComment />
     </div>
   );
 }
