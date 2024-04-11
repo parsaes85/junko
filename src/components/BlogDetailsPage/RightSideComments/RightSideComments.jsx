@@ -3,7 +3,7 @@ import RightSideCommentBox from "../RightSideCommentBox/RightSideCommentBox";
 
 function RightSideComments() {
   return (
-    <div className="mb-16">
+    <div className="mb-14">
       <div className="mb-4">
         <h1 className="text-xl font-IRANSans">۳ دیدگاه</h1>
       </div>

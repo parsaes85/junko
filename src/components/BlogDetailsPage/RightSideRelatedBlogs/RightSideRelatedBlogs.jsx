@@ -9,7 +9,7 @@ function RightSideRelatedBlogs() {
           مطالب مرتبط
         </h1>
       </div>
-      <div className="flex gap-7">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-7 md:grid-cols-3">
         <BlogBox/>
         <BlogBox/>
         <BlogBox/>

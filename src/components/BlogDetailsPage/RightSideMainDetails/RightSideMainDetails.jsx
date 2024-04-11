@@ -10,7 +10,7 @@ function RightSideMainDetails() {
   return (
     <div className="border-b pb-6 mb-14">
       <div className="mb-6">
-        <h1 className="text-[40px]">مطلب بلاگ تصویری</h1>
+        <h1 className="text-2xl md:text-3xl xl:text-[40px]">مطلب بلاگ تصویری</h1>
         <div className="mt-4 mb-7">
           ارسال توسط :{" "}
           <Link to="" className="text-primaryBlue text-sm tracking-tight">
@@ -40,7 +40,7 @@ function RightSideMainDetails() {
           پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی
           سوالات پیوسته اهل دنیای
         </p>
-        <div className="bg-gray-100 px-10 py-9 border-r-4 border-r-primaryBlue mr-8 text-[17px]">
+        <div className="bg-gray-100 px-10 py-9 border-r-4 border-r-primaryBlue md:mr-8 text-[17px]">
           <p className="italic">
             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
             استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در
@@ -75,7 +75,7 @@ function RightSideMainDetails() {
           ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
           طراحان
         </p>
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col gap-y-2 md:flex-row md:items-center justify-between">
           <div className="flex gap-1 items-center">
             <p>برجسب ها: </p>
             <div>

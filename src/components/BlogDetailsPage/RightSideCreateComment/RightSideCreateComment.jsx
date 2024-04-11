@@ -5,7 +5,7 @@ function RightSideCreateComment() {
     <div>
       <div className="space-y-4 mb-4">
         <h1 className="text-xl font-IRANSans">یک پاسخ ارسال کنید</h1>
-        <p>ایمیل شما منتشر نخواهد شد. فیلد های الزامی با * مشخص شده اند</p>
+        <p className="text-[15px] md:text-base">ایمیل شما منتشر نخواهد شد. فیلد های الزامی با * مشخص شده اند</p>
       </div>
       <form className="[&_label]:mb-2">
         <div>
