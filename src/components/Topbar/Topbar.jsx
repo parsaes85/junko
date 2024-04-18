@@ -23,7 +23,7 @@ function Topbar() {
 
           <div className="flex items-center gap-5">
             <div className="transition hover:text-primaryBlue">
-              <Link>حساب کاربری</Link>
+              <Link to="/login">حساب کاربری</Link>
             </div>
             <div className="w-[1px] h-3 bg-black"></div>
             <div className="transition hover:text-primaryBlue">
