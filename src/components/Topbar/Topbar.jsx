@@ -75,14 +75,17 @@ function Topbar() {
             </div>
 
             <div className="flex gap-8">
-              <div className="relative">
-                <span className="absolute -top-2 -right-3 text-sm bg-primaryBlue text-white rounded-full w-5 flex justify-center">
-                  ۳
-                </span>
-                <span className="text-gray-800 cursor-pointer hover:text-primaryBlue transition-all duration-200">
-                  <FavoriteBorderIcon />
-                </span>
-              </div>
+              <Link to="/wishlist">
+                <div className="relative">
+                  <span className="absolute -top-2 -right-3 text-sm bg-primaryBlue text-white rounded-full w-5 flex justify-center">
+                    ۳
+                  </span>
+                  <span className="text-gray-800 cursor-pointer hover:text-primaryBlue transition-all duration-200">
+                    <FavoriteBorderIcon />
+                  </span>
+                </div>
+              </Link>
+
               <div className="relative group">
                 <div className="relative">
                   <span className="absolute -top-2 -right-3 text-sm bg-primaryBlue text-white rounded-full w-5 flex justify-center">

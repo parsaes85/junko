@@ -100,6 +100,7 @@ function Sidebar({ isSidebarShow, setIsSidebarShow }) {
             </div>
 
             <div className="flex justify-center gap-8 pt-2">
+              <Link to="/wishlist">
               <div className="relative">
                 <span className="absolute -top-2 -right-3 text-sm bg-primaryBlue text-white rounded-full w-5 flex justify-center">
                   ۳
@@ -108,6 +109,7 @@ function Sidebar({ isSidebarShow, setIsSidebarShow }) {
                   <FavoriteBorderIcon />
                 </span>
               </div>
+              </Link>
               <div className="relative group">
                 <div
                   className="relative"

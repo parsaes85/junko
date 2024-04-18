@@ -4,6 +4,7 @@ import ProductDetails from "./pages/ProductDetails/ProductDetails";
 import Blog from "./pages/Blog/Blog";
 import BlogDetails from "./pages/BlogDetails/BlogDetails";
 import Login from "./pages/Login/Login";
+import Wishlist from "./pages/Wishlist/Wishlist";
 
 const routes = [
   { path: "/", element: <Index /> },
@@ -12,6 +13,7 @@ const routes = [
   { path: "/blog", element: <Blog /> },
   { path: "/blog-details/:blogID", element: <BlogDetails /> },
   { path: "/login", element: <Login /> },
+  { path: "/wishlist", element: <Wishlist /> },
 ];
 
 export default routes;
