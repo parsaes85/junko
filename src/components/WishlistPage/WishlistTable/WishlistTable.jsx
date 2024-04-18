@@ -5,8 +5,8 @@ import CloseIcon from "@mui/icons-material/Close";
 function WishlistTable() {
   return (
     <section className="px-4 xs:px-24 mb-16">
-      <div>
-        <table className="w-full [&_th]:text-center [&_th]:bg-gray-100 [&_th]:border-b-[3px] [&_th]:border-b-primaryBlue [&_th]:py-3 [&_th]:px-6 [&_td]:text-center [&_td]:border">
+      <div className="overflow-x-auto">
+        <table className="w-full min-w-[840px] [&_th]:text-center [&_th]:bg-gray-100 [&_th]:border-b-[3px] [&_th]:border-b-primaryBlue [&_th]:py-3 [&_th]:px-6 [&_td]:text-center [&_td]:border">
           <thead>
             <tr>
               <th>حذف</th>

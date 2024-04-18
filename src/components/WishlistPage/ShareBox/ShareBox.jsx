@@ -9,7 +9,7 @@ function ShareBox() {
   return (
     <section className="px-4 xs:px-24 mb-16">
       <div className="border py-5 text-center space-y-2">
-        <h1 className="font-IRANSans text-lg">اشتراک گذاری در:</h1>
+        <h1 className="font-IRANSans text-lg tracking-tight">اشتراک گذاری در:</h1>
         <div className="flex gap-4 justify-center">
           <span className="text-gray-900 hover:text-primaryBlue transition duration-300 cursor-pointer text-lg">
             <RssFeedIcon fontSize="" />
