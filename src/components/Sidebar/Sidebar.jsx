@@ -11,7 +11,7 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 import RssFeedIcon from "@mui/icons-material/RssFeed";
 import PinterestIcon from "@mui/icons-material/Pinterest";
 
-import SidebarMiniCart from "../SidebarMiniCart/SidebarMiniCart"
+import SidebarMiniCart from "../SidebarMiniCart/SidebarMiniCart";
 
 function Sidebar({ isSidebarShow, setIsSidebarShow }) {
   const [isSidebarMiniCartShow, setIsSidebarMiniCartShow] = useState(false);
@@ -68,7 +68,7 @@ function Sidebar({ isSidebarShow, setIsSidebarShow }) {
 
             <div className="flex justify-center items-center gap-4">
               <div className="transition hover:text-primaryBlue">
-                <Link>حساب کاربری</Link>
+                <Link to="/login">حساب کاربری</Link>
               </div>
               <div className="w-[1px] h-3 bg-black"></div>
               <div className="transition hover:text-primaryBlue">
@@ -101,20 +101,17 @@ function Sidebar({ isSidebarShow, setIsSidebarShow }) {
 
             <div className="flex justify-center gap-8 pt-2">
               <Link to="/wishlist">
-              <div className="relative">
-                <span className="absolute -top-2 -right-3 text-sm bg-primaryBlue text-white rounded-full w-5 flex justify-center">
-                  ۳
-                </span>
-                <span className="text-gray-800 cursor-pointer hover:text-primaryBlue transition-all duration-200">
-                  <FavoriteBorderIcon />
-                </span>
-              </div>
+                <div className="relative">
+                  <span className="absolute -top-2 -right-3 text-sm bg-primaryBlue text-white rounded-full w-5 flex justify-center">
+                    ۳
+                  </span>
+                  <span className="text-gray-800 cursor-pointer hover:text-primaryBlue transition-all duration-200">
+                    <FavoriteBorderIcon />
+                  </span>
+                </div>
               </Link>
               <div className="relative group">
-                <div
-                  className="relative"
-                  onClick={sidebarCartIconClickHandler}
-                >
+                <div className="relative" onClick={sidebarCartIconClickHandler}>
                   <span className="absolute -top-2 -right-3 text-sm bg-primaryBlue text-white rounded-full w-5 flex justify-center">
                     ۲
                   </span>
@@ -125,7 +122,9 @@ function Sidebar({ isSidebarShow, setIsSidebarShow }) {
                     <KeyboardArrowDownIcon fontSize="" />
                   </span>
                 </div>
-                <SidebarMiniCart isSidebarMiniCartShow={isSidebarMiniCartShow} />
+                <SidebarMiniCart
+                  isSidebarMiniCartShow={isSidebarMiniCartShow}
+                />
               </div>
             </div>
           </div>
