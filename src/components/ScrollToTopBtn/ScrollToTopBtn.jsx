@@ -1,8 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp";
 
 function ScrollToTopBtn() {
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const handleScroll = () => {
+    setScrollPosition(scrollY);
+  };
+
   const scrollToTopHandler = () => {
     scrollTo({
       top: 0,
@@ -11,9 +17,17 @@ function ScrollToTopBtn() {
     });
   };
 
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div
-      className="fixed bottom-3 left-3 cursor-pointer z-[99]"
+      className={`fixed ${scrollPosition > 250 ? "bottom-3" : "-bottom-96"} transition-all duration-300 left-3 cursor-pointer z-[99]`}
       onClick={scrollToTopHandler}
     >
       <div className="bg-primaryBlue px-2 py-[7px] rounded-full text-white">
