@@ -3,18 +3,18 @@ import React from "react";
 function TotalCartPrice() {
   return (
     <section className="px-4 xs:px-24 mb-16">
-      <div className="flex items-start gap-8">
-        <div className="border flex-1">
+      <div className="flex flex-col md:flex-row items-start gap-8">
+        <div className="border flex-1 w-full">
           <div className="bg-zinc-900 py-2 px-4">
             <h1 className="text-white font-IRANSans text-lg">کد تخفیف</h1>
           </div>
           <div className="pb-6 pt-5 px-5 space-y-6">
             <p className="text-sm">کد تخفیف خود را در صورت وجود وارد نمایید</p>
-            <div className="flex gap-6">
+            <div className="flex flex-col lg:flex-row items-start gap-6">
               <input
                 type="text"
                 placeholder="کد تخفیف"
-                className="focus:outline-none border rounded px-4 py-2 text-sm"
+                className="focus:outline-none border rounded px-4 py-2 text-sm w-full lg:w-auto"
               />
               <button className="bg-zinc-900 py-2 px-4 text-[13px] text-white rounded hover:bg-primaryBlue transition duration-300">
                 اعمال کد تخفیف
@@ -22,7 +22,7 @@ function TotalCartPrice() {
             </div>
           </div>
         </div>
-        <div className="border flex-1">
+        <div className="border flex-1 w-full">
           <div className="bg-zinc-900 py-2 px-4">
             <h1 className="text-white font-IRANSans text-lg">مجموع سبد</h1>
           </div>
