@@ -6,6 +6,7 @@ import BlogDetails from "./pages/BlogDetails/BlogDetails";
 import Login from "./pages/Login/Login";
 import Wishlist from "./pages/Wishlist/Wishlist";
 import Cart from "./pages/Cart/Cart";
+import Checkout from "./pages/Checkout/Checkout";
 
 const routes = [
   { path: "/", element: <Index /> },
@@ -16,6 +17,7 @@ const routes = [
   { path: "/login", element: <Login /> },
   { path: "/wishlist", element: <Wishlist /> },
   { path: "/cart", element: <Cart /> },
+  { path: "/checkout", element: <Checkout /> },
 ];
 
 export default routes;
