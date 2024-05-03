@@ -31,9 +31,9 @@ function DiscountCodeBox() {
             isDiscountCodeBoxOpen
               ? "visible max-h-[100rem]"
               : "invisible max-h-0"
-          } overflow-hidden border flex gap-3 mt-7 transition-all duration-1000`}
+          } overflow-hidden border mt-7 transition-all duration-1000`}
         >
-          <div className="px-8 py-5">
+          <div className="px-8 py-5 flex gap-3">
             <input
               type="text"
               placeholder="کد تخفیف"
