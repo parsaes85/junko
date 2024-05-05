@@ -7,6 +7,7 @@ import Login from "./pages/Login/Login";
 import Wishlist from "./pages/Wishlist/Wishlist";
 import Cart from "./pages/Cart/Cart";
 import Checkout from "./pages/Checkout/Checkout";
+import Contact from "./pages/Contact/Contact";
 
 const routes = [
   { path: "/", element: <Index /> },
@@ -18,6 +19,7 @@ const routes = [
   { path: "/wishlist", element: <Wishlist /> },
   { path: "/cart", element: <Cart /> },
   { path: "/checkout", element: <Checkout /> },
+  { path: "/contact", element: <Contact /> },
 ];
 
 export default routes;

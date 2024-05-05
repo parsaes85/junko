@@ -72,7 +72,7 @@ function Sidebar({ isSidebarShow, setIsSidebarShow }) {
               </div>
               <div className="w-[1px] h-3 bg-black"></div>
               <div className="transition hover:text-primaryBlue">
-                <Link>پرداخت</Link>
+                <Link to="/checkout">پرداخت</Link>
               </div>
             </div>
 
