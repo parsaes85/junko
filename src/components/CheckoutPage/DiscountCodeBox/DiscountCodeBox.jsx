@@ -12,9 +12,9 @@ function DiscountCodeBox() {
   };
 
   return (
-    <section className="px-4 xs:px-24 mb-16">
+    <section className="px-4 xs:px-24 mb-8">
       <div>
-        <div className="px-3 py-4 border-t-4 border-t-primaryBlue bg-gray-100">
+        <div className="px-3 py-4 border-t-4 border-t-primaryBlue bg-gray-100 text-sm lg:text-base">
           <div>
             <span>کد تخفیف دارید؟</span>{" "}
             <span
@@ -33,7 +33,7 @@ function DiscountCodeBox() {
               : "invisible max-h-0"
           } overflow-hidden border mt-7 transition-all duration-1000`}
         >
-          <div className="px-8 py-5 flex gap-3">
+          <div className="px-8 py-5 flex flex-wrap gap-3">
             <input
               type="text"
               placeholder="کد تخفیف"
