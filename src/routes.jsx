@@ -8,6 +8,7 @@ import Wishlist from "./pages/Wishlist/Wishlist";
 import Cart from "./pages/Cart/Cart";
 import Checkout from "./pages/Checkout/Checkout";
 import Contact from "./pages/Contact/Contact";
+import About from "./pages/About/About";
 
 const routes = [
   { path: "/", element: <Index /> },
@@ -20,6 +21,7 @@ const routes = [
   { path: "/cart", element: <Cart /> },
   { path: "/checkout", element: <Checkout /> },
   { path: "/contact", element: <Contact /> },
+  { path: "/about", element: <About /> },
 ];
 
 export default routes;
