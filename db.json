@@ -1,13 +1,97 @@
 {
-    "posts": [
-      { "id": "1", "title": "a title", "views": 100 },
-      { "id": "2", "title": "another title", "views": 200 }
-    ],
-    "comments": [
-      { "id": "1", "text": "a comment about post 1", "postId": "1" },
-      { "id": "2", "text": "another comment about post 1", "postId": "1" }
-    ],
-    "profile": {
-      "name": "typicode"
+  "products": [
+    {
+      "id": "1",
+      "name": "phone",
+      "shortDesc": "توضیحات تستی برای دوره ری‌اکت سبزلرن",
+      "desc": "توضیحات تستی برای دوره ری‌اکت سبزلرن توضیحات تستی برای دوره ری‌اکت سبزلر توضیحات تستی برای دوره ری‌اکت سبزلر",
+      "images": ["/images/product.jpg", "/images/product2.jpg"],
+      "categoryID": "2",
+      "price": 12000000,
+      "discount": 40,
+      "count": 3,
+      "isAvailable": 1
     }
+  ],
+  "categories": [
+    { "id": "1", "title": "لباس و پوشاک" },
+    { "id": "2", "title": "دکور و مبلمان ها" },
+    { "id": "3", "title": "کامپیوتر و لپتاپ" },
+    { "id": "4", "title": "قطعات خودرو" }
+  ],
+  "menus": [
+    { "id": "1", "title": "لباس و پوشاک", "href": "clothing", "parent": "" },
+    {
+      "id": "2",
+      "title": "دکور و مبلمان ها",
+      "href": "furniture",
+      "parent": ""
+    },
+    { "id": "3", "title": "کامپیوتر و لپتاپ", "href": "laptop", "parent": "" },
+    { "id": "4", "title": "قطعات خودرو", "href": "auto-parts", "parent": "" }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "body": "لباس و پوشاک",
+      "product": "clothing",
+      "creator": "",
+      "isAnswer": 0,
+      "answer": 0,
+      "score": 5,
+      "mainCommentID": ""
+    },
+    {
+      "id": "2",
+      "body": "لباس و پوشاک",
+      "product": "clothing",
+      "creator": "",
+      "isAnswer": 0,
+      "answer": 0,
+      "score": 5,
+      "mainCommentID": ""
+    },
+    {
+      "id": "3",
+      "body": "لباس و پوشاک",
+      "product": "clothing",
+      "creator": "",
+      "isAnswer": 1,
+      "answer": 0,
+      "score": 5,
+      "mainCommentID": "1"
+    }
+  ],
+  "articles": [
+    {
+      "id": "1",
+      "title": "برای یادگیری ری‌اکت چقدر باید جاوا اسکریپت بلد باشیم؟",
+      "desc": "و این مقاله راجع به فلان فلانم فلان بسزنرحیبسزژ ریبسکنتلزردیسبر",
+      "body": "<h2><strong>معرفی بهترین سایت ‌های آموزش جاوا اسکریپت:</strong></h2><p>&nbsp;</p><p><strong>توجه داشته باشید که تمام وب سایت‌هایی که به عنوان بهترین سایت آموزش جاوا اسکریپت در ادامه معرفی می‌کنیم، بین‌المللی هستند و منابع موجود در آن‌ها به زبان انگلیسی است. در نتیجه شما باید یا تسلط متوسط و حداقلی به زبان انگلیسی داشته باشید و یا اینکه با استفاده از گوگل ترنسلیت منابع موجود را ترجمه کرده و از آن‌ها استفاده کنید. به همین دلیل در انتهای محتوا به شما خواهیم گفت که راه آسان دیگری برای یادگیری زبان جاوا اسکریپت وجود دارد که شما بتوانید به واسطه آن به صورت رایگان و به زبان فارسی این زبان را یاد بگیرید.</strong></p>",
+      "cover": "images/blog.jpg",
+      "shortName": "how-much-js-to-start-react",
+      "creator": "3",
+      "categoryID": "2",
+      "publish": "1"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "parsa_esmaeili",
+      "email": "parsa771385@gmail.com",
+      "password": "parsa123456",
+      "name": "پارسا اسماعیلی",
+      "role": "ADMIN",
+      "profile": "images/profile.jpg",
+      "phone": "09012345678"
+    }
+  ],
+  "userCartProducts": [
+    { "id": "1", "product": "3", "user": "1", "count": 1, "price": 12000000 }
+  ],
+  "userFavoriteProducts": [
+    { "id": "1", "product": "2", "user": "2" },
+    { "id": "2", "product": "4", "user": "1" }
+  ]
 }
