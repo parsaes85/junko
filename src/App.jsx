@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useHref, useRoutes } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import routes from "./routes";
 import Topbar from "./components/Topbar/Topbar";
@@ -9,6 +10,7 @@ import StickyNavbar from "./components/StickyNavbar/StickyNavbar";
 import ScrollToTopBtn from "./components/ScrollToTopBtn/ScrollToTopBtn";
 
 function App() {
+  const queryClient = new QueryClient()
   const router = useRoutes(routes);
 
   const href = useHref();
@@ -18,7 +20,7 @@ function App() {
   }, [href]);
 
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <div className="font-Yekan">
         <header>
           <Topbar />
@@ -29,7 +31,7 @@ function App() {
         <Footer />
       </div>
       <ScrollToTopBtn />
-    </>
+    </QueryClientProvider>
   );
 }
 
