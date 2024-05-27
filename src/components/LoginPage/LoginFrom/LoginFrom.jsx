@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
 import Input from "../../Input/Input";
+import useLogin from "../../../hooks/useLogin";
 
 function LoginFrom() {
   const {
@@ -11,12 +12,18 @@ function LoginFrom() {
     formState: { errors },
   } = useForm({
     defaultValues: {
-      username: "",
+      email: "",
       password: "",
     },
   });
+  const {mutate: findUser} = useLogin(emptyInputsValue)
 
-  const onSubmit = (data) => console.log(data);
+  function emptyInputsValue() {
+    setValue("email", "");
+    setValue("password", "");
+  }
+
+  const onSubmit = (data) => findUser(data);
 
   return (
     <div className="flex-1">
@@ -28,24 +35,19 @@ function LoginFrom() {
         onSubmit={handleSubmit(onSubmit)}
       >
         <div>
-          <label htmlFor="username" className="block mb-2">
-            نام کاربری یا ایمیل *
+          <label htmlFor="email" className="block mb-2">
+            ایمیل *
           </label>
           <Input
-            type="text"
-            id="username"
+            type="email"
+            id="email"
             register={{
-              ...register("username", { required: true, minLength: 8 }),
+              ...register("email", { required: true, minLength: 8 }),
             }}
             validations={[
-              errors.username?.type === "required" && (
+              errors.email?.type === "required" && (
                 <p role="alert" className="text-xs text-red-600 mt-1">
-                  نام کاربری یا ایمیل اجباری است
-                </p>
-              ),
-              errors.username?.type === "minLength" && (
-                <p role="alert" className="text-xs text-red-600 mt-1">
-                  نام کاربری یا ایمیل میبایست بیشتر از ۸ کاراکتر باشد.
+                  ایمیل اجباری است
                 </p>
               ),
             ]}
@@ -56,7 +58,7 @@ function LoginFrom() {
             رمز عبور *
           </label>
           <Input
-            type="text"
+            type="password"
             id="password"
             register={{
               ...register("password", { required: true, minLength: 8 }),

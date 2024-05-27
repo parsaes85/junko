@@ -8,14 +8,13 @@ const Toast = Swal.mixin({
   position: "top-end",
   showConfirmButton: false,
   timer: 2000,
-  timerProgressBar: true,
   didOpen: (toast) => {
     toast.onmouseenter = Swal.stopTimer;
     toast.onmouseleave = Swal.resumeTimer;
   },
 });
 
-function usePostUser(emptyInputsValue) {
+function useSignup(emptyInputsValue) {
   const navigate = useNavigate();
 
   return useMutation({
@@ -25,7 +24,12 @@ function usePostUser(emptyInputsValue) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ ...data, role: "USER", profile: "" }),
+        body: JSON.stringify({
+          ...data,
+          role: "USER",
+          profile: "",
+          token: crypto.randomUUID(),
+        }),
       }),
     onSuccess: () => {
       emptyInputsValue();
@@ -38,4 +42,4 @@ function usePostUser(emptyInputsValue) {
   });
 }
 
-export default usePostUser;
+export default useSignup;

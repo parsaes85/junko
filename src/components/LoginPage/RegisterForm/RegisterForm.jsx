@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
 import Input from "../../Input/Input";
-import usePostUser from "../../../hooks/usePostUser";
+import useSignup from "../../../hooks/useSignup";
 
 function RegisterForm() {
   const {
@@ -13,14 +13,14 @@ function RegisterForm() {
     setValue,
   } = useForm({
     defaultValues: {
-      fullname: "asfdasdfadf",
-      username: "asdfasdfasdf",
-      email: "asdfasfsaf@gmail.com",
-      password: "343423423424",
-      phone: "2342342342342",
+      fullname: "",
+      username: "",
+      email: "",
+      password: "",
+      phone: "",
     },
   });
-  const { mutate: addNewUser } = usePostUser(emptyInputsValue);
+  const { mutate: addNewUser } = useSignup(emptyInputsValue);
 
   function emptyInputsValue() {
     setValue("fullname", "");
