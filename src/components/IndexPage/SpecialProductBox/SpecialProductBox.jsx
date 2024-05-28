@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function SpecialProductBox() {
+function SpecialProductBox(props) {
   return (
     <div className="border border-transparent flex bg-white w-fit group hover:border-gray-200">
       <div className="relative">
@@ -15,10 +15,10 @@ function SpecialProductBox() {
       <div className="space-y-4 p-4">
         <div className="cursor-default">
           <p className="text-gray-500 line-through text-[15px]">۸۶,۰۰۰ تومان</p>
-          <p className="text-primaryBlue text-[17px]">۷۹,۰۰۰ تومان</p>
+          <p className="text-primaryBlue text-[17px]">{props.price} تومان</p>
         </div>
         <Link className="block text-[15px] hover:text-primaryBlue transition">
-          ساعت هوشمند سامسونگ Gear
+          {props.name}
         </Link>
         <button className="text-sm bg-primaryBlue px-4 xs:py-2 w-full rounded-md text-white transition duration-300 opacity-0 group-hover:opacity-100">
           افزودن به سبد

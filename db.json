@@ -13,7 +13,145 @@
       "price": 12000000,
       "discount": 40,
       "count": 3,
-      "isAvailable": 1
+      "isAvailable": 1,
+      "isSpecialProduct": 1,
+      "isSpecialOffer": 0
+    },
+    {
+      "id": "2",
+      "name": "laptop",
+      "shortDesc": "توضیحات تستی برای دوره ری‌اکت سبزلرن",
+      "desc": "توضیحات تستی برای دوره ری‌اکت سبزلرن توضیحات تستی برای دوره ری‌اکت سبزلر توضیحات تستی برای دوره ری‌اکت سبزلر",
+      "images": [
+        "/images/product.jpg",
+        "/images/product2.jpg"
+      ],
+      "categoryID": "2",
+      "price": 12000000,
+      "discount": 40,
+      "count": 3,
+      "isAvailable": 1,
+      "isSpecialProduct": 1,
+      "isSpecialOffer": 0
+    },
+    {
+      "id": "3",
+      "name": "airpod",
+      "shortDesc": "توضیحات تستی برای دوره ری‌اکت سبزلرن",
+      "desc": "توضیحات تستی برای دوره ری‌اکت سبزلرن توضیحات تستی برای دوره ری‌اکت سبزلر توضیحات تستی برای دوره ری‌اکت سبزلر",
+      "images": [
+        "/images/product.jpg",
+        "/images/product2.jpg"
+      ],
+      "categoryID": "2",
+      "price": 12000000,
+      "discount": 40,
+      "count": 3,
+      "isAvailable": 1,
+      "isSpecialProduct": 1,
+      "isSpecialOffer": 0
+    },
+    {
+      "id": "4",
+      "name": "headphone",
+      "shortDesc": "توضیحات تستی برای دوره ری‌اکت سبزلرن",
+      "desc": "توضیحات تستی برای دوره ری‌اکت سبزلرن توضیحات تستی برای دوره ری‌اکت سبزلر توضیحات تستی برای دوره ری‌اکت سبزلر",
+      "images": [
+        "/images/product.jpg",
+        "/images/product2.jpg"
+      ],
+      "categoryID": "2",
+      "price": 12000000,
+      "discount": 40,
+      "count": 3,
+      "isAvailable": 1,
+      "isSpecialProduct": 1,
+      "isSpecialOffer": 0
+    },
+    {
+      "id": "5",
+      "name": "phone",
+      "shortDesc": "توضیحات تستی برای دوره ری‌اکت سبزلرن",
+      "desc": "توضیحات تستی برای دوره ری‌اکت سبزلرن توضیحات تستی برای دوره ری‌اکت سبزلر توضیحات تستی برای دوره ری‌اکت سبزلر",
+      "images": [
+        "/images/product.jpg",
+        "/images/product2.jpg"
+      ],
+      "categoryID": "2",
+      "price": 12000000,
+      "discount": 40,
+      "count": 3,
+      "isAvailable": 1,
+      "isSpecialProduct": 1,
+      "isSpecialOffer": 0
+    },
+    {
+      "id": "6",
+      "name": "phone",
+      "shortDesc": "توضیحات تستی برای دوره ری‌اکت سبزلرن",
+      "desc": "توضیحات تستی برای دوره ری‌اکت سبزلرن توضیحات تستی برای دوره ری‌اکت سبزلر توضیحات تستی برای دوره ری‌اکت سبزلر",
+      "images": [
+        "/images/product.jpg",
+        "/images/product2.jpg"
+      ],
+      "categoryID": "2",
+      "price": 12000000,
+      "discount": 40,
+      "count": 3,
+      "isAvailable": 1,
+      "isSpecialProduct": 1,
+      "isSpecialOffer": 0
+    },
+    {
+      "id": "7",
+      "name": "phone",
+      "shortDesc": "توضیحات تستی برای دوره ری‌اکت سبزلرن",
+      "desc": "توضیحات تستی برای دوره ری‌اکت سبزلرن توضیحات تستی برای دوره ری‌اکت سبزلر توضیحات تستی برای دوره ری‌اکت سبزلر",
+      "images": [
+        "/images/product.jpg",
+        "/images/product2.jpg"
+      ],
+      "categoryID": "2",
+      "price": 12000000,
+      "discount": 40,
+      "count": 3,
+      "isAvailable": 1,
+      "isSpecialProduct": 1,
+      "isSpecialOffer": 0
+    },
+    {
+      "id": "8",
+      "name": "phone",
+      "shortDesc": "توضیحات تستی برای دوره ری‌اکت سبزلرن",
+      "desc": "توضیحات تستی برای دوره ری‌اکت سبزلرن توضیحات تستی برای دوره ری‌اکت سبزلر توضیحات تستی برای دوره ری‌اکت سبزلر",
+      "images": [
+        "/images/product.jpg",
+        "/images/product2.jpg"
+      ],
+      "categoryID": "2",
+      "price": 12000000,
+      "discount": 40,
+      "count": 3,
+      "isAvailable": 1,
+      "isSpecialProduct": 1,
+      "isSpecialOffer": 0
+    },
+    {
+      "id": "9",
+      "name": "laptop",
+      "shortDesc": "توضیحات تستی برای دوره ری‌اکت سبزلرن",
+      "desc": "توضیحات تستی برای دوره ری‌اکت سبزلرن توضیحات تستی برای دوره ری‌اکت سبزلر توضیحات تستی برای دوره ری‌اکت سبزلر",
+      "images": [
+        "/images/product.jpg",
+        "/images/product2.jpg"
+      ],
+      "categoryID": "3",
+      "price": 56000000,
+      "discount": 20,
+      "count": 2,
+      "isAvailable": 1,
+      "isSpecialProduct": 0,
+      "isSpecialOffer": 1
     }
   ],
   "categories": [
@@ -132,8 +270,8 @@
   "userCartProducts": [
     {
       "id": "1",
-      "product": "3",
-      "user": "1",
+      "productID": "3",
+      "userID": "1",
       "count": 1,
       "price": 12000000
     }
@@ -141,13 +279,13 @@
   "userFavoriteProducts": [
     {
       "id": "1",
-      "product": "2",
-      "user": "2"
+      "productID": "2",
+      "userID": "2"
     },
     {
       "id": "2",
-      "product": "4",
-      "user": "1"
+      "productID": "4",
+      "userID": "1"
     }
   ]
 }

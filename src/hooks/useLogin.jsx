@@ -3,6 +3,8 @@ import { useMutation } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
+import { baseURL } from "../data/variables";
+
 const Toast = Swal.mixin({
   toast: true,
   position: "top-end",
@@ -17,9 +19,7 @@ const Toast = Swal.mixin({
 function useLogin(emptyInputsValue) {
   return useMutation({
     mutationFn: (data) =>
-      fetch(`http://localhost:3000/users?email=${data.email}`).then((res) =>
-        res.json()
-      ),
+      fetch(`${baseURL}/users?email=${data.email}`).then((res) => res.json()),
     onSuccess: (res, data) => {
       if (res[0].password === data.password) {
         //   emptyInputsValue();
@@ -34,6 +34,12 @@ function useLogin(emptyInputsValue) {
           title: "ایمیل یا رمز عبور اشتباه است!",
         });
       }
+    },
+    onError: () => {
+      Toast.fire({
+        icon: "error",
+        title: "ایمیل یا رمز عبور اشتباه است!",
+      });
     },
   });
 }

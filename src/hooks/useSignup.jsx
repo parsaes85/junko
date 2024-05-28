@@ -3,6 +3,8 @@ import { useMutation } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
+import { baseURL } from "../data/variables";
+
 const Toast = Swal.mixin({
   toast: true,
   position: "top-end",
@@ -19,7 +21,7 @@ function useSignup(emptyInputsValue) {
 
   return useMutation({
     mutationFn: (data) =>
-      fetch("http://localhost:3000/users", {
+      fetch(`${baseURL}/users`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

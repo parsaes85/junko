@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
@@ -7,9 +7,12 @@ import MenuIcon from "@mui/icons-material/Menu";
 
 import Sidebar from "../Sidebar/Sidebar";
 import TopbarMiniCart from "../TopbarMiniCart/TopbarMiniCart";
+import useGetAllMenus from "../../hooks/useGetAllMenus";
 
 function Topbar() {
   const [isSidebarShow, setIsSidebarShow] = useState(false);
+
+  const { data: menus } = useGetAllMenus();
 
   return (
     <>
@@ -54,8 +57,11 @@ function Topbar() {
                 <div className="relative">
                   <select className="cursor-pointer w-32 text-[15px] h-full focus:outline-none appearance-none bg-transparent peer">
                     <option value="all">همه دسته ها</option>
-                    <option value="">لوازم جانبی</option>
-                    <option value="">قطعات کامپیوتر</option>
+                    {menus?.map((menu) => (
+                      <option key={menu.id} value={menu.id}>
+                        {menu.title}
+                      </option>
+                    ))}
                   </select>
                   <KeyboardArrowDownIcon
                     fontSize=""

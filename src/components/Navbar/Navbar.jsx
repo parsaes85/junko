@@ -3,10 +3,14 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { NavLink } from "react-router-dom";
 
 import NavbarCategoriesItem from "./NavbarCategoriesItem/NavbarCategoriesItem";
+import useGetAllMenus from "../../hooks/useGetAllMenus";
+
 import "./Navbar.css";
 
 function Navbar() {
   const [isShowCategoriesDropdown, setIsShowCategoriesDropdown] = useState(false)
+
+  const { data: menus } = useGetAllMenus();
 
   const categoriesDropdownClickHandler = () => {
     if(isShowCategoriesDropdown) {
@@ -30,8 +34,9 @@ function Navbar() {
             </div>
             <div className={`transition-all duration-1000 overflow-hidden ${isShowCategoriesDropdown ? "max-h-[100rem] z-50" : "max-h-0 z-0"} absolute  w-full lg:w-72 bg-white top-12 lg:top-14 right-0 border`}>
               <ul className="flex flex-col  py-4 [&>li]:px-4">
-                <NavbarCategoriesItem hasSubmenu={true} />
-                <NavbarCategoriesItem hasSubmenu={false} />
+                {
+                  menus?.map(menu => <NavbarCategoriesItem key={menu.id} hasSubmenu={false} {...menu} />)
+                }
               </ul>
             </div>
           </div>

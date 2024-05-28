@@ -1,10 +1,13 @@
 import React, { useEffect } from "react";
 
 import SpecialProductBox from "../SpecialProductBox/SpecialProductBox";
+import useGetSpecialProducts from "../../../hooks/useGetSpecialProducts";
 
 import "./SpecialProductsSwiper.css";
 
 function SpecialProductsSwiper() {
+  const { data: specialProducts } = useGetSpecialProducts();
+
   useEffect(() => {
     const swiperEl = document.querySelector(".specialProductsSwiper");
     Object.assign(swiperEl, {
@@ -24,13 +27,18 @@ function SpecialProductsSwiper() {
     swiperEl.initialize();
   }, []);
   return (
-    <swiper-container class="specialProductsSwiper" grid-rows="2" space-between="30" loop="true">
-      <swiper-slide>
-        <SpecialProductBox />
-      </swiper-slide>
-      <swiper-slide>
-        <SpecialProductBox />
-      </swiper-slide>
+    <swiper-container
+      class="specialProductsSwiper"
+      grid-rows="2"
+      space-between="30"
+      loop="true"
+    >
+      {/* {specialProducts?.map((product) => (
+        <swiper-slide>
+          <SpecialProductBox key={product.id} {...product} />
+        </swiper-slide>
+      ))} */}
+
       <swiper-slide>
         <SpecialProductBox />
       </swiper-slide>

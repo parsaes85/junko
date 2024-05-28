@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 
-function NavbarCategoriesItem({ hasSubmenu }) {
+function NavbarCategoriesItem({ hasSubmenu, title, href }) {
   return (
     <li className="relative hover:text-primaryBlue transition duration-300 group">
       <div>
@@ -13,7 +13,7 @@ function NavbarCategoriesItem({ hasSubmenu }) {
           />
         )}
 
-        <Link className="block p-2">لباس و پوشاک</Link>
+        <Link to={`/shop?category=${href}`} className="block p-2">{title}</Link>
       </div>
       {hasSubmenu && (
         <div className="hidden absolute bg-white py-6 px-8 top-0 right-[285px] border group-hover:block text-black">

@@ -12,9 +12,12 @@ import RssFeedIcon from "@mui/icons-material/RssFeed";
 import PinterestIcon from "@mui/icons-material/Pinterest";
 
 import SidebarMiniCart from "../SidebarMiniCart/SidebarMiniCart";
+import useGetAllMenus from "../../hooks/useGetAllMenus";
 
 function Sidebar({ isSidebarShow, setIsSidebarShow }) {
   const [isSidebarMiniCartShow, setIsSidebarMiniCartShow] = useState(false);
+
+  const { data: menus } = useGetAllMenus();
 
   const href = useHref();
 
@@ -90,8 +93,11 @@ function Sidebar({ isSidebarShow, setIsSidebarShow }) {
             <div className="relative w-40 mx-auto border rounded py-0.5 z-20">
               <select className="cursor-pointer text-[15px] w-full h-full text-center focus:outline-none appearance-none bg-transparent bg-opacity-0">
                 <option value="all">همه دسته ها</option>
-                <option value="">لوازم جانبی</option>
-                <option value="">قطعات کامپیوتر</option>
+                {menus?.map((menu) => (
+                  <option key={menu.id} value={menu.id}>
+                    {menu.title}
+                  </option>
+                ))}
               </select>
               <KeyboardArrowDownIcon
                 fontSize=""

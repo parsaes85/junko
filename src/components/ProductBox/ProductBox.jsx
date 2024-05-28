@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import SearchIcon from "@mui/icons-material/Search";
 
-function ProductBox() {
+function ProductBox(props) {
   return (
     <div className="p-4 rounded border border-transparent transition hover:border-gray-300 group/item">
       <div className="relative">
@@ -57,7 +57,7 @@ function ProductBox() {
           <p className="text-primaryBlue text-[17px]">۷۹,۰۰۰ تومان</p>
         </div>
         <Link to="/product-details/1" className="text-[15px] hover:text-primaryBlue transition">
-          گوشی موبایل شیائومی مدل MI ۹ Lite
+          {props.name}
         </Link>
       </div>
     </div>
