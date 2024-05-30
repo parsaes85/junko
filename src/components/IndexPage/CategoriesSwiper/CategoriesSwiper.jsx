@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 
 import CategoryBox from "../CategoryBox/CategoryBox";
+import useGetAllCategories from "../../../hooks/useGetAllCategories";
 
 function CategoriesSwiper() {
+  const { data: categories } = useGetAllCategories();
 
   useEffect(() => {
     const swiperEl = document.querySelector(".categoriesSwiper");
@@ -26,34 +28,15 @@ function CategoriesSwiper() {
       },
     });
     swiperEl.initialize();
-  }, [])
+  }, []);
 
   return (
-    <swiper-container
-      class="categoriesSwiper"
-      init="false"
-    >
-      <swiper-slide>
-        <CategoryBox />
-      </swiper-slide>
-      <swiper-slide>
-        <CategoryBox />
-      </swiper-slide>
-      <swiper-slide>
-        <CategoryBox />
-      </swiper-slide>
-      <swiper-slide>
-        <CategoryBox />
-      </swiper-slide>
-      <swiper-slide>
-        <CategoryBox />
-      </swiper-slide>
-      <swiper-slide>
-        <CategoryBox />
-      </swiper-slide>
-      <swiper-slide>
-        <CategoryBox />
-      </swiper-slide>
+    <swiper-container class="categoriesSwiper" init="false">
+      {categories?.map((category) => (
+        <swiper-slide>
+          <CategoryBox {...category}/>
+        </swiper-slide>
+      ))}
     </swiper-container>
   );
 }

@@ -1,8 +1,14 @@
 import React, { useEffect } from "react";
 
 import ProductBox from "../../ProductBox/ProductBox";
+import useGetProducts from "../../../hooks/useGetProducts";
 
 function ComputerProductsSwiper() {
+  const { data: computerProducts } = useGetProducts(
+    "computerProducts",
+    "categoryId=4"
+  );
+
   useEffect(() => {
     const swiperEl = document.querySelector(".computerProductsSwiper");
     Object.assign(swiperEl, {
@@ -29,27 +35,11 @@ function ComputerProductsSwiper() {
 
   return (
     <swiper-container class="computerProductsSwiper" init="false">
-      <swiper-slide>
-        <ProductBox />
-      </swiper-slide>
-      <swiper-slide>
-        <ProductBox />
-      </swiper-slide>
-      <swiper-slide>
-        <ProductBox />
-      </swiper-slide>
-      <swiper-slide>
-        <ProductBox />
-      </swiper-slide>
-      <swiper-slide>
-        <ProductBox />
-      </swiper-slide>
-      <swiper-slide>
-        <ProductBox />
-      </swiper-slide>
-      <swiper-slide>
-        <ProductBox />
-      </swiper-slide>
+      {computerProducts?.map((product) => (
+        <swiper-slide>
+          <ProductBox {...product}/>
+        </swiper-slide>
+      ))}
     </swiper-container>
   );
 }

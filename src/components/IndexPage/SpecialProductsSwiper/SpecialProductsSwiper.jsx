@@ -1,17 +1,17 @@
 import React, { useEffect } from "react";
 
 import SpecialProductBox from "../SpecialProductBox/SpecialProductBox";
-import useGetSpecialProducts from "../../../hooks/useGetSpecialProducts";
+import useGetProducts from "../../../hooks/useGetProducts";
 
 import "./SpecialProductsSwiper.css";
 
 function SpecialProductsSwiper() {
-  const { data: specialProducts } = useGetSpecialProducts();
+  const { data: specialProducts } = useGetProducts("specialProducts", "isSpecialProduct=1");
 
   useEffect(() => {
     const swiperEl = document.querySelector(".specialProductsSwiper");
     Object.assign(swiperEl, {
-      slidesPerView: 1,
+      slidesPerView: 3,
       spaceBetween: 30,
       loop: true,
       breakpoints: {
@@ -29,40 +29,14 @@ function SpecialProductsSwiper() {
   return (
     <swiper-container
       class="specialProductsSwiper"
-      grid-rows="2"
       space-between="30"
       loop="true"
     >
-      {/* {specialProducts?.map((product) => (
+      {specialProducts?.map((product) => (
         <swiper-slide>
           <SpecialProductBox key={product.id} {...product} />
         </swiper-slide>
-      ))} */}
-
-      <swiper-slide>
-        <SpecialProductBox />
-      </swiper-slide>
-      <swiper-slide>
-        <SpecialProductBox />
-      </swiper-slide>
-      <swiper-slide>
-        <SpecialProductBox />
-      </swiper-slide>
-      <swiper-slide>
-        <SpecialProductBox />
-      </swiper-slide>
-      <swiper-slide>
-        <SpecialProductBox />
-      </swiper-slide>
-      <swiper-slide>
-        <SpecialProductBox />
-      </swiper-slide>
-      <swiper-slide>
-        <SpecialProductBox />
-      </swiper-slide>
-      <swiper-slide>
-        <SpecialProductBox />
-      </swiper-slide>
+      ))}
     </swiper-container>
   );
 }

@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 
 import ProductBox from "../../ProductBox/ProductBox";
-import useGetSpecialProducts from "../../../hooks/useGetSpecialProducts";
+import useGetProducts from "../../../hooks/useGetProducts";
 
 function ProductsSwiper() {
-  const { data } = useGetSpecialProducts();
+  const { data: specialOffers } = useGetProducts("specialOffers", "isSpecialOffer=1");
 
   useEffect(() => {
     const swiperEl = document.querySelector(".productsSwiper");
@@ -32,7 +32,7 @@ function ProductsSwiper() {
 
   return (
     <swiper-container class="productsSwiper" init="false">
-      {data?.map((product) => (
+      {specialOffers?.map((product) => (
         <swiper-slide>
           <ProductBox key={product.id} {...product} />
         </swiper-slide>

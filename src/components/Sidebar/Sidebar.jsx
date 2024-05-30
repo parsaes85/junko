@@ -94,7 +94,7 @@ function Sidebar({ isSidebarShow, setIsSidebarShow }) {
               <select className="cursor-pointer text-[15px] w-full h-full text-center focus:outline-none appearance-none bg-transparent bg-opacity-0">
                 <option value="all">همه دسته ها</option>
                 {menus?.map((menu) => (
-                  <option key={menu.id} value={menu.id}>
+                  <option key={menu.id} value={menu.name}>
                     {menu.title}
                   </option>
                 ))}

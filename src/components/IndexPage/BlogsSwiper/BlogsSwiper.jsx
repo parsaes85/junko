@@ -1,8 +1,11 @@
 import React, { useEffect } from "react";
 
 import BlogBox from "../../BlogBox/BlogBox";
+import useGetBlogs from "../../../hooks/useGetBlogs";
 
 function BlogsSwiper() {
+  const { data: blogs } = useGetBlogs();
+
   useEffect(() => {
     const swiperEl = document.querySelector(".blogsSwiper");
     Object.assign(swiperEl, {
@@ -25,30 +28,14 @@ function BlogsSwiper() {
   }, []);
 
   return (
-    <swiper-container
-      class="blogsSwiper"
-    >
-      <swiper-slide>
-        <BlogBox />
-      </swiper-slide>
-      <swiper-slide>
-        <BlogBox />
-      </swiper-slide>
-      <swiper-slide>
-        <BlogBox />
-      </swiper-slide>
-      <swiper-slide>
-        <BlogBox />
-      </swiper-slide>
-      <swiper-slide>
-        <BlogBox />
-      </swiper-slide>
-      <swiper-slide>
-        <BlogBox />
-      </swiper-slide>
-      <swiper-slide>
-        <BlogBox />
-      </swiper-slide>
+    <swiper-container class="blogsSwiper">
+      {blogs?.map((blog) => (
+        blog.publish && (
+          <swiper-slide>
+            <BlogBox key={blog.id} {...blog} />
+          </swiper-slide>
+        )
+      ))}
     </swiper-container>
   );
 }

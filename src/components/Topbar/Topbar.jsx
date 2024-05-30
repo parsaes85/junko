@@ -58,7 +58,7 @@ function Topbar() {
                   <select className="cursor-pointer w-32 text-[15px] h-full focus:outline-none appearance-none bg-transparent peer">
                     <option value="all">همه دسته ها</option>
                     {menus?.map((menu) => (
-                      <option key={menu.id} value={menu.id}>
+                      <option key={menu.id} value={menu.name}>
                         {menu.title}
                       </option>
                     ))}
