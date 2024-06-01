@@ -31,8 +31,8 @@ function BlogsSwiper() {
     <swiper-container class="blogsSwiper">
       {blogs?.map((blog) => (
         blog.publish && (
-          <swiper-slide>
-            <BlogBox key={blog.id} {...blog} />
+          <swiper-slide key={blog.id}>
+            <BlogBox {...blog} />
           </swiper-slide>
         )
       ))}

@@ -17,9 +17,7 @@ function SpecialProductsSwiper() {
       breakpoints: {
         960: {
           slidesPerView: 3,
-          grid: {
-            rows: 2,
-          },
+
           spaceBetween: 30,
         },
       },
@@ -33,8 +31,8 @@ function SpecialProductsSwiper() {
       loop="true"
     >
       {specialProducts?.map((product) => (
-        <swiper-slide>
-          <SpecialProductBox key={product.id} {...product} />
+        <swiper-slide key={product.id}>
+          <SpecialProductBox {...product} />
         </swiper-slide>
       ))}
     </swiper-container>

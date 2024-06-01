@@ -36,7 +36,7 @@ function ComputerProductsSwiper() {
   return (
     <swiper-container class="computerProductsSwiper" init="false">
       {computerProducts?.map((product) => (
-        <swiper-slide>
+        <swiper-slide key={product.id}>
           <ProductBox {...product}/>
         </swiper-slide>
       ))}

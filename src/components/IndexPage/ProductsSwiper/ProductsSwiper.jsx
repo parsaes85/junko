@@ -33,8 +33,8 @@ function ProductsSwiper() {
   return (
     <swiper-container class="productsSwiper" init="false">
       {specialOffers?.map((product) => (
-        <swiper-slide>
-          <ProductBox key={product.id} {...product} />
+        <swiper-slide key={product.id}>
+          <ProductBox {...product} />
         </swiper-slide>
       ))}
 

@@ -33,7 +33,7 @@ function CategoriesSwiper() {
   return (
     <swiper-container class="categoriesSwiper" init="false">
       {categories?.map((category) => (
-        <swiper-slide>
+        <swiper-slide key={category.id}>
           <CategoryBox {...category}/>
         </swiper-slide>
       ))}

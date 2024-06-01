@@ -35,7 +35,7 @@ function MobileProductsSwiper() {
       class="mobileProductsSwiper"
     >
       {mobileProducts?.map((product) => (
-        <swiper-slide>
+        <swiper-slide key={product.id}>
           <ProductBox {...product}/>
         </swiper-slide>
       ))}
