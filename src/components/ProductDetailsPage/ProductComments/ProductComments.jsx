@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import StarIcon from "@mui/icons-material/Star";
 
 import ProductCommentBox from "../ProductCommentBox/ProductCommentBox";
+import useGetProductComments from "../../../hooks/useGetProductComments";
 
-function ProductComments() {
+function ProductComments(props) {
   const [sectionTitle, setSectionTitle] = useState("desc");
+  const { data: productComments } = useGetProductComments(props.id);
 
   return (
     <section>
@@ -27,29 +29,16 @@ function ProductComments() {
               className={`${sectionTitle === "comments" && "text-black"}`}
               onClick={() => setSectionTitle("comments")}
             >
-              نقد و بررسی (۱)
+              نقد و بررسی (
+              {productComments?.length
+                ? productComments.length.toLocaleString("fa")
+                : "۰"}
+              )
             </h1>
           </div>
           <div className="pt-8">
             {sectionTitle === "desc" && (
-              <p className="text-[15px] leading-7">
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
-                در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
-                نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-                کتابهای
-                <br />
-                <br />
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
-                در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
-                نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-                کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان
-                جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را
-                برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در
-                زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و
-                دشواری موجود در ارائه راهکارها و شرایط سخت تایپ
-              </p>
+              <p className="text-[15px] leading-7">{props.desc}</p>
             )}
 
             {sectionTitle === "infos" && (
@@ -86,13 +75,23 @@ function ProductComments() {
             {sectionTitle === "comments" && (
               <div>
                 <div className="mb-8">
-                  <h1 className="text-[17px] md:text-xl font-IRANSans tracking-tighter mb-6">
-                    ۱ نقد و بررسی برای این محصول
-                  </h1>
-                  <div className="space-y-6">
-                    <ProductCommentBox />
-                    <ProductCommentBox />
-                  </div>
+                  {!productComments?.length ? (
+                    <h1 className="text-[17px] md:text-xl font-IRANSans tracking-tighter mb-6">
+                      هیچ نقد و بررسی برای این محصول ثبت نشده است
+                    </h1>
+                  ) : (
+                    <>
+                      <h1 className="text-[17px] md:text-xl font-IRANSans tracking-tighter mb-6">
+                        {productComments.length.toLocaleString("fa")} نقد و
+                        بررسی برای این محصول
+                      </h1>
+                      <div className="space-y-6">
+                        {productComments.map((comment) => (
+                          <ProductCommentBox key={comment.id} {...comment} />
+                        ))}
+                      </div>
+                    </>
+                  )}
                 </div>
                 <div>
                   <h1 className="text-[17px] md:text-xl font-IRANSans tracking-tighter mb-6">
@@ -146,7 +145,11 @@ function ProductComments() {
                           />
                         </div>
                       </div>
-                      <input type="submit" value="ثبت" className="text-white bg-zinc-800 px-4 py-2 rounded-md text-sm mt-4 cursor-pointer transition duration-300 hover:bg-primaryBlue" />
+                      <input
+                        type="submit"
+                        value="ثبت"
+                        className="text-white bg-zinc-800 px-4 py-2 rounded-md text-sm mt-4 cursor-pointer transition duration-300 hover:bg-primaryBlue"
+                      />
                     </form>
                   </div>
                 </div>

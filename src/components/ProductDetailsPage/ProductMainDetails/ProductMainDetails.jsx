@@ -13,8 +13,6 @@ function ProductMainDetails(props) {
   const [productNumber, setProductNumber] = useState(1);
   const [productMainImage, setProductMainImage] = useState("");
 
-  console.log();
-
   useEffect(() => {
     setProductMainImage(props.images && props.images[0]);
   }, [props]);
@@ -32,8 +30,8 @@ function ProductMainDetails(props) {
             />
           </div>
           <div className="flex justify-center gap-4 mt-5 px-14">
-            {props?.images?.map((image) => (
-              <div className="border cursor-pointer">
+            {props?.images?.map((image, index) => (
+              <div key={index} className="border cursor-pointer">
                 <img
                   src={image}
                   className="max-h-32"
@@ -50,15 +48,15 @@ function ProductMainDetails(props) {
             <h1 className="text-xl sm:text-[22px] lg:text-2xl">{props.name}</h1>
             <div className="flex gap-2 items-center">
               <div className="text-primaryBlue sm:text-xl">
-                {props.rating && Array(5 - props.rating)
+                {props.score && Array(5 - props.score)
                   .fill(1)
-                  .map((start) => (
-                    <StarBorderIcon fontSize="" />
+                  .map((start, index) => (
+                    <StarBorderIcon key={index} fontSize="" />
                   ))}
-                {Array(props.rating)
+                {Array(props.score)
                   .fill(1)
-                  .map((start) => (
-                    <StarIcon fontSize="" />
+                  .map((start, index) => (
+                    <StarIcon key={index} fontSize="" />
                   ))}
               </div>
               <p className="text-gray-600">(امتیاز مشتریان)</p>
@@ -81,8 +79,8 @@ function ProductMainDetails(props) {
             <div>
               <h2>رنگ</h2>
               <div className="flex gap-2 mt-2">
-                {props?.colors?.map((color) => (
-                  <div className="border border-gray-300 p-0.5">
+                {props?.colors?.map((color, index) => (
+                  <div key={index} className="border border-gray-300 p-0.5">
                     <div className={`w-[29px] h-[30px]`} style={{backgroundColor: color}}></div>
                   </div>
                 ))}
