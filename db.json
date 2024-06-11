@@ -11,7 +11,7 @@
       "price": 12000000,
       "colors": ["#000", "#bebebe", "#fe0000", ["#ffff01"]],
       "discount": 40,
-      "score": 3,
+      "score": 4,
       "count": 42,
       "isAvailable": 1,
       "isSpecialProduct": 1,
@@ -282,30 +282,45 @@
       "body": "از محصول راضی بودم",
       "productId": "9",
       "userId": "f8a0",
-      "isAnswer": 0,
-      "answer": 0,
-      "score": 4,
-      "mainCommentID": ""
+      "answers": [
+        {
+          "id": "1",
+          "body": "از مجصول راضی نبودم",
+          "username": "reza_66",
+          "score": 3
+        }
+      ],
+      "score": 4
     },
     {
       "id": "2",
       "body": "قیمت بسیار عالی است",
       "productId": "9",
       "userId": "7478",
-      "isAnswer": 0,
-      "answer": 0,
-      "score": 5,
-      "mainCommentID": ""
+      "answers": [
+        {
+          "id": "1",
+          "body": "از مجصول راضی نبودم",
+          "username": "reza_66",
+          "score": 3
+        }
+      ],
+      "score": 5
     },
     {
       "id": "3",
       "body": "از مجصول راضی نبودم",
       "productId": "10",
       "userId": "f8a0",
-      "isAnswer": 1,
-      "answer": 0,
-      "score": 2,
-      "mainCommentID": "1"
+      "answers": [
+        {
+          "id": "1",
+          "body": "از مجصول راضی نبودم",
+          "username": "reza_66",
+          "score": 3
+        }
+      ],
+      "score": 2
     }
   ],
   "blogs": [
