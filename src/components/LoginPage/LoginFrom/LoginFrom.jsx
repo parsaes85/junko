@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useSelector } from "react-redux";
 
 import Input from "../../Input/Input";
 import useLogin from "../../../hooks/useLogin";
@@ -16,14 +17,20 @@ function LoginFrom() {
       password: "",
     },
   });
-  const {mutate: findUser} = useLogin(emptyInputsValue)
+  const { mutate: findUser } = useLogin(emptyInputsValue);
 
   function emptyInputsValue() {
     setValue("email", "");
     setValue("password", "");
   }
 
-  const onSubmit = (data) => findUser(data);
+  const onSubmit = (data) => {
+    findUser(data);
+  };
+  
+  useEffect(() => {
+    console.log(data)
+  });
 
   return (
     <div className="flex-1">

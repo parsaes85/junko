@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHref } from "react-router-dom";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
@@ -8,11 +8,20 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Sidebar from "../Sidebar/Sidebar";
 import TopbarMiniCart from "../TopbarMiniCart/TopbarMiniCart";
 import useGetAllMenus from "../../hooks/useGetAllMenus";
+import useGetMe from "../../hooks/useGetMe";
 
 function Topbar() {
   const [isSidebarShow, setIsSidebarShow] = useState(false);
+  const href = useHref();
 
   const { data: menus } = useGetAllMenus();
+  const { mutate: getUserInfos } = useGetMe();
+
+  useEffect(() => {
+    const localStorageUserToken = JSON.parse(localStorage.getItem("userToken"));
+
+    getUserInfos(localStorageUserToken);
+  }, []);
 
   return (
     <>
