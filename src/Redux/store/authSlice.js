@@ -10,7 +10,6 @@ export const authSlice = createSlice({
     login: (state, action) => {
       state.isLoggedIn = action.payload.isLoggedIn;
       state.userInfos = action.payload.userInfos;
-      console.log("action =>", action.payload);
     },
     logout: (state) => {},
   },

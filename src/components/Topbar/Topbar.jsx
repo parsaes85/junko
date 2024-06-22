@@ -9,11 +9,12 @@ import Sidebar from "../Sidebar/Sidebar";
 import TopbarMiniCart from "../TopbarMiniCart/TopbarMiniCart";
 import useGetAllMenus from "../../hooks/useGetAllMenus";
 import useGetMe from "../../hooks/useGetMe";
+import { useSelector } from "react-redux";
 
 function Topbar() {
   const [isSidebarShow, setIsSidebarShow] = useState(false);
   const href = useHref();
-
+  const { userInfos, isLoggedIn } = useSelector((state) => state.auth);
   const { data: menus } = useGetAllMenus();
   const { mutate: getUserInfos } = useGetMe();
 
@@ -22,6 +23,11 @@ function Topbar() {
 
     getUserInfos(localStorageUserToken);
   }, []);
+
+  useEffect(() => {
+    console.log(userInfos);
+    console.log(isLoggedIn);
+  }, [userInfos]);
 
   return (
     <>
@@ -35,7 +41,11 @@ function Topbar() {
 
           <div className="flex items-center gap-5">
             <div className="transition hover:text-primaryBlue">
-              <Link to="/login">حساب کاربری</Link>
+              {isLoggedIn ? (
+                <Link to="#">حساب کاربری ({userInfos.fullname})</Link>
+              ) : (
+                <Link to="/login">ورود</Link>
+              )}
             </div>
             <div className="w-[1px] h-3 bg-black"></div>
             <div className="transition hover:text-primaryBlue">

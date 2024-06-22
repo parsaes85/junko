@@ -27,10 +27,6 @@ function LoginFrom() {
   const onSubmit = (data) => {
     findUser(data);
   };
-  
-  useEffect(() => {
-    console.log(data)
-  });
 
   return (
     <div className="flex-1">
