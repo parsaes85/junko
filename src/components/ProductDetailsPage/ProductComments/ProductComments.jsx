@@ -3,10 +3,37 @@ import StarIcon from "@mui/icons-material/Star";
 
 import ProductCommentBox from "../ProductCommentBox/ProductCommentBox";
 import useGetProductComments from "../../../hooks/useGetProductComments";
+import { useSelector } from "react-redux";
+import useRegisterCommentForProduct from "../../../hooks/useRegisterCommentForProduct";
 
 function ProductComments(props) {
   const [sectionTitle, setSectionTitle] = useState("desc");
+  const [productCommentScore, setProductCommentScore] = useState(5);
+  const [productCommentBody, setProductCommentBody] = useState("");
+  const { userInfos, isLoggedIn } = useSelector((state) => state.auth);
+
   const { data: productComments } = useGetProductComments(props.id);
+  const { mutate: registerCommentForProduct } = useRegisterCommentForProduct();
+
+  const emptyInputsValue = () => {
+    setProductCommentBody("");
+    setProductCommentScore(5);
+  };
+
+  const registerCommentHandler = (event) => {
+    event.preventDefault();
+    if (productCommentBody) {
+      registerCommentForProduct({
+        productId: props.id,
+        userId: userInfos.id,
+        body: productCommentBody,
+        score: Number(productCommentScore),
+        answers: [],
+      });
+    }
+
+    emptyInputsValue();
+  };
 
   return (
     <section>
@@ -93,66 +120,70 @@ function ProductComments(props) {
                     </>
                   )}
                 </div>
-                <div>
-                  <h1 className="text-[17px] md:text-xl font-IRANSans tracking-tighter mb-6">
-                    یک نقد و بررسی بنویسید
-                  </h1>
-                  <div className="space-y-5">
-                    <p>
-                      ایمیل شما منتشر نخواهد شد. فیلد های الزامی مشخص شده اند
-                    </p>
-                    <div>
-                      <h2>امتیاز شما</h2>
-                      <div className="text-primaryBlue mt-2 ">
-                        <StarIcon fontSize="" />
-                        <StarIcon fontSize="" />
-                        <StarIcon fontSize="" />
-                        <StarIcon fontSize="" />
-                        <StarIcon fontSize="" />
-                      </div>
-                    </div>
-                    <form className="[&_label]:mb-2">
+                {isLoggedIn ? (
+                  <div>
+                    <h1 className="text-[17px] md:text-xl font-IRANSans tracking-tighter mb-6">
+                      یک نقد و بررسی بنویسید
+                    </h1>
+                    <div className="space-y-5">
+                      <p>
+                        ایمیل شما منتشر نخواهد شد. فیلد های الزامی مشخص شده اند
+                      </p>
                       <div>
-                        <label htmlFor="comment" className="block">
-                          نقد و بررسی شما
-                        </label>
-                        <textarea
-                          name=""
-                          id="comment"
-                          rows="6"
-                          className="border w-full text-sm p-2 resize-none focus:outline-none"
-                        ></textarea>
+                        <h2>امتیاز شما</h2>
+                        {/* <div className="text-primaryBlue mt-2 ">
+                          <StarIcon fontSize="" />
+                          <StarIcon fontSize="" />
+                          <StarIcon fontSize="" />
+                          <StarIcon fontSize="" />
+                          <StarIcon fontSize="" />
+                        </div> */}
+                        <select
+                          className="outline-none border border-gray-300"
+                          onChange={(e) =>
+                            setProductCommentScore(e.target.value)
+                          }
+                          value={productCommentScore}
+                        >
+                          <option value={5}>بسیار عالی</option>
+                          <option value={4}>عالی</option>
+                          <option value={3}>متوسط</option>
+                          <option value={2}>بد</option>
+                          <option value={1}>بسیار بد</option>
+                        </select>
                       </div>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mt-2 md:mt-4">
+                      <form className="[&_label]:mb-2">
                         <div>
-                          <label htmlFor="name" className="block">
-                            نام
+                          <label htmlFor="comment" className="block">
+                            نقد و بررسی شما
                           </label>
-                          <input
-                            type="text"
-                            id="name"
-                            className="border w-full text-sm p-2 focus:outline-none"
-                          />
+                          <textarea
+                            name=""
+                            id="comment"
+                            rows="6"
+                            className="border w-full text-sm p-2 resize-none focus:outline-none"
+                            onChange={(e) =>
+                              setProductCommentBody(e.target.value)
+                            }
+                            value={productCommentBody}
+                          ></textarea>
                         </div>
-                        <div>
-                          <label htmlFor="email" className="block">
-                            ایمیل
-                          </label>
-                          <input
-                            type="text"
-                            id="email"
-                            className="border w-full text-sm p-2 focus:outline-none"
-                          />
-                        </div>
-                      </div>
-                      <input
-                        type="submit"
-                        value="ثبت"
-                        className="text-white bg-zinc-800 px-4 py-2 rounded-md text-sm mt-4 cursor-pointer transition duration-300 hover:bg-primaryBlue"
-                      />
-                    </form>
+                        <input
+                          type="submit"
+                          value="ثبت"
+                          className="text-white bg-zinc-800 px-4 py-2 rounded-md text-sm mt-4 cursor-pointer transition duration-300 hover:bg-primaryBlue"
+                          onClick={registerCommentHandler}
+                        />
+                      </form>
+                    </div>
                   </div>
-                </div>
+                ) : (
+                  <div>
+                    <h1 className="text-[17px] md:text-xl font-IRANSans tracking-tighter mb-6">
+                      برای ثبت نظر ابتدا وارد شوید
+                    </h1>
+                  </div>
+                )}
               </div>
             )}
           </div>
