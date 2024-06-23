@@ -37,7 +37,7 @@ function BestSellingProducts() {
         </div>
         <div>
           <swiper-container class="bestSellingProducts">
-            <swiper-slide>
+            {/* <swiper-slide>
               <ProductBox />
             </swiper-slide>
             <swiper-slide>
@@ -57,7 +57,7 @@ function BestSellingProducts() {
             </swiper-slide>
             <swiper-slide>
               <ProductBox />
-            </swiper-slide>
+            </swiper-slide> */}
           </swiper-container>
         </div>
       </div>

@@ -17,8 +17,8 @@ function ProductDetails() {
       <Breadcrumb page="جزئیات محصول" />
       <ProductMainDetails {...productDetails}/>
       <ProductComments {...productDetails}/>
-      {/* <RelatedProducts />
-      <BestSellingProducts /> */}
+      <RelatedProducts {...productDetails}/>
+      {/* <BestSellingProducts /> */}
     </>
   );
 }

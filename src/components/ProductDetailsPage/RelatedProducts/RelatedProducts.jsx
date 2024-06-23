@@ -1,8 +1,14 @@
 import React, { useEffect } from "react";
 
 import ProductBox from "../../ProductBox/ProductBox";
+import useGetProducts from "../../../hooks/useGetProducts";
 
-function RelatedProducts() {
+function RelatedProducts(props) {
+  const { data: relatedProducts } = useGetProducts(
+    `relatedProducts, ${props.categoryId}`,
+    `categoryId=${props.categoryId}`
+  );
+
   useEffect(() => {
     const swiperEl = document.querySelector(".relatedProducts");
     Object.assign(swiperEl, {
@@ -31,31 +37,17 @@ function RelatedProducts() {
     <section>
       <div className="px-4 xs:px-24 mb-12">
         <div className="border-b pb-4 mb-6">
-          <h1 className="text-[22px] tracking-tighter font-IRANSans">محصولات مرتبط</h1>
+          <h1 className="text-[22px] tracking-tighter font-IRANSans">
+            محصولات مرتبط
+          </h1>
         </div>
         <div>
           <swiper-container class="relatedProducts">
-            <swiper-slide>
-              <ProductBox />
-            </swiper-slide>
-            <swiper-slide>
-              <ProductBox />
-            </swiper-slide>
-            <swiper-slide>
-              <ProductBox />
-            </swiper-slide>
-            <swiper-slide>
-              <ProductBox />
-            </swiper-slide>
-            <swiper-slide>
-              <ProductBox />
-            </swiper-slide>
-            <swiper-slide>
-              <ProductBox />
-            </swiper-slide>
-            <swiper-slide>
-              <ProductBox />
-            </swiper-slide>
+            {relatedProducts?.map((product) => (
+              <swiper-slide key={product.id}>
+                <ProductBox {...product} />
+              </swiper-slide>
+            ))}
           </swiper-container>
         </div>
       </div>

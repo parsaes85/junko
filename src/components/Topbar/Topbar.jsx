@@ -24,11 +24,6 @@ function Topbar() {
     getUserInfos(localStorageUserToken);
   }, []);
 
-  useEffect(() => {
-    console.log(userInfos);
-    console.log(isLoggedIn);
-  }, [userInfos]);
-
   return (
     <>
       <Sidebar
