@@ -552,14 +552,24 @@
   ],
   "userFavoriteProducts": [
     {
-      "id": "1",
-      "productId": "2",
-      "userId": "2"
+      "id": "478c",
+      "productId": "9",
+      "userId": "f8a0"
     },
     {
-      "id": "2",
-      "productId": "4",
-      "userId": "1"
+      "id": "25ad",
+      "productId": "10",
+      "userId": "f8a0"
+    },
+    {
+      "id": "9b07",
+      "productId": "1",
+      "userId": "f8a0"
+    },
+    {
+      "id": "8e7d",
+      "productId": "11",
+      "userId": "f8a0"
     }
   ]
 }

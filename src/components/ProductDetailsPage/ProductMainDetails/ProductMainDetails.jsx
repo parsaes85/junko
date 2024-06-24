@@ -2,16 +2,34 @@ import React, { useEffect, useState } from "react";
 
 import StarIcon from "@mui/icons-material/Star";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import GoogleIcon from "@mui/icons-material/Google";
 import PinterestIcon from "@mui/icons-material/Pinterest";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
+import { useSelector } from "react-redux";
+
+import useAddToFavorites from "../../../hooks/useAddToFavorites";
+import useIsInFavorites from "../../../hooks/useIsInFavorites";
 
 function ProductMainDetails(props) {
   const [productNumber, setProductNumber] = useState(1);
   const [productMainImage, setProductMainImage] = useState("");
+
+  const { userInfos } = useSelector((state) => state.auth);
+
+  const { data } = useIsInFavorites(props.id, userInfos.id);
+  const { mutate: addToFavorites } = useAddToFavorites();
+
+  const addToFavoritesHandler = () => {
+    addToFavorites({ productId: props.id, userId: userInfos.id });
+  };
+
+  useEffect(() => {
+    console.log(data);
+  }, [data]);
 
   useEffect(() => {
     setProductMainImage(props.images && props.images[0]);
@@ -48,11 +66,12 @@ function ProductMainDetails(props) {
             <h1 className="text-xl sm:text-[22px] lg:text-2xl">{props.name}</h1>
             <div className="flex gap-2 items-center">
               <div className="text-primaryBlue sm:text-xl">
-                {props.score && Array(5 - props.score)
-                  .fill(1)
-                  .map((start, index) => (
-                    <StarBorderIcon key={index} fontSize="" />
-                  ))}
+                {props.score &&
+                  Array(5 - props.score)
+                    .fill(1)
+                    .map((start, index) => (
+                      <StarBorderIcon key={index} fontSize="" />
+                    ))}
                 {Array(props.score)
                   .fill(1)
                   .map((start, index) => (
@@ -81,7 +100,10 @@ function ProductMainDetails(props) {
               <div className="flex gap-2 mt-2">
                 {props?.colors?.map((color, index) => (
                   <div key={index} className="border border-gray-300 p-0.5">
-                    <div className={`w-[29px] h-[30px]`} style={{backgroundColor: color}}></div>
+                    <div
+                      className={`w-[29px] h-[30px]`}
+                      style={{ backgroundColor: color }}
+                    ></div>
                   </div>
                 ))}
               </div>
@@ -101,9 +123,18 @@ function ProductMainDetails(props) {
                 افزودن به سبد
               </button>
             </div>
-            <div className="text-[15px] transition cursor-pointer hover:text-primaryBlue flex gap-2">
+            <div
+              className={`text-[15px] transition cursor-pointer hover:text-primaryBlue flex gap-2 ${
+                data && "text-primaryBlue"
+              }`}
+              onClick={addToFavoritesHandler}
+            >
               <span>
-                <FavoriteBorderIcon fontSize="small" />
+                {data ? (
+                  <FavoriteIcon fontSize="small" />
+                ) : (
+                  <FavoriteBorderIcon fontSize="small" />
+                )}
               </span>
               افزودن به علاقه‌مندی‌ها
             </div>
