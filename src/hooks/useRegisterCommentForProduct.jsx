@@ -20,7 +20,7 @@ function useRegisterCommentForProduct() {
   return useMutation({
     mutationKey: ["registerCommentForProduct"],
     mutationFn: (data) =>
-      fetch(`${baseURL}/commentss`, {
+      fetch(`${baseURL}/comments`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

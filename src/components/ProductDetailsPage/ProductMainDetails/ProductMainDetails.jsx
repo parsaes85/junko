@@ -13,27 +13,39 @@ import { useSelector } from "react-redux";
 
 import useAddToFavorites from "../../../hooks/useAddToFavorites";
 import useIsInFavorites from "../../../hooks/useIsInFavorites";
+import useRemoveFromFavorites from "../../../hooks/useRemoveFromFavorites";
 
 function ProductMainDetails(props) {
-  const [productNumber, setProductNumber] = useState(1);
-  const [productMainImage, setProductMainImage] = useState("");
-
   const { userInfos } = useSelector((state) => state.auth);
 
-  const { data } = useIsInFavorites(props.id, userInfos.id);
+  const { data: isInFavorites } = useIsInFavorites(props.id, userInfos.id);
   const { mutate: addToFavorites } = useAddToFavorites();
+  const { mutate: removeFromFavorites } = useRemoveFromFavorites();
 
-  const addToFavoritesHandler = () => {
-    addToFavorites({ productId: props.id, userId: userInfos.id });
+  const [productNumber, setProductNumber] = useState(1);
+  const [productMainImage, setProductMainImage] = useState("");
+  const [isInFavoritesState, setIsInFavoritesState] = useState()
+
+  const addOrRemoveFromFavorites = () => {
+    if (!isInFavoritesState) {
+      addToFavorites({ productId: props.id, userId: userInfos.id });
+    } else {
+      removeFromFavorites(isInFavoritesState.id)
+      setIsInFavoritesState(false)
+    }
   };
 
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
+  const addToCartHandler = () => {
+    
+  }
 
   useEffect(() => {
     setProductMainImage(props.images && props.images[0]);
   }, [props]);
+
+  useEffect(() => {
+    setIsInFavoritesState(isInFavorites)
+  }, [isInFavorites])
 
   return (
     <main>
@@ -119,18 +131,18 @@ function ProductMainDetails(props) {
                   setProductNumber(e.target.value);
                 }}
               />
-              <button className="bg-primaryBlue text-white py-2 w-2/4 rounded hover:bg-gray-700 transition">
+              <button className="bg-primaryBlue text-white py-2 w-2/4 rounded hover:bg-gray-700 transition" onClick={addToCartHandler}>
                 افزودن به سبد
               </button>
             </div>
             <div
               className={`text-[15px] transition cursor-pointer hover:text-primaryBlue flex gap-2 ${
-                data && "text-primaryBlue"
+                isInFavoritesState && "text-primaryBlue"
               }`}
-              onClick={addToFavoritesHandler}
+              onClick={addOrRemoveFromFavorites}
             >
               <span>
-                {data ? (
+                {isInFavoritesState  ? (
                   <FavoriteIcon fontSize="small" />
                 ) : (
                   <FavoriteBorderIcon fontSize="small" />

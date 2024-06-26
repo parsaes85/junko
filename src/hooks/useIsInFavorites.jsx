@@ -11,7 +11,7 @@ function useIsInFavorites(productId, userInfos) {
         (res) =>
           res.json().then((data) => {
             if (data[0].userId === userInfos) {
-              return true;
+              return data[0];
             } else {
               return false;
             }
