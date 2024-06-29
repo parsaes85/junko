@@ -292,7 +292,7 @@
       ],
       "discount": 20,
       "score": 3,
-      "count": 2,
+      "count": 4,
       "isAvailable": 1,
       "isSpecialProduct": 1,
       "isSpecialOffer": 1
@@ -551,11 +551,18 @@
   ],
   "userCartProducts": [
     {
-      "id": "1",
-      "productId": "3",
-      "userId": "1",
-      "count": 1,
-      "price": 12000000
+      "id": "6607",
+      "productId": "9",
+      "userId": "f8a0",
+      "count": 2,
+      "price": 56000000
+    },
+    {
+      "id": "ea5c",
+      "productId": "10",
+      "userId": "f8a0",
+      "count": 2,
+      "price": 56000000
     }
   ],
   "userFavoriteProducts": [
@@ -565,23 +572,13 @@
       "userId": "f8a0"
     },
     {
-      "id": "25ad",
-      "productId": "10",
-      "userId": "f8a0"
-    },
-    {
-      "id": "8e7d",
-      "productId": "11",
-      "userId": "f8a0"
-    },
-    {
-      "id": "9935",
-      "productId": "2",
-      "userId": "f8a0"
-    },
-    {
       "id": "76ed",
       "productId": "3",
+      "userId": "f8a0"
+    },
+    {
+      "id": "5c22",
+      "productId": "10",
       "userId": "f8a0"
     }
   ]

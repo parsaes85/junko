@@ -10,42 +10,57 @@ import GoogleIcon from "@mui/icons-material/Google";
 import PinterestIcon from "@mui/icons-material/Pinterest";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 import useAddToFavorites from "../../../hooks/useAddToFavorites";
 import useIsInFavorites from "../../../hooks/useIsInFavorites";
 import useRemoveFromFavorites from "../../../hooks/useRemoveFromFavorites";
+import useAddToCart from "../../../hooks/useAddToCart";
+import useIsInCart from "../../../hooks/useIsInCart";
 
 function ProductMainDetails(props) {
   const { userInfos } = useSelector((state) => state.auth);
 
   const { data: isInFavorites } = useIsInFavorites(props.id, userInfos.id);
+  const { data: isInCart } = useIsInCart(props.id, userInfos.id);
   const { mutate: addToFavorites } = useAddToFavorites();
   const { mutate: removeFromFavorites } = useRemoveFromFavorites();
+  const { mutate: addToCart } = useAddToCart();
 
   const [productNumber, setProductNumber] = useState(1);
   const [productMainImage, setProductMainImage] = useState("");
-  const [isInFavoritesState, setIsInFavoritesState] = useState()
+  const [isInFavoritesState, setIsInFavoritesState] = useState();
+  const [isInCartState, setIsInCartState] = useState();
 
   const addOrRemoveFromFavorites = () => {
     if (!isInFavoritesState) {
       addToFavorites({ productId: props.id, userId: userInfos.id });
     } else {
-      removeFromFavorites(isInFavoritesState.id)
-      setIsInFavoritesState(false)
+      removeFromFavorites(isInFavoritesState.id);
+      setIsInFavoritesState(false);
     }
   };
 
   const addToCartHandler = () => {
-    
-  }
+    addToCart({
+      productId: props.id,
+      userId: userInfos.id,
+      count: Number(productNumber),
+      price: props.price,
+    });
+  };
 
   useEffect(() => {
     setProductMainImage(props.images && props.images[0]);
   }, [props]);
 
   useEffect(() => {
-    setIsInFavoritesState(isInFavorites)
-  }, [isInFavorites])
+    setIsInFavoritesState(isInFavorites);
+  }, [isInFavorites]);
+
+  useEffect(() => {
+    setIsInCartState(isInCart);
+  }, [isInCart]);
 
   return (
     <main>
@@ -120,21 +135,35 @@ function ProductMainDetails(props) {
                 ))}
               </div>
             </div>
-            <div className="py-2">
-              <label htmlFor="product-number">تعداد:</label>
-              <input
-                type="number"
-                id="product-number"
-                className="outline-none border w-1/4 px-2 py-2 mx-4 rounded text-sm"
-                value={productNumber}
-                onChange={(e) => {
-                  setProductNumber(e.target.value);
-                }}
-              />
-              <button className="bg-primaryBlue text-white py-2 w-2/4 rounded hover:bg-gray-700 transition" onClick={addToCartHandler}>
-                افزودن به سبد
-              </button>
-            </div>
+            {!isInCartState ? (
+              <div className="py-2">
+                <label htmlFor="product-number">تعداد:</label>
+                <input
+                  type="number"
+                  id="product-number"
+                  className="outline-none border w-1/4 px-2 py-2 mx-4 rounded text-sm"
+                  min={1}
+                  max={props.count}
+                  value={productNumber}
+                  onChange={(e) => {
+                    setProductNumber(e.target.value);
+                  }}
+                />
+                <button
+                  className="bg-primaryBlue text-white py-2 w-2/4 rounded hover:bg-gray-700 transition"
+                  onClick={addToCartHandler}
+                >
+                  افزودن به سبد
+                </button>
+              </div>
+            ) : (
+              <div className="py-2 flex items-center gap-2">
+                <button className="bg-gray-700 text-white py-2 w-2/4 rounded transition cursor-default">
+                  این محصول در سبد خرید شما وجود دارد
+                </button>
+                <Link to="/cart" className="underline hover:text-primaryBlue">رفتن به صفحه سبد خرید</Link>
+              </div>
+            )}
             <div
               className={`text-[15px] transition cursor-pointer hover:text-primaryBlue flex gap-2 ${
                 isInFavoritesState && "text-primaryBlue"
@@ -142,7 +171,7 @@ function ProductMainDetails(props) {
               onClick={addOrRemoveFromFavorites}
             >
               <span>
-                {isInFavoritesState  ? (
+                {isInFavoritesState ? (
                   <FavoriteIcon fontSize="small" />
                 ) : (
                   <FavoriteBorderIcon fontSize="small" />
@@ -150,9 +179,15 @@ function ProductMainDetails(props) {
               </span>
               افزودن به علاقه‌مندی‌ها
             </div>
-            <div className="flex gap-2">
-              <span>دسته:</span>
-              <p>{props?.category?.title}</p>
+            <div>
+              <div className="flex gap-2">
+                <span>تعداد موجودی:</span>
+                <p>{Number(props?.count).toLocaleString("fa")}</p>
+              </div>
+              <div className="flex gap-2">
+                <span>دسته:</span>
+                <p>{props?.category?.title}</p>
+              </div>
             </div>
             <div className="flex flex-wrap gap-2 text-[13px] text-white [&>a]:rounded [&>a]:py-0.5 [&>a]:px-1 sm:[&>a]:px-2 [&>a]:flex [&>a]:gap-1 [&>a]:items-center [&>a]:opacity-90">
               <a href="" className="bg-[#bc2a8d] hover:bg-[#C753A2]">
