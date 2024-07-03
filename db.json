@@ -551,17 +551,10 @@
   ],
   "userCartProducts": [
     {
-      "id": "6607",
+      "id": "f7a0",
       "productId": "9",
       "userId": "f8a0",
-      "count": 2,
-      "price": 56000000
-    },
-    {
-      "id": "ea5c",
-      "productId": "10",
-      "userId": "f8a0",
-      "count": 2,
+      "count": 1,
       "price": 56000000
     }
   ],
@@ -577,7 +570,12 @@
       "userId": "f8a0"
     },
     {
-      "id": "5c22",
+      "id": "c6be",
+      "productId": "4",
+      "userId": "f8a0"
+    },
+    {
+      "id": "8b20",
       "productId": "10",
       "userId": "f8a0"
     }

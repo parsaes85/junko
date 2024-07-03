@@ -35,7 +35,7 @@ function App() {
         </div>
       </Provider>
       <ScrollToTopBtn />
-      {/* <ReactQueryDevtools initialIsOpen={false} /> */}
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 }

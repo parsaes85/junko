@@ -4,19 +4,23 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useSelector } from "react-redux";
 
 import Sidebar from "../Sidebar/Sidebar";
 import TopbarMiniCart from "../TopbarMiniCart/TopbarMiniCart";
 import useGetAllMenus from "../../hooks/useGetAllMenus";
 import useGetMe from "../../hooks/useGetMe";
-import { useSelector } from "react-redux";
+import useGetFavoriteProducts from "../../hooks/useGetFavoriteProducts";
+import useGetCartProducts from "../../hooks/useGetCartProducts";
 
 function Topbar() {
+  const { data: menus } = useGetAllMenus();
+  const { data: favoriteProducts } = useGetFavoriteProducts();
+  const { data: cartProducts } = useGetCartProducts();
+  const { mutate: getUserInfos } = useGetMe();
+  const { userInfos, isLoggedIn } = useSelector((state) => state.auth);
   const [isSidebarShow, setIsSidebarShow] = useState(false);
   const href = useHref();
-  const { userInfos, isLoggedIn } = useSelector((state) => state.auth);
-  const { data: menus } = useGetAllMenus();
-  const { mutate: getUserInfos } = useGetMe();
 
   useEffect(() => {
     const localStorageUserToken = JSON.parse(localStorage.getItem("userToken"));
@@ -98,7 +102,7 @@ function Topbar() {
               <Link to="/wishlist">
                 <div className="relative">
                   <span className="absolute -top-2 -right-3 text-sm bg-primaryBlue text-white rounded-full w-5 flex justify-center">
-                    ۳
+                    {favoriteProducts?.length.toLocaleString("fa")}
                   </span>
                   <span className="text-gray-800 cursor-pointer hover:text-primaryBlue transition-all duration-200">
                     <FavoriteBorderIcon />
@@ -109,7 +113,7 @@ function Topbar() {
               <div className="relative group">
                 <div className="relative">
                   <span className="absolute -top-2 -right-3 text-sm bg-primaryBlue text-white rounded-full w-5 flex justify-center">
-                    ۲
+                    {cartProducts?.length.toLocaleString("fa")}
                   </span>
                   <span className="text-gray-800 cursor-pointer transition-all duration-200 group-hover:text-primaryBlue">
                     <ShoppingBagIcon />
@@ -118,7 +122,7 @@ function Topbar() {
                     <KeyboardArrowDownIcon fontSize="" />
                   </span>
                 </div>
-                <TopbarMiniCart />
+                <TopbarMiniCart cartProducts={cartProducts}/>
               </div>
             </div>
           </div>

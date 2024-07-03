@@ -3,19 +3,20 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { baseURL } from "../data/variables";
 
-function useRemoveFromFavorites() {
+function useRemoveFromCart() {
   const queryClient = useQueryClient();
+
   return useMutation({
-    mutationKey: ["removeFromFavorites"],
+    mutationKey: ["removeFromCart"],
     mutationFn: (productId) =>
-      fetch(`${baseURL}/userFavoriteProducts/${productId}`, {
+      fetch(`${baseURL}/userCartProducts/${productId}`, {
         method: "DELETE",
       }),
     onSuccess: (res) => {
-      queryClient.invalidateQueries();
       console.log(res);
+      queryClient.invalidateQueries();
     },
   });
 }
 
-export default useRemoveFromFavorites;
+export default useRemoveFromCart;
