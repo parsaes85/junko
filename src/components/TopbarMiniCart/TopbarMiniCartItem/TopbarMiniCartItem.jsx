@@ -10,28 +10,28 @@ function TopbarMiniCartItem(props) {
   return (
     <div className="flex gap-2 border-b py-2">
       <div className="border border-transparent hover:border-primaryBlue">
-        <Link to={`/product-details/${props.product.id}`}>
-          <img src={props.product.images[0]} alt="" className="w-28" />
+        <Link to={`/product-details/${props?.product?.id}`}>
+          <img src={props?.product?.images[0]} alt="" className="w-28" />
         </Link>
       </div>
       <div className="space-y-2">
         <Link
-          to={`/product-details/${props.product.id}`}
+          to={`/product-details/${props?.product?.id}`}
           className="hover:text-primaryBlue transition duration-300"
         >
-          {props.product.name}
+          {props?.product?.name}
         </Link>
         <p className="text-sm">
           تعداد:{" "}
           <span className="font-bold">
-            <span>{props.count.toLocaleString("fa")}</span>{" "}
+            <span>{props?.count?.toLocaleString("fa")}</span>{" "}
             <CloseIcon fontSize="" className="text-xs" />{" "}
-            <span>{props.price.toLocaleString("fa")}</span> تومان
+            <span>{props?.price?.toLocaleString("fa")}</span> تومان
           </span>
         </p>
       </div>
       <div>
-        <span className="border rounded-full text-gray-600 px-1 text-sm transition duration-300 cursor-pointer hover:bg-primaryBlue hover:text-white hover:border-primaryBlue" onClick={() => removeFromCart(props.id)}>
+        <span className="border rounded-full text-gray-600 px-1 text-sm transition duration-300 cursor-pointer hover:bg-primaryBlue hover:text-white hover:border-primaryBlue" onClick={() => removeFromCart(props?.id)}>
           <CloseIcon fontSize="" />
         </span>
       </div>

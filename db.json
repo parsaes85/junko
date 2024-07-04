@@ -551,31 +551,31 @@
   ],
   "userCartProducts": [
     {
-      "id": "f7a0",
+      "id": "7e11",
       "productId": "9",
       "userId": "f8a0",
-      "count": 1,
+      "count": 2,
       "price": 56000000
     }
   ],
   "userFavoriteProducts": [
     {
-      "id": "478c",
-      "productId": "9",
-      "userId": "f8a0"
+      "id": "5042",
+      "productId": "2",
+      "userId": "f8a"
     },
     {
-      "id": "76ed",
+      "id": "7ac7",
       "productId": "3",
       "userId": "f8a0"
     },
     {
-      "id": "c6be",
-      "productId": "4",
+      "id": "efd6",
+      "productId": "1",
       "userId": "f8a0"
     },
     {
-      "id": "8b20",
+      "id": "d0dd",
       "productId": "10",
       "userId": "f8a0"
     }

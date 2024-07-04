@@ -1,9 +1,11 @@
 import React from "react";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { baseURL } from "../data/variables";
 
 function useAddToCart() {
+  const queryClient = useQueryClient()
+
   return useMutation({
     mutationKey: ["addToCart"],
     mutationFn: (data) =>
@@ -13,7 +15,7 @@ function useAddToCart() {
         body: JSON.stringify(data),
       }),
     onSuccess: (res) => {
-      console.log(res);
+      queryClient.invalidateQueries()
     },
   });
 }

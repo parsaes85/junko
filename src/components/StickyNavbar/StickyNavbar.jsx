@@ -3,22 +3,18 @@ import { Link, NavLink } from "react-router-dom";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import { QueryClient, useQueryClient } from "@tanstack/react-query";
+import { useSelector } from "react-redux";
 
 import TopbarMiniCart from "../TopbarMiniCart/TopbarMiniCart";
 
 import "./StickyNavbar.css";
 
 function StickyNavbar() {
-  const queryClient = useQueryClient();
+  const favoriteProducts = useSelector((state) => state.favoriteProducts)
 
+  const [cartProducts, setCartProducts] = useState([]);
+  // const [favoriteProducts, setFavoriteProducts] = useState([]);
   const [scrollPosition, setScrollPosition] = useState(0);
-  const cartProducts = queryClient.getQueriesData({
-    queryKey: ["cartProducts"],
-  })[0][1];
-  const favoriteProducts = queryClient.getQueriesData({
-    queryKey: ["favoriteProducts"],
-  })[0][1];
 
   const handleScroll = () => {
     setScrollPosition(scrollY);
@@ -31,6 +27,25 @@ function StickyNavbar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  // useEffect(() => {
+  //   if (
+  //     queryClient.getQueriesData({
+  //       queryKey: ["cartProducts"],
+  //     })[0]
+  //   ) {
+  //     setCartProducts(
+  //       queryClient.getQueriesData({
+  //         queryKey: ["cartProducts"],
+  //       })[0][1]
+  //     );
+  //     setFavoriteProducts(
+  //       queryClient.getQueriesData({
+  //         queryKey: ["favoriteProducts"],
+  //       })[0][1]
+  //     );
+  //   }
+  // });
 
   return (
     <div
@@ -88,7 +103,7 @@ function StickyNavbar() {
         <div className="flex gap-8">
           <div className="relative">
             <span className="absolute -top-2 -right-3 text-sm bg-primaryBlue text-white rounded-full w-5 flex justify-center">
-              {favoriteProducts?.length.toLocaleString("fa")}
+              {favoriteProducts?.products?.length.toLocaleString("fa")}
             </span>
             <span className="text-gray-800 cursor-pointer hover:text-primaryBlue transition-all duration-200">
               <FavoriteBorderIcon />

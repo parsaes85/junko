@@ -12,9 +12,14 @@ function useRemoveFromCart() {
       fetch(`${baseURL}/userCartProducts/${productId}`, {
         method: "DELETE",
       }),
-    onSuccess: (res) => {
-      console.log(res);
-      queryClient.invalidateQueries();
+    onSuccess: (res, productId) => {
+      const cartProducts = queryClient.getQueriesData({
+        queryKey: ["cartProducts"],
+      })[0][1]
+      const filteredCartProduct = cartProducts.filter(product => product.id !== productId)
+      console.log(cartProducts);
+      console.log(filteredCartProduct)
+      queryClient.setQueriesData(['cartProducts'], filteredCartProduct)
     },
   });
 }

@@ -1,9 +1,13 @@
 import React from "react";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { baseURL } from "../data/variables";
+import useGetFavoriteProducts from "./useGetFavoriteProducts";
 
 function useAddToFavorites() {
+  const queryClient = useQueryClient()
+  const { data } = useGetFavoriteProducts();
+  
   return useMutation({
     mutationKey: ["addToFavorites"],
     mutationFn: (data) =>
@@ -12,7 +16,8 @@ function useAddToFavorites() {
         "Content-Type": "application/json",
         body: JSON.stringify(data),
       }),
-    onSuccess: (res) => {
+    onSuccess: (res, data) => {
+      queryClient.invalidateQueries()
       console.log(res);
     },
   });

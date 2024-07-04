@@ -11,9 +11,8 @@ function useRemoveFromFavorites() {
       fetch(`${baseURL}/userFavoriteProducts/${productId}`, {
         method: "DELETE",
       }),
-    onSuccess: (res) => {
-      queryClient.invalidateQueries();
-      console.log(res);
+    onSuccess: () => {
+      queryClient.invalidateQueries()
     },
   });
 }

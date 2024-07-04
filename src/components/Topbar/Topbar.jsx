@@ -5,6 +5,7 @@ import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useSelector } from "react-redux";
+import { useQueryClient } from "@tanstack/react-query";
 
 import Sidebar from "../Sidebar/Sidebar";
 import TopbarMiniCart from "../TopbarMiniCart/TopbarMiniCart";
@@ -14,12 +15,16 @@ import useGetFavoriteProducts from "../../hooks/useGetFavoriteProducts";
 import useGetCartProducts from "../../hooks/useGetCartProducts";
 
 function Topbar() {
+  const { userInfos, isLoggedIn } = useSelector((state) => state.auth);
+  const favoriteProducts = useSelector((state) => state.favoriteProducts)
+
   const { data: menus } = useGetAllMenus();
-  const { data: favoriteProducts } = useGetFavoriteProducts();
+  const { data } = useGetFavoriteProducts();
   const { data: cartProducts } = useGetCartProducts();
   const { mutate: getUserInfos } = useGetMe();
-  const { userInfos, isLoggedIn } = useSelector((state) => state.auth);
+
   const [isSidebarShow, setIsSidebarShow] = useState(false);
+
   const href = useHref();
 
   useEffect(() => {
@@ -27,6 +32,11 @@ function Topbar() {
 
     getUserInfos(localStorageUserToken);
   }, []);
+
+  useEffect(() => {
+    console.log(favoriteProducts)
+
+  }, [favoriteProducts])
 
   return (
     <>
@@ -102,7 +112,7 @@ function Topbar() {
               <Link to="/wishlist">
                 <div className="relative">
                   <span className="absolute -top-2 -right-3 text-sm bg-primaryBlue text-white rounded-full w-5 flex justify-center">
-                    {favoriteProducts?.length.toLocaleString("fa")}
+                    {favoriteProducts?.products?.length.toLocaleString("fa")}
                   </span>
                   <span className="text-gray-800 cursor-pointer hover:text-primaryBlue transition-all duration-200">
                     <FavoriteBorderIcon />
@@ -122,7 +132,7 @@ function Topbar() {
                     <KeyboardArrowDownIcon fontSize="" />
                   </span>
                 </div>
-                <TopbarMiniCart cartProducts={cartProducts}/>
+                <TopbarMiniCart cartProducts={cartProducts} />
               </div>
             </div>
           </div>
