@@ -2,9 +2,11 @@ import React from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { baseURL } from "../data/variables";
+import useGetCartProducts from "./useGetCartProducts";
 
 function useRemoveFromCart() {
   const queryClient = useQueryClient();
+  const { data } = useGetCartProducts();
 
   return useMutation({
     mutationKey: ["removeFromCart"],
@@ -12,14 +14,8 @@ function useRemoveFromCart() {
       fetch(`${baseURL}/userCartProducts/${productId}`, {
         method: "DELETE",
       }),
-    onSuccess: (res, productId) => {
-      const cartProducts = queryClient.getQueriesData({
-        queryKey: ["cartProducts"],
-      })[0][1]
-      const filteredCartProduct = cartProducts.filter(product => product.id !== productId)
-      console.log(cartProducts);
-      console.log(filteredCartProduct)
-      queryClient.setQueriesData(['cartProducts'], filteredCartProduct)
+    onSuccess: () => {
+      queryClient.invalidateQueries();
     },
   });
 }

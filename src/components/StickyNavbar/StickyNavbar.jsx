@@ -11,9 +11,8 @@ import "./StickyNavbar.css";
 
 function StickyNavbar() {
   const favoriteProducts = useSelector((state) => state.favoriteProducts)
+  const cartProducts = useSelector((state) => state.cartProducts)
 
-  const [cartProducts, setCartProducts] = useState([]);
-  // const [favoriteProducts, setFavoriteProducts] = useState([]);
   const [scrollPosition, setScrollPosition] = useState(0);
 
   const handleScroll = () => {
@@ -27,25 +26,6 @@ function StickyNavbar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  // useEffect(() => {
-  //   if (
-  //     queryClient.getQueriesData({
-  //       queryKey: ["cartProducts"],
-  //     })[0]
-  //   ) {
-  //     setCartProducts(
-  //       queryClient.getQueriesData({
-  //         queryKey: ["cartProducts"],
-  //       })[0][1]
-  //     );
-  //     setFavoriteProducts(
-  //       queryClient.getQueriesData({
-  //         queryKey: ["favoriteProducts"],
-  //       })[0][1]
-  //     );
-  //   }
-  // });
 
   return (
     <div
@@ -112,7 +92,7 @@ function StickyNavbar() {
           <div className="relative group">
             <div className="relative">
               <span className="absolute -top-2 -right-3 text-sm bg-primaryBlue text-white rounded-full w-5 flex justify-center">
-                {cartProducts?.length.toLocaleString("fa")}
+                {cartProducts?.products?.length.toLocaleString("fa")}
               </span>
               <span className="text-gray-800 cursor-pointer transition-all duration-200 group-hover:text-primaryBlue">
                 <ShoppingBagIcon />
@@ -121,7 +101,7 @@ function StickyNavbar() {
                 <KeyboardArrowDownIcon fontSize="" />
               </span>
             </div>
-            <TopbarMiniCart cartProducts={cartProducts} />
+            <TopbarMiniCart cartProducts={cartProducts?.products} />
           </div>
         </div>
       </div>

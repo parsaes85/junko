@@ -16,9 +16,8 @@ function useAddToFavorites() {
         "Content-Type": "application/json",
         body: JSON.stringify(data),
       }),
-    onSuccess: (res, data) => {
+    onSuccess: () => {
       queryClient.invalidateQueries()
-      console.log(res);
     },
   });
 }

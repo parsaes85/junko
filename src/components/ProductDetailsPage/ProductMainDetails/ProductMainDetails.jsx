@@ -13,31 +13,37 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 import useAddToFavorites from "../../../hooks/useAddToFavorites";
-import useIsInFavorites from "../../../hooks/useIsInFavorites";
 import useRemoveFromFavorites from "../../../hooks/useRemoveFromFavorites";
 import useAddToCart from "../../../hooks/useAddToCart";
-import useIsInCart from "../../../hooks/useIsInCart";
 
 function ProductMainDetails(props) {
   const { userInfos } = useSelector((state) => state.auth);
+  const cartProducts = useSelector((state) => state.cartProducts);
+  const favoriteProducts = useSelector((state) => state.favoriteProducts);
 
-  const { data: isInFavorites } = useIsInFavorites(props.id, userInfos.id);
-  const { data: isInCart } = useIsInCart(props.id, userInfos.id);
   const { mutate: addToFavorites } = useAddToFavorites();
   const { mutate: removeFromFavorites } = useRemoveFromFavorites();
   const { mutate: addToCart } = useAddToCart();
 
   const [productNumber, setProductNumber] = useState(1);
   const [productMainImage, setProductMainImage] = useState("");
-  const [isInFavoritesState, setIsInFavoritesState] = useState();
-  const [isInCartState, setIsInCartState] = useState();
+
+  const isInCart = () =>
+    cartProducts.products.some(
+      (product) =>
+        product.productId == props.id && product.userId == userInfos.id
+    );
+  const isInFavorite = () =>
+    favoriteProducts.products.find(
+      (product) =>
+        product.productId == props.id && product.userId == userInfos.id
+    );
 
   const addOrRemoveFromFavorites = () => {
-    if (!isInFavoritesState) {
+    if (!isInFavorite()) {
       addToFavorites({ productId: props.id, userId: userInfos.id });
     } else {
-      removeFromFavorites(isInFavoritesState.id);
-      setIsInFavoritesState(false);
+      removeFromFavorites(isInFavorite().id);
     }
   };
 
@@ -53,14 +59,6 @@ function ProductMainDetails(props) {
   useEffect(() => {
     setProductMainImage(props.images && props.images[0]);
   }, [props]);
-
-  useEffect(() => {
-    setIsInFavoritesState(isInFavorites);
-  }, [isInFavorites]);
-
-  useEffect(() => {
-    setIsInCartState(isInCart);
-  }, [isInCart]);
 
   return (
     <main>
@@ -135,7 +133,7 @@ function ProductMainDetails(props) {
                 ))}
               </div>
             </div>
-            {!isInCartState ? (
+            {!isInCart() ? (
               <div className="py-2">
                 <label htmlFor="product-number">تعداد:</label>
                 <input
@@ -161,17 +159,19 @@ function ProductMainDetails(props) {
                 <button className="bg-gray-700 text-white py-2 w-2/4 rounded transition cursor-default">
                   این محصول در سبد خرید شما وجود دارد
                 </button>
-                <Link to="/cart" className="underline hover:text-primaryBlue">رفتن به صفحه سبد خرید</Link>
+                <Link to="/cart" className="underline hover:text-primaryBlue">
+                  رفتن به صفحه سبد خرید
+                </Link>
               </div>
             )}
             <div
               className={`text-[15px] transition cursor-pointer hover:text-primaryBlue flex gap-2 ${
-                isInFavoritesState && "text-primaryBlue"
+                isInFavorite() && "text-primaryBlue"
               }`}
               onClick={addOrRemoveFromFavorites}
             >
               <span>
-                {isInFavoritesState ? (
+                {isInFavorite() ? (
                   <FavoriteIcon fontSize="small" />
                 ) : (
                   <FavoriteBorderIcon fontSize="small" />

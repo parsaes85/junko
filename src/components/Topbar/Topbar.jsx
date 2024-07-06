@@ -16,28 +16,22 @@ import useGetCartProducts from "../../hooks/useGetCartProducts";
 
 function Topbar() {
   const { userInfos, isLoggedIn } = useSelector((state) => state.auth);
-  const favoriteProducts = useSelector((state) => state.favoriteProducts)
+  const favoriteProducts = useSelector((state) => state.favoriteProducts);
+  const cartProducts = useSelector((state) => state.cartProducts);
 
   const { data: menus } = useGetAllMenus();
-  const { data } = useGetFavoriteProducts();
-  const { data: cartProducts } = useGetCartProducts();
+  const { data: favoriteProductsData } = useGetFavoriteProducts();
+  const { data: cartProductsData } = useGetCartProducts();
   const { mutate: getUserInfos } = useGetMe();
 
   const [isSidebarShow, setIsSidebarShow] = useState(false);
-
-  const href = useHref();
 
   useEffect(() => {
     const localStorageUserToken = JSON.parse(localStorage.getItem("userToken"));
 
     getUserInfos(localStorageUserToken);
   }, []);
-
-  useEffect(() => {
-    console.log(favoriteProducts)
-
-  }, [favoriteProducts])
-
+  
   return (
     <>
       <Sidebar
@@ -123,7 +117,7 @@ function Topbar() {
               <div className="relative group">
                 <div className="relative">
                   <span className="absolute -top-2 -right-3 text-sm bg-primaryBlue text-white rounded-full w-5 flex justify-center">
-                    {cartProducts?.length.toLocaleString("fa")}
+                    {cartProducts?.products?.length.toLocaleString("fa")}
                   </span>
                   <span className="text-gray-800 cursor-pointer transition-all duration-200 group-hover:text-primaryBlue">
                     <ShoppingBagIcon />
@@ -132,7 +126,7 @@ function Topbar() {
                     <KeyboardArrowDownIcon fontSize="" />
                   </span>
                 </div>
-                <TopbarMiniCart cartProducts={cartProducts} />
+                <TopbarMiniCart cartProducts={cartProducts?.products} />
               </div>
             </div>
           </div>
