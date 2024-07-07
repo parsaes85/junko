@@ -1,8 +1,18 @@
 import React from "react";
-
 import CloseIcon from "@mui/icons-material/Close";
+import { useSelector } from "react-redux";
 
 function CheckoutProductsForms() {
+  const cartProducts = useSelector((state) => state.cartProducts);
+
+  const calculateCartTotalPrice = () => {
+    let cartTotalPrice = 0;
+    cartProducts?.products.forEach(
+      (product) => (cartTotalPrice += product.price)
+    );
+    return cartTotalPrice;
+  };
+
   return (
     <section className="px-4 xs:px-24 mb-16">
       <div className="flex flex-col md:flex-row items-start gap-x-8 gap-y-16">
@@ -105,7 +115,12 @@ function CheckoutProductsForms() {
               <label htmlFor="desc" className="lg:text-lg">
                 توضیحات سفارش
               </label>
-              <textarea id="desc" rows="3" placeholder="یادداشت های مربوط به سفارش, مانند توضیح نحوه ارسال." className="w-full border rounded-sm text-sm lg:text-base block px-4 py-2 outline-none resize-none"></textarea>
+              <textarea
+                id="desc"
+                rows="3"
+                placeholder="یادداشت های مربوط به سفارش, مانند توضیح نحوه ارسال."
+                className="w-full border rounded-sm text-sm lg:text-base block px-4 py-2 outline-none resize-none"
+              ></textarea>
             </div>
           </div>
         </div>
@@ -122,54 +137,45 @@ function CheckoutProductsForms() {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td className="border-b border-l p-4 px-0 text-sm lg:text-base text-center flex items-center justify-center gap-1">
-                    <span>گوشی موبایل Xiaomi Mi ۹</span>
-                    <span className="font-IRANSans flex gap-1 items-center">
-                      <CloseIcon fontSize="" className="text-sm" /> ۲
-                    </span>
-                  </td>
-                  <td className="border-b p-4 text-center text-sm lg:text-base">۱۶۵,۰۰۰ تومان</td>
-                </tr>
-                <tr>
-                  <td className="border-b border-l p-4 px-0 text-sm lg:text-base text-center flex items-center justify-center gap-1">
-                    <span>گوشی موبایل Xiaomi Mi ۹</span>
-                    <span className="font-IRANSans flex gap-1 items-center">
-                      <CloseIcon fontSize="" className="text-sm" /> ۲
-                    </span>
-                  </td>
-                  <td className="border-b p-4 text-center text-sm lg:text-base">۱۶۵,۰۰۰ تومان</td>
-                </tr>
-                <tr>
-                  <td className="border-b border-l p-4 px-0 text-sm lg:text-base text-center flex items-center justify-center gap-1">
-                    <span>گوشی موبایل Xiaomi Mi ۹</span>
-                    <span className="font-IRANSans flex gap-1 items-center">
-                      <CloseIcon fontSize="" className="text-sm" /> ۲
-                    </span>
-                  </td>
-                  <td className="border-b p-4 text-center text-sm lg:text-base">۱۶۵,۰۰۰ تومان</td>
-                </tr>
-                <tr>
-                  <td className="border-b border-l p-4 px-0 text-sm lg:text-base text-center flex items-center justify-center gap-1">
-                    <span>گوشی موبایل Xiaomi Mi ۹</span>
-                    <span className="font-IRANSans flex gap-1 items-center">
-                      <CloseIcon fontSize="" className="text-sm" /> ۲
-                    </span>
-                  </td>
-                  <td className="border-b p-4 text-center text-sm lg:text-base">۱۶۵,۰۰۰ تومان</td>
-                </tr>
+                {cartProducts?.products.map((product) => (
+                  <tr>
+                    <td className="border-b border-l p-4 px-0 text-sm lg:text-base text-center flex items-center justify-center gap-1">
+                      <span>{product.product.name}</span>
+                      <span className="font-IRANSans flex gap-1 items-center">
+                        <CloseIcon fontSize="" className="text-sm" />{" "}
+                        {product.count.toLocaleString("fa")}
+                      </span>
+                    </td>
+                    <td className="border-b p-4 text-center text-sm lg:text-base">
+                      {product.price.toLocaleString("fa")} تومان
+                    </td>
+                  </tr>
+                ))}
 
                 <tr>
-                  <td className="border-b p-4 text-center text-sm lg:text-base">جمع سبد</td>
-                  <td className="border-b p-4 text-center text-sm lg:text-base">۲۱۵,۰۰۰ تومان</td>
+                  <td className="border-b p-4 text-center text-sm lg:text-base">
+                    جمع سبد
+                  </td>
+                  <td className="border-b p-4 text-center text-sm lg:text-base">
+                    {calculateCartTotalPrice().toLocaleString("fa")} تومان
+                  </td>
                 </tr>
                 <tr>
-                  <td className="border-b p-4 text-center text-sm lg:text-base">حمل و نقل</td>
-                  <td className="border-b p-4 text-center text-sm lg:text-base">۵,۰۰۰ تومان</td>
+                  <td className="border-b p-4 text-center text-sm lg:text-base">
+                    حمل و نقل
+                  </td>
+                  <td className="border-b p-4 text-center text-sm lg:text-base">
+                    ۱۵,۰۰۰ تومان
+                  </td>
                 </tr>
                 <tr>
-                  <td className="border-b p-4 text-center text-sm lg:text-base">مجموع سفارش</td>
-                  <td className="border-b p-4 text-center text-sm lg:text-base">۲۲۰,۰۰۰ تومان</td>
+                  <td className="border-b p-4 text-center text-sm lg:text-base">
+                    مجموع سفارش
+                  </td>
+                  <td className="border-b p-4 text-center text-sm lg:text-base">
+                    {(calculateCartTotalPrice() + 15000).toLocaleString("fa")}{" "}
+                    تومان
+                  </td>
                 </tr>
               </tbody>
             </table>
