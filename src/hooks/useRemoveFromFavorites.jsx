@@ -2,9 +2,12 @@ import React from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { baseURL } from "../data/variables";
+import useGetFavoriteProducts from "./useGetFavoriteProducts";
 
 function useRemoveFromFavorites() {
   const queryClient = useQueryClient();
+  const { data } = useGetFavoriteProducts();
+
   return useMutation({
     mutationKey: ["removeFromFavorites"],
     mutationFn: (productId) =>
@@ -12,7 +15,7 @@ function useRemoveFromFavorites() {
         method: "DELETE",
       }),
     onSuccess: () => {
-      queryClient.invalidateQueries()
+      queryClient.invalidateQueries();
     },
   });
 }

@@ -11,7 +11,7 @@ function useGetFavoriteProducts() {
   return useQuery({
     queryKey: ["favoriteProducts"],
     queryFn: () =>
-      fetch(`${baseURL}/userFavoriteProducts`)
+      fetch(`${baseURL}/userFavoriteProducts?_embed=product`)
         .then((res) => res.json())
         .then((data) => {
           dispatch(setFavoriteProducts(data))

@@ -6,8 +6,6 @@ import ShareBox from "../../components/WishlistPage/ShareBox/ShareBox";
 import { useSelector } from "react-redux";
 
 function Wishlist() {
-  const userInfos = useSelector((state) => state.auth.userInfos)
-
   return (
     <>
       <Breadcrumb page="لیست علاقه مندی‌ها" />

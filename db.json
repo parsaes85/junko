@@ -549,26 +549,26 @@
       "token": "860dd41d-9ef3-4d93-8ede-4570886d6477"
     }
   ],
-  "userCartProducts": [],
+  "userCartProducts": [
+    {
+      "id": "d845",
+      "productId": "11",
+      "userId": "f8a0",
+      "count": 1,
+      "price": 56000000
+    },
+    {
+      "id": "9292",
+      "productId": "10",
+      "userId": "f8a0",
+      "count": 1,
+      "price": 56000000
+    }
+  ],
   "userFavoriteProducts": [
     {
-      "id": "8e6c",
-      "productId": "3",
-      "userId": "f8a0"
-    },
-    {
-      "id": "0717",
+      "id": "7a0c",
       "productId": "11",
-      "userId": "f8a0"
-    },
-    {
-      "id": "727e",
-      "productId": "9",
-      "userId": "f8a0"
-    },
-    {
-      "id": "fd40",
-      "productId": "10",
       "userId": "f8a0"
     }
   ]

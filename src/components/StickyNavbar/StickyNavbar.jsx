@@ -81,6 +81,7 @@ function StickyNavbar() {
         </ul>
 
         <div className="flex gap-8">
+          <Link to="/wishlist">
           <div className="relative">
             <span className="absolute -top-2 -right-3 text-sm bg-primaryBlue text-white rounded-full w-5 flex justify-center">
               {favoriteProducts?.products?.length.toLocaleString("fa")}
@@ -89,6 +90,7 @@ function StickyNavbar() {
               <FavoriteBorderIcon />
             </span>
           </div>
+          </Link>
           <div className="relative group">
             <div className="relative">
               <span className="absolute -top-2 -right-3 text-sm bg-primaryBlue text-white rounded-full w-5 flex justify-center">
