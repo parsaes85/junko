@@ -1,6 +1,16 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 function TotalCartPrice() {
+  const cartProducts = useSelector((state) => state.cartProducts);
+
+  const calculateCartTotalPrice = () => {
+    let cartTotalPrice = 0
+    cartProducts?.products.forEach(product => cartTotalPrice += product.price)
+    return cartTotalPrice 
+  }
+
   return (
     <section className="px-4 xs:px-24 mb-16">
       <div className="flex flex-col md:flex-row items-start gap-8">
@@ -30,7 +40,7 @@ function TotalCartPrice() {
             <div className="border-b space-y-5 pb-6">
               <div className="flex items-center justify-between">
                 <p>جمع اجزا</p>
-                <p className="text-xl">۱,۳۵۰,۰۰۰ تومان</p>
+                <p className="text-xl">{calculateCartTotalPrice().toLocaleString("fa")} تومان</p>
               </div>
               <div className="flex items-center justify-between">
                 <p>حمل و نقل</p>
@@ -40,9 +50,11 @@ function TotalCartPrice() {
             <div className="space-y-5">
               <div className="flex items-center justify-between">
                 <p>جمع کل</p>
-                <p className="text-xl">۱,۳۶۵,۰۰۰ تومان</p>
+                <p className="text-xl">{(calculateCartTotalPrice() + 15000).toLocaleString("fa")} تومان</p>
               </div>
-              <button className="bg-primaryBlue text-white py-2 px-5 rounded block mr-auto hover:bg-zinc-900 transition duration-300">پرداخت</button>
+              <Link to="/checkout" className="block">
+              <button className="bg-primaryBlue text-white py-1.5 px-5 rounded block mr-auto hover:bg-zinc-900 transition duration-300">پرداخت</button>
+              </Link>
             </div>
           </div>
         </div>

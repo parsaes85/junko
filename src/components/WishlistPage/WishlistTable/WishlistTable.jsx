@@ -30,10 +30,6 @@ function WishlistTable() {
         product.userId == productInfos.userId
     );
 
-  useEffect(() => {
-    console.log(favoriteProducts.products);
-  }, [favoriteProducts]);
-
   return (
     <section className="px-4 xs:px-24 mb-16">
       <div className="overflow-x-auto">

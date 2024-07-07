@@ -52,7 +52,7 @@ function ProductMainDetails(props) {
       productId: props.id,
       userId: userInfos.id,
       count: Number(productNumber),
-      price: props.price,
+      price: productNumber * props.price,
     });
   };
 
