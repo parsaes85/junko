@@ -24,14 +24,14 @@ function LeftSideColProductBox() {
               <p>افزودن به علاقه‌مندی‌ها</p>
             </div>
           </div>
-          <div className="relative group/icon">
+          {/* <div className="relative group/icon">
             <span className="bg-primaryBlue text-white py-1 px-1.5 rounded-full hover:brightness-90">
               <SearchIcon fontSize="small" />
             </span>
             <div className="absolute -top-9 -right-6 text-xs bg-black text-white w-20 py-1 rounded transition duration-300 text-center opacity-0 invisible group-hover/icon:opacity-100 group-hover/icon:visible after:absolute after:-bottom-1 after:right-9 after:w-2 after:h-2 after:rotate-45 after:bg-black">
               <p>مشاهده سریع</p>
             </div>
-          </div>
+          </div> */}
         </div>
         <button className="absolute bottom-0 left-1/2 -translate-x-1/2 text-white bg-primaryBlue text-sm tracking-tighter py-2.5 w-[60%] rounded-md duration-300 invisible opacity-0 group-hover/item:visible group-hover/item:opacity-100 hover:bg-[#1953b4] hidden xs:block">
             افزودن به سبد

@@ -55,14 +55,14 @@ function ProductBox(props) {
               <p>افزودن به علاقه‌مندی‌ها</p>
             </div>
           </div>
-          <div className="relative group/icon">
+          {/* <div className="relative group/icon">
             <span className="bg-primaryBlue text-white py-1 px-1.5 rounded-full hover:brightness-90 cursor-pointer">
               <SearchIcon fontSize="small" />
             </span>
             <div className="absolute -top-9 -right-6 text-xs bg-black text-white w-20 py-1 rounded transition duration-300 text-center opacity-0 invisible group-hover/icon:opacity-100 group-hover/icon:visible after:absolute after:-bottom-1 after:right-9 after:w-2 after:h-2 after:rotate-45 after:bg-black">
               <p>مشاهده سریع</p>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="absolute bottom-0 left-0 bg-primaryBlue flex justify-between w-full text-center rounded px-3 pb-1 text-white">
           <div>

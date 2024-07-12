@@ -48,12 +48,12 @@ function LeftSideRowProductBox() {
             </span>
             افزودن به علاقه‌مندی‌ها
           </div>
-          <div>
+          {/* <div>
             <span>
               <SearchIcon fontSize="small"/>
             </span>
             نمایش سریع
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
