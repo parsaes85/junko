@@ -2,10 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import RightSideProductBox from "../RightSideProductBox/RightSideProductBox";
+import useGetAllMenus from "../../../hooks/useGetAllMenus";
 
 import "./RightSide.css";
 
 function RightSide() {
+  const { data: menus } = useGetAllMenus();
+
   const [rangeInputMinValue, setRangeInputMinValue] = useState("0");
   const [rangeInputMaxValue, setRangeInputMaxValue] = useState("50000000");
 
@@ -50,29 +53,11 @@ function RightSide() {
 
         <div>
           <ul className="flex flex-col text-[15px] [&>li]:transition [&>li:hover]:text-primaryBlue">
-            <li>
-              <Link className="block py-3 border-b">
-                دوربین عکاسی و فیلمبرداری
-              </Link>
-            </li>
-            <li>
-              <Link className="block py-3 border-b">کامپیوتر و شبکه</Link>
-            </li>
-            <li>
-              <Link className="block py-3 border-b">بازی و کنسول</Link>
-            </li>
-            <li>
-              <Link className="block py-3 border-b">هدفون و اسپیکر</Link>
-            </li>
-            <li>
-              <Link className="block py-3 border-b">فیلم و بازی ویدئویی</Link>
-            </li>
-            <li>
-              <Link className="block py-3 border-b">گوشی هوشمند</Link>
-            </li>
-            <li>
-              <Link className="block py-3 border-b">بدون دسته</Link>
-            </li>
+            {menus?.map((menu) => (
+              <li key={menu.id}>
+                <Link to={`/shop?category=${menu.name}`} className="block py-3 border-b">{menu.title}</Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
@@ -142,11 +127,21 @@ function RightSide() {
           برچسب های محصولات
         </h1>
         <div className="flex flex-wrap gap-2">
-            <Link className="bg-white border py-2 px-4 rounded text-sm transition duration-300 hover:text-white hover:bg-primaryBlue tr">بلوز</Link>
-            <Link className="bg-white border py-2 px-4 rounded text-sm transition duration-300 hover:text-white hover:bg-primaryBlue tr">لورم ایپسوم</Link>
-            <Link className="bg-white border py-2 px-4 rounded text-sm transition duration-300 hover:text-white hover:bg-primaryBlue tr">مد و زیبایی</Link>
-            <Link className="bg-white border py-2 px-4 rounded text-sm transition duration-300 hover:text-white hover:bg-primaryBlue tr">لورم ایپسوم</Link>
-            <Link className="bg-white border py-2 px-4 rounded text-sm transition duration-300 hover:text-white hover:bg-primaryBlue tr">لپتاپ</Link>
+          <Link className="bg-white border py-2 px-4 rounded text-sm transition duration-300 hover:text-white hover:bg-primaryBlue tr">
+            بلوز
+          </Link>
+          <Link className="bg-white border py-2 px-4 rounded text-sm transition duration-300 hover:text-white hover:bg-primaryBlue tr">
+            لورم ایپسوم
+          </Link>
+          <Link className="bg-white border py-2 px-4 rounded text-sm transition duration-300 hover:text-white hover:bg-primaryBlue tr">
+            مد و زیبایی
+          </Link>
+          <Link className="bg-white border py-2 px-4 rounded text-sm transition duration-300 hover:text-white hover:bg-primaryBlue tr">
+            لورم ایپسوم
+          </Link>
+          <Link className="bg-white border py-2 px-4 rounded text-sm transition duration-300 hover:text-white hover:bg-primaryBlue tr">
+            لپتاپ
+          </Link>
         </div>
       </div>
     </div>
