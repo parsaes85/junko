@@ -551,53 +551,31 @@
   ],
   "userCartProducts": [
     {
-      "id": "f569",
-      "productId": "10",
-      "userId": "f8a0",
-      "count": 2,
-      "price": 112000000
-    },
-    {
-      "id": "7715",
-      "productId": "11",
+      "id": "6c1d",
+      "productId": "1",
       "userId": "f8a0",
       "count": 1,
-      "price": 56000000
+      "price": 12000000
     },
     {
-      "id": "b064",
+      "id": "681c",
       "productId": "2",
       "userId": "f8a0",
       "count": 1,
       "price": 12000000
     },
     {
-      "id": "aaa3",
-      "productId": "4",
+      "id": "b992",
+      "productId": "10",
       "userId": "f8a0",
-      "count": 3,
-      "price": 36000000
+      "count": 1,
+      "price": 56000000
     }
   ],
   "userFavoriteProducts": [
     {
-      "id": "4a02",
+      "id": "02b9",
       "productId": "2",
-      "userId": "f8a0"
-    },
-    {
-      "id": "7028",
-      "productId": "4",
-      "userId": "f8a0"
-    },
-    {
-      "id": "763f",
-      "productId": "9",
-      "userId": "f8a0"
-    },
-    {
-      "id": "df09",
-      "productId": "10",
       "userId": "f8a0"
     }
   ]

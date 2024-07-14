@@ -3,9 +3,51 @@ import { Link } from "react-router-dom";
 import StarIcon from "@mui/icons-material/Star";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import SearchIcon from "@mui/icons-material/Search";
+import { useSelector } from "react-redux";
+
+import useAddToFavorites from "../../../hooks/useAddToFavorites";
+import useRemoveFromFavorites from "../../../hooks/useRemoveFromFavorites";
+import useAddToCart from "../../../hooks/useAddToCart";
 
 function LeftSideRowProductBox(props) {
+  const { userInfos } = useSelector((state) => state.auth);
+  const cartProducts = useSelector((state) => state.cartProducts);
+  const favoriteProducts = useSelector((state) => state.favoriteProducts);
+
+  const { mutate: addToFavorites } = useAddToFavorites();
+  const { mutate: removeFromFavorites } = useRemoveFromFavorites();
+  const { mutate: addToCart } = useAddToCart();
+
+  const isInCart = () =>
+    cartProducts.products.some(
+      (product) =>
+        product.productId == props.id && product.userId == userInfos.id
+    );
+  const isInFavorite = () =>
+    favoriteProducts.products.find(
+      (product) =>
+        product.productId == props.id && product.userId == userInfos.id
+    );
+
+  const addOrRemoveFromFavorites = () => {
+    if (!isInFavorite()) {
+      addToFavorites({ productId: props.id, userId: userInfos.id });
+    } else {
+      removeFromFavorites(isInFavorite().id);
+    }
+  };
+
+  const addToCartHandler = () => {
+    addToCart({
+      productId: props.id,
+      userId: userInfos.id,
+      count: 1,
+      price: props.price,
+    });
+  };
+
   return (
     <div className="grid md:grid-cols-11 gap-5 p-4 rounded border border-transparent transition hover:border-gray-300 group/item">
       <div className="md:col-span-4 relative">
@@ -50,13 +92,23 @@ function LeftSideRowProductBox(props) {
         <p className="sm:text-justify text-[15px]">{props.shortDesc}</p>
       </div>
       <div className="md:col-span-3 my-auto">
-        <button className="text-primaryBlue border-2 border-primaryBlue text-sm tracking-tighter py-2 sm:py-2.5 px-8 sm:px-0 sm:w-full rounded-md duration-300 hover:bg-primaryBlue hover:text-white">
-          افزودن به سبد
+        <button
+          className={`text-primaryBlue border-2 border-primaryBlue text-sm tracking-tighter py-2 sm:py-2.5 px-8 sm:px-0 sm:w-full rounded-md duration-300 hover:bg-primaryBlue hover:text-white ${
+            isInCart() && "bg-zinc-800 hover:bg-zinc-800 text-white border-none"
+          }`}
+          onClick={addToCartHandler}
+          disabled={isInCart()}
+        >
+          {isInCart() ? "موجود در سبد" : "افزودن به سبد"}
         </button>
         <div className="text-[15px] mt-5 space-y-2 [&>div]:transition [&>div]:cursor-pointer [&>div:hover]:text-primaryBlue [&>div]:flex [&>div]:gap-2">
-          <div>
+          <div className={`${isInFavorite() && "text-primaryBlue"}`} onClick={addOrRemoveFromFavorites}>
             <span>
-              <FavoriteBorderIcon fontSize="small" />
+              {isInFavorite() ? (
+                <FavoriteIcon fontSize="small" />
+              ) : (
+                <FavoriteBorderIcon fontSize="small" />
+              )}
             </span>
             افزودن به علاقه‌مندی‌ها
           </div>
