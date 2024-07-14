@@ -1,15 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import LeftSideHeader from "../LeftSideHeader/LeftSideHeader";
 import LeftSideColProductBox from "../LeftSideColProductBox/LeftSideColProductBox";
 import LeftSideRowProductBox from "../LeftSideRowProductBox/LeftSideRowProductBox";
 import LeftSidePagination from "../LeftSidePagination/LeftSidePagination";
+import useGetProducts from "../../../hooks/useGetProducts";
 
 function LeftSide() {
+  const { data: products } = useGetProducts("allProducts", "");
+
   const [productsShownType, setProductsShownType] = useState("col-4");
 
   return (
     <div className="flex-[4]">
-      <LeftSideHeader setProductsShownType={setProductsShownType} productsShownType={productsShownType}/>
+      <LeftSideHeader
+        setProductsShownType={setProductsShownType}
+        productsShownType={productsShownType}
+      />
 
       <div
         className={`grid ${
@@ -22,28 +28,22 @@ function LeftSide() {
       >
         {productsShownType === "row" ? (
           <>
-            <LeftSideRowProductBox />
-            <LeftSideRowProductBox />
-            <LeftSideRowProductBox />
-            <LeftSideRowProductBox />
-            <LeftSideRowProductBox />
+            {products?.map((product) => (
+              <LeftSideRowProductBox key={product.id} {...product} />
+            ))}
           </>
         ) : productsShownType === "col-3" ? (
           <>
-          <LeftSideColProductBox />
-          <LeftSideColProductBox />
-          <LeftSideColProductBox />
-          <LeftSideColProductBox />
-          <LeftSideColProductBox />
-        </>
+            {products?.map((product) => (
+              <LeftSideColProductBox key={product.id} {...product} />
+            ))}
+          </>
         ) : (
           <>
-          <LeftSideColProductBox />
-          <LeftSideColProductBox />
-          <LeftSideColProductBox />
-          <LeftSideColProductBox />
-          <LeftSideColProductBox />
-        </>
+            {products?.map((product) => (
+              <LeftSideColProductBox key={product.id} {...product} />
+            ))}
+          </>
         )}
       </div>
 

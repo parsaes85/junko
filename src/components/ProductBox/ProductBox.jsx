@@ -85,11 +85,18 @@ function ProductBox(props) {
       </div>
       <div className="text-center mt-4 space-y-3">
         <div>
-          <p className="text-gray-500 line-through text-[15px]">۸۶,۰۰۰ تومان</p>
-          <p className="text-primaryBlue text-[17px]">۷۹,۰۰۰ تومان</p>
+          <p className="text-gray-500 line-through text-[15px]">
+            {Number(
+              props.price + props.price * (props.discount / 100)
+            ).toLocaleString("fa")}{" "}
+            تومان
+          </p>
+          <p className="text-primaryBlue text-[17px]">
+            {Number(props.price).toLocaleString("fa")} تومان
+          </p>
         </div>
         <Link
-          to="/product-details/1"
+          to={`/product-details/${props.id}`}
           className="text-[15px] hover:text-primaryBlue transition"
         >
           {props.name}
