@@ -2,7 +2,7 @@ import React from "react";
 
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
-function LeftSideHeader({ setProductsShownType, productsShownType }) {
+function LeftSideHeader({ setProductsShownType, productsShownType, shownProducts }) {
   return (
     <div className="flex flex-col justify-between items-center border px-3 py-5 sm:flex-row sm:py-2 gap-6 sm:gap-0">
       <div className="flex items-center gap-4">
@@ -58,7 +58,7 @@ function LeftSideHeader({ setProductsShownType, productsShownType }) {
         </div>
       </div>
       <div>
-        <p className="tracking-tighter">نمایش ۱ـ۱۲ از ۲۴ محصول</p>
+        <p className="tracking-tighter">نمایش ۱ـ۱۲ از {shownProducts?.length.toLocaleString("fa")} محصول</p>
       </div>
     </div>
   );

@@ -3,16 +3,22 @@ import { Link } from "react-router-dom";
 
 import RightSideProductBox from "../RightSideProductBox/RightSideProductBox";
 import useGetAllMenus from "../../../hooks/useGetAllMenus";
+import useGetProducts from "../../../hooks/useGetProducts";
 
 import "./RightSide.css";
 
-function RightSide() {
+function RightSide({ filteredProductsState, setShownProducts }) {
   const { data: menus } = useGetAllMenus();
 
   const [rangeInputMinValue, setRangeInputMinValue] = useState("0");
   const [rangeInputMaxValue, setRangeInputMaxValue] = useState("50000000");
 
   let priceGap = 5000000;
+
+  const filterProductsByPrice = () => {
+    const filteredProducts = filteredProductsState.filter(product => product.price > rangeInputMinValue && product.price < rangeInputMaxValue)
+    setShownProducts(filteredProducts)
+  };
 
   useEffect(() => {
     const priceFilterRangeInputs =
@@ -53,9 +59,19 @@ function RightSide() {
 
         <div>
           <ul className="flex flex-col text-[15px] [&>li]:transition [&>li:hover]:text-primaryBlue">
+            <li>
+              <Link to="/shop" className="block py-3 border-b">
+                تمام محصولات
+              </Link>
+            </li>
             {menus?.map((menu) => (
               <li key={menu.id}>
-                <Link to={`/shop?category=${menu.name}`} className="block py-3 border-b">{menu.title}</Link>
+                <Link
+                  to={`/shop?category=${menu.name}`}
+                  className="block py-3 border-b"
+                >
+                  {menu.title}
+                </Link>
               </li>
             ))}
           </ul>
@@ -100,11 +116,12 @@ function RightSide() {
             <span class="price-input"> 0 تومان </span> -
             <span class="price-input"> 50,000,000 تومان </span>
           </div>
-          <Link>
-            <button className="text-white bg-zinc-800 rounded-full py-1 px-5 transition duration-300 hover:bg-primaryBlue">
-              فیلتر
-            </button>
-          </Link>
+          <button
+            className="text-white bg-zinc-800 rounded-full py-1 px-5 transition duration-300 hover:bg-primaryBlue"
+            onClick={filterProductsByPrice}
+          >
+            فیلتر
+          </button>
         </div>
       </div>
 

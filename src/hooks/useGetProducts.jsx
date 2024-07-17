@@ -7,7 +7,7 @@ function useGetProducts(queryKey, condition) {
   return useQuery({
     queryKey: [queryKey],
     queryFn: () =>
-      fetch(`${baseURL}/products?${condition}`).then((res) => res.json()),
+      fetch(`${baseURL}/products?${condition}&_embed=category`).then((res) => res.json()),
   });
 }
 

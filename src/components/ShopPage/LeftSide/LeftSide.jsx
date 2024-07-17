@@ -4,10 +4,9 @@ import LeftSideColProductBox from "../LeftSideColProductBox/LeftSideColProductBo
 import LeftSideRowProductBox from "../LeftSideRowProductBox/LeftSideRowProductBox";
 import LeftSidePagination from "../LeftSidePagination/LeftSidePagination";
 import useGetProducts from "../../../hooks/useGetProducts";
+import { useSearchParams } from "react-router-dom";
 
-function LeftSide() {
-  const { data: products } = useGetProducts("allProducts", "");
-
+function LeftSide({shownProducts}) {
   const [productsShownType, setProductsShownType] = useState("col-4");
 
   return (
@@ -15,6 +14,7 @@ function LeftSide() {
       <LeftSideHeader
         setProductsShownType={setProductsShownType}
         productsShownType={productsShownType}
+        shownProducts={shownProducts}
       />
 
       <div
@@ -28,19 +28,19 @@ function LeftSide() {
       >
         {productsShownType === "row" ? (
           <>
-            {products?.map((product) => (
+            {shownProducts?.map((product) => (
               <LeftSideRowProductBox key={product.id} {...product} />
             ))}
           </>
         ) : productsShownType === "col-3" ? (
           <>
-            {products?.map((product) => (
+            {shownProducts?.map((product) => (
               <LeftSideColProductBox key={product.id} {...product} />
             ))}
           </>
         ) : (
           <>
-            {products?.map((product) => (
+            {shownProducts?.map((product) => (
               <LeftSideColProductBox key={product.id} {...product} />
             ))}
           </>
