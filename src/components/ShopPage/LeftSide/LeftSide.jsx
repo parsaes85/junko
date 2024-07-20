@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+
 import LeftSideHeader from "../LeftSideHeader/LeftSideHeader";
 import LeftSideColProductBox from "../LeftSideColProductBox/LeftSideColProductBox";
 import LeftSideRowProductBox from "../LeftSideRowProductBox/LeftSideRowProductBox";
 import LeftSidePagination from "../LeftSidePagination/LeftSidePagination";
-import useGetProducts from "../../../hooks/useGetProducts";
-import { useSearchParams } from "react-router-dom";
 
-function LeftSide({shownProducts}) {
+function LeftSide({ shownProducts }) {
   const [productsShownType, setProductsShownType] = useState("col-4");
+  const [currentItems, setCurrentItems] = useState([])
 
   return (
     <div className="flex-[4]">
@@ -28,26 +28,26 @@ function LeftSide({shownProducts}) {
       >
         {productsShownType === "row" ? (
           <>
-            {shownProducts?.map((product) => (
+            {currentItems?.map((product) => (
               <LeftSideRowProductBox key={product.id} {...product} />
             ))}
           </>
         ) : productsShownType === "col-3" ? (
           <>
-            {shownProducts?.map((product) => (
+            {currentItems?.map((product) => (
               <LeftSideColProductBox key={product.id} {...product} />
             ))}
           </>
         ) : (
           <>
-            {shownProducts?.map((product) => (
+            {currentItems?.map((product) => (
               <LeftSideColProductBox key={product.id} {...product} />
             ))}
           </>
         )}
       </div>
 
-      <LeftSidePagination />
+      <LeftSidePagination shownProducts={shownProducts} setCurrentItems={setCurrentItems} />
     </div>
   );
 }
