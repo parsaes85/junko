@@ -10,10 +10,6 @@ function CartTable() {
 
   const { mutate: removeFromCart } = useRemoveFromCart();
 
-  useEffect(() => {
-    console.log(cartProducts.products);
-  }, [cartProducts]);
-
   return (
     <section className="px-4 xs:px-24 mb-16">
       <div className="overflow-x-auto">

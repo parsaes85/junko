@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useHref } from "react-router-dom";
+import { Link, useHref, useNavigate } from "react-router-dom";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
@@ -23,15 +23,27 @@ function Topbar() {
   const { data: favoriteProductsData } = useGetFavoriteProducts();
   const { data: cartProductsData } = useGetCartProducts();
   const { mutate: getUserInfos } = useGetMe();
+  const navigate = useNavigate();
 
   const [isSidebarShow, setIsSidebarShow] = useState(false);
+  const [searchProductFormCategory, setSearchProductFormCategory] =
+    useState("");
+  const [searchProductFormTitle, setSearchProductFormTitle] = useState("");
+
+  const searchProductHandler = () => {
+    if (searchProductFormTitle) {
+      navigate(
+        `/shop?category=${searchProductFormCategory}&search=${searchProductFormTitle}`
+      );
+    }
+  };
 
   useEffect(() => {
     const localStorageUserToken = JSON.parse(localStorage.getItem("userToken"));
 
     getUserInfos(localStorageUserToken);
   }, []);
-  
+
   return (
     <>
       <Sidebar
@@ -77,8 +89,13 @@ function Topbar() {
             <div className="flex flex-1">
               <div className="flex w-2/3 xl:w-1/2 mr-auto items-center border p-2 border-gray-300 rounded-r-md">
                 <div className="relative">
-                  <select className="cursor-pointer w-32 text-[15px] h-full focus:outline-none appearance-none bg-transparent peer">
-                    <option value="all">همه دسته ها</option>
+                  <select
+                    className="cursor-pointer w-32 text-[15px] h-full focus:outline-none appearance-none bg-transparent peer"
+                    onChange={(e) =>
+                      setSearchProductFormCategory(e.target.value)
+                    }
+                  >
+                    <option value="">همه دسته ها</option>
                     {menus?.map((menu) => (
                       <option key={menu.id} value={menu.name}>
                         {menu.title}
@@ -95,9 +112,15 @@ function Topbar() {
                   type="text"
                   placeholder="جستجوی محصول ..."
                   className="text-gray-500 placeholder:text-sm placeholder:text-gray-500 focus:outline-none"
+                  value={searchProductFormTitle}
+                  onChange={(e) => setSearchProductFormTitle(e.target.value)}
                 />
               </div>
-              <button className="bg-primaryBlue text-white rounded-l-md py-3 px-10 hover:bg-gray-800 transition duration-300">
+
+              <button
+                className="bg-primaryBlue text-white rounded-l-md py-3 px-10 hover:bg-gray-800 transition duration-300"
+                onClick={searchProductHandler}
+              >
                 جستجو
               </button>
             </div>

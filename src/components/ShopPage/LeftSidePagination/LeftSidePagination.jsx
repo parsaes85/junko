@@ -19,7 +19,7 @@ function LeftSidePagination({ setCurrentItems, shownProducts }) {
 
   useEffect(() => {
     setCurrentItems(shownProducts?.slice(itemOffset, endOffset));
-  });
+  }, [itemOffset, shownProducts]);
 
   return (
     <ReactPaginate

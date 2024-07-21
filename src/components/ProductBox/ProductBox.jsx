@@ -29,7 +29,6 @@ function ProductBox(props) {
     }
   };
 
-  console.log(props.id);
   return (
     <div className="p-4 rounded border border-transparent transition hover:border-gray-300 group/item">
       <div className="relative">
