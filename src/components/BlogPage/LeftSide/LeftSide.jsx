@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import LeftSideCommentBox from "../LeftSideCommentBox/LeftSideCommentBox";
 import LeftSideRecentBlogBox from "../LeftSideRecentBlogBox/LeftSideRecentBlogBox";
-import LeftSideCategoryBox from "../LeftSideCategoryBox/LeftSideCategoryBox";
 
 function LeftSide() {
   return (

@@ -15,7 +15,7 @@ const routes = [
   { path: "/shop", element: <Shop /> },
   { path: "/product-details/:productID", element: <ProductDetails /> },
   { path: "/blog", element: <Blog /> },
-  { path: "/blog-details/:blogID", element: <BlogDetails /> },
+  { path: "/blog-details/:blogShortName", element: <BlogDetails /> },
   { path: "/login", element: <Login /> },
   { path: "/wishlist", element: <Wishlist /> },
   { path: "/cart", element: <Cart /> },

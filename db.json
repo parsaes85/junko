@@ -669,7 +669,7 @@
       "cover": "https://www.digikala.com/mag/wp-content/uploads/2024/07/Samsung-Galaxy-Z-Fold-6-vs-Z-Flip-6-1.jpg",
       "shortName": "samsung-galaxy-z-fold-6-vs-z-flip-6",
       "creator": "3",
-      "categoryId": "2",
+      "categoryId": "3",
       "publish": true
     },
     {
@@ -680,7 +680,7 @@
       "cover": "https://www.digikala.com/mag/wp-content/uploads/2024/07/Olympic-Games.jpeg",
       "shortName": "all-about-olympics",
       "creator": "3",
-      "categoryId": "2",
+      "categoryId": "6",
       "publish": true
     },
     {
@@ -691,7 +691,7 @@
       "cover": "https://www.digikala.com/mag/wp-content/uploads/2024/07/free-diet.jpg",
       "shortName": "free-30-day-weight-loss-diet",
       "creator": "3",
-      "categoryId": "2",
+      "categoryId": "7",
       "publish": true
     },
     {
@@ -701,8 +701,8 @@
       "body": "<h1>ماجرای سریال «داریوش» چیست؟</h1><p>یکی از مجموعه‌های پرمخاطب سال گذشته در شبکه‌ نمایش‌خانگی سریال «پوست شیر» بود. سریالی که برادران مجمودی آن را ساخته بودند و بازیگر نقش اصلی آن هادی حجازی‌فر بود. با گذشت یک سال از پایان این مجموعه، در هفته‌های اخیر تیزر سریالی به نام «داریوش» در فضای مجازی منتشر شده. براساس اطلاعاتی که از این سریال فعلا در اختیار مخاطبان قرارگرفته، حجازی‌فر طراحی قصه و کارگردانی آن را برعهده دارد و برادران محمودی تهیه‌کننده این سریال هستند. «داریوش» قرار است از ۲۷ تیر در پلتفرم فیلم‌نت منتشر شود. این مجموعه اولین تجربه هادی حجازی‌فر در زمینه سریال‌سازی است و با حضور گروه بازیگران چهره‌ای که انتخاب کرده، احتمالا توجه‌ها را به خود جلب خواهد کرد.اما این مجموعه پیش از انتشار دچار حاشیه شد. در تیزری که از «داریوش» در فضای مجازی منتشر شد، در حالی که لوگوی سریال نوشته می‌شد، یکی از مشهورترین ترانه‌های داریوش اقبالی با نام «یاور همیشه مومن» بر روی تیزر پخش شد. این انتخاب موسیقی و شباهت نام سریال به نام خواننده ترانه، مورد توجه مخاطبان و کاربران شبکه‌های مجازی قرار گرفت. اما بیشتر از همه واکنش داریوش اقبالی به این اتفاق وایرال شد. اقبالی حدودا یک هفته پیش در میان اجرای یکی از کنسرت‌هایش با عصبانیت به این موضوع پرداخت و در بخشی از صحبت‌هایش گفت: «من به عنوان خواننده هیچ اعتراضی نمیتوانم بکنم. اما رایت آهنگ برای شاعر و آهنگساز است و این توهین است به جامعه هنری…»</p>",
       "cover": "https://www.digikala.com/mag/wp-content/uploads/2024/07/los-angles-music.jpg",
       "shortName": "using-nostalgic-music-in-iranian-movies-and-tv-series",
-      "creator": "3",
-      "categoryId": "2",
+      "creator": "5",
+      "categoryId": "4",
       "publish": true
     },
     {
@@ -713,7 +713,7 @@
       "cover": "https://www.digikala.com/mag/wp-content/uploads/2024/07/highly-detailed-mosquito-1.jpg",
       "shortName": "dengue-fever-2",
       "creator": "3",
-      "categoryId": "2",
+      "categoryId": "1",
       "publish": true
     },
     {
@@ -724,7 +724,7 @@
       "cover": "https://www.digikala.com/mag/wp-content/uploads/2024/07/Windows-11-1.jpg",
       "shortName": "how-to-optimize-windows-11-for-gaming",
       "creator": "3",
-      "categoryId": "2",
+      "categoryId": "4",
       "publish": false
     },
     {
@@ -735,7 +735,7 @@
       "cover": "https://www.digikala.com/mag/wp-content/uploads/2024/07/laptop-audio-cover.jpg",
       "shortName": "what-to-do-if-a-laptop-has-no-sound",
       "creator": "3",
-      "categoryId": "2",
+      "categoryId": "4",
       "publish": false
     },
     {
@@ -746,7 +746,7 @@
       "cover": "https://www.digikala.com/mag/wp-content/uploads/2024/07/Best-Poco-M6-Pro-Accessories-14.jpg",
       "shortName": "poco-m6-pro-accessories",
       "creator": "3",
-      "categoryId": "2",
+      "categoryId": "3",
       "publish": false
     },
     {
@@ -757,7 +757,7 @@
       "cover": "https://www.digikala.com/mag/wp-content/uploads/2024/07/Next-GPU-1.jpg",
       "shortName": "make-sure-your-next-gpu-has-more-than-8gb-of-memory",
       "creator": "3",
-      "categoryId": "2",
+      "categoryId": "4",
       "publish": false
     }
   ],
