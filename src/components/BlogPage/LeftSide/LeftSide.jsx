@@ -48,18 +48,6 @@ function LeftSide() {
         </div>
       </div>
 
-      {/* categories */}
-      <div>
-        <h1 className="text-xl font-IRANSans mb-4 tracking-tighter">دسته ها</h1>
-        <div>
-          <LeftSideCategoryBox name="صوت" />
-          <LeftSideCategoryBox name="شرکت" />
-          <LeftSideCategoryBox name="گالری" />
-          <LeftSideCategoryBox name="تصویر" />
-          <LeftSideCategoryBox name="فروشگاه" />
-        </div>
-      </div>
-
       {/* products lables */}
       <div>
         <h1 className="text-xl font-IRANSans mb-4 tracking-tighter">

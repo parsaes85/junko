@@ -15,7 +15,7 @@ function Blog() {
       </main>
 
       <div className="px-4 xs:px-24">
-        <LeftSidePagination />
+        {/* <LeftSidePagination /> */}
       </div>
     </>
   );
