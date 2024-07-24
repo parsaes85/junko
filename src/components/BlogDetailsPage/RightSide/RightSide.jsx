@@ -15,8 +15,7 @@ function RightSide() {
     <div className="flex-[3.7]">
       {blogDetails && <RightSideMainDetails {...blogDetails[0]} />}
       {blogDetails && <RightSideRelatedBlogs {...blogDetails[0]} />}
-
-      <RightSideComments />
+      {blogDetails && <RightSideComments {...blogDetails[0]} />}
       <RightSideCreateComment />
     </div>
   );

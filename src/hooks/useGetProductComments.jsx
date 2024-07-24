@@ -7,7 +7,7 @@ function useGetProductComments(productId) {
   return useQuery({
     queryKey: ["productComments", productId],
     queryFn: () =>
-      fetch(`${baseURL}/comments?_embed=user&productId=${productId}`).then((res) =>
+      fetch(`${baseURL}/productComments?_embed=user&productId=${productId}`).then((res) =>
         res.json()
       ),
   });

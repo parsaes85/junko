@@ -29,7 +29,6 @@ function RightSideRelatedBlogs(props) {
     });
     swiperEl.initialize();
   }, []);
-  console.log(relatedBlogs)
 
   return (
     <div className="mb-12 w-[98%]">

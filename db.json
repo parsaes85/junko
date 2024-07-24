@@ -589,7 +589,7 @@
       "parent": ""
     }
   ],
-  "comments": [
+  "productComments": [
     {
       "id": "1",
       "body": "از محصول راضی بودم",
@@ -657,6 +657,68 @@
       "userId": "f8a0",
       "body": "baaad",
       "score": 2,
+      "answers": []
+    }
+  ],
+  "blogComments": [
+    {
+      "id": "1",
+      "body": "از محصول راضی بودم",
+      "blogId": "9",
+      "userId": "f8a0",
+      "answers": [
+        {
+          "id": "1",
+          "body": "از مجصول راضی نبودم",
+          "username": "reza_66"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "body": "قیمت بسیار عالی است",
+      "blogId": "9",
+      "userId": "7478",
+      "answers": [
+        {
+          "id": "1",
+          "body": "از مجصول راضی نبودم",
+          "username": "reza_66"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "body": "از مجصول راضی نبودم",
+      "blogId": "10",
+      "userId": "f8a0",
+      "answers": [
+        {
+          "id": "1",
+          "body": "از مجصول راضی نبودم",
+          "username": "reza_66"
+        }
+      ]
+    },
+    {
+      "id": "0dd0",
+      "blogId": "9",
+      "userId": "f8a0",
+      "body": "i dont like it",
+      "answers": []
+    },
+    {
+      "id": "23ba",
+      "blogId": "10",
+      "userId": "f8a0",
+      "body": "محصول فوق العاده بود",
+      "answers": []
+    },
+    {
+      "id": "ec3a",
+      "blogId": "1",
+      "userId": "f8a0",
+      "body": "baaad",
       "answers": []
     }
   ],
