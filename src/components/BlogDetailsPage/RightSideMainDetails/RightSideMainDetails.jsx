@@ -7,7 +7,6 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GoogleIcon from '@mui/icons-material/Google';
 
 function RightSideMainDetails(props) {
-  console.log(props)
   return (
     <div className="border-b pb-6 mb-14">
       <div className="mb-6">

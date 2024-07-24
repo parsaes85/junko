@@ -3,10 +3,13 @@ import { useQuery } from "@tanstack/react-query";
 
 import { baseURL } from "../data/variables";
 
-function useGetBlogs() {
+function useGetBlogs(queryKey, condition) {
   return useQuery({
-    queryKey: ["blogs"],
-    queryFn: () => fetch(`${baseURL}/blogs`).then((res) => res.json()),
+    queryKey: [queryKey],
+    queryFn: () =>
+      fetch(`${baseURL}/blogs?${condition}&_embed=category`).then((res) =>
+        res.json()
+      ),
   });
 }
 

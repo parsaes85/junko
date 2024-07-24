@@ -4,7 +4,7 @@ import BlogBox from "../../BlogBox/BlogBox";
 import useGetBlogs from "../../../hooks/useGetBlogs";
 
 function BlogsSwiper() {
-  const { data: blogs } = useGetBlogs();
+  const { data: blogs } = useGetBlogs("allBlogs", "");
 
   useEffect(() => {
     const swiperEl = document.querySelector(".blogsSwiper");

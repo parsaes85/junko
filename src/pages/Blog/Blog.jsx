@@ -7,7 +7,7 @@ import useGetBlogs from "../../hooks/useGetBlogs";
 
 function Blog() {
   const [currentItems, setCurrentItems] = useState([])
-  const { data: blogs } = useGetBlogs();
+  const { data: blogs } = useGetBlogs("allBlogs", "");
 
   return (
     <>
