@@ -5,14 +5,14 @@ import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrow
 
 import "./LeftSidePagination.css";
 
-function LeftSidePagination({ setCurrentItems, shownProducts }) {
+function LeftSidePagination({ setCurrentItems, shownProducts, itemsPerPage }) {
   const [itemOffset, setItemOffset] = useState(0);
 
-  const itemsPerPage = 8;
   const endOffset = itemOffset + itemsPerPage;
   const pageCount = Math.ceil(shownProducts?.length / itemsPerPage);
 
   const handlePageClick = (event) => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     const newOffset = (event.selected * itemsPerPage) % shownProducts?.length;
     setItemOffset(newOffset);
   };

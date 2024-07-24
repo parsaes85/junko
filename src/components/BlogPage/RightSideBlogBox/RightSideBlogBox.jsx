@@ -6,7 +6,7 @@ function RightSideBlogBox(props) {
   return (
     <div>
       <Link to={`/blog-details/${props.shortName}`}>
-        <img src={`${props.cover}`} alt="" className="h-72" />
+        <img src={`${props.cover}`} alt="" className="h-72 w-full" />
       </Link>
       <div className="mt-6 space-y-4">
         <Link

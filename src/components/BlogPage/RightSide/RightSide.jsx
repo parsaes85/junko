@@ -1,9 +1,7 @@
 import React from "react";
 import RightSideBlogBox from "../RightSideBlogBox/RightSideBlogBox";
-import useGetBlogs from "../../../hooks/useGetBlogs";
 
-function RightSide() {
-  const { data: blogs } = useGetBlogs();
+function RightSide({currentItems}) {
 
   return (
     <div className="flex-[3.7]">
@@ -12,7 +10,7 @@ function RightSide() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
         {
-          blogs?.map(blog => <RightSideBlogBox key={blog.id} {...blog} />)
+          currentItems?.map(blog => <RightSideBlogBox key={blog.id} {...blog} />)
         }
       </div>
     </div>

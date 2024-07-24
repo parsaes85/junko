@@ -47,7 +47,7 @@ function LeftSide({ shownProducts }) {
         )}
       </div>
 
-      <LeftSidePagination shownProducts={shownProducts} setCurrentItems={setCurrentItems} />
+      <LeftSidePagination shownProducts={shownProducts} setCurrentItems={setCurrentItems} itemsPerPage={8}/>
     </div>
   );
 }
