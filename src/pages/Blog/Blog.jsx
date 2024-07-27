@@ -18,16 +18,25 @@ function Blog() {
   useEffect(() => {
     setFilteredBlogsState(blogs);
     let blogSearchParam = searchParams.get("blogSearch");
+    let blogCategoryParam = searchParams.get("blogCategory");
 
     if (blogSearchParam) {
       let filteredBlogs = blogs?.filter((blog) =>
         blog.title.includes(blogSearchParam)
       );
-      setShownBlogs(filteredBlogs)
-      setFilteredBlogsState(filteredBlogs)
+      setShownBlogs(filteredBlogs);
+      setFilteredBlogsState(filteredBlogs);
     } else {
-      setShownBlogs(blogs)
-      setFilteredBlogsState(blogs)
+      setShownBlogs(blogs);
+      setFilteredBlogsState(blogs);
+    }
+
+    if (blogCategoryParam) {
+      let filteredBlogs = blogs?.filter(
+        (blog) => blog.category.name == blogCategoryParam
+      );
+      setShownBlogs(filteredBlogs);
+      setFilteredBlogsState(filteredBlogs);
     }
   }, [searchParams, blogs]);
 

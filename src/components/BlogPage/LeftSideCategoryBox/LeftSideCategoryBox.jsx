@@ -1,13 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function LeftSideCategoryBox({ name }) {
+function LeftSideCategoryBox(props) {
   return (
-    <div className="border-b py-3 text-[15px]">
-      <Link className="transition duration-300 hover:text-primaryBlue">
-        {name}
+    <li className="block border-b py-3 text-[15px]">
+      <Link
+        className="transition duration-300 hover:text-primaryBlue"
+        to={`/blog?blogCategory=${props.name}`}
+      >
+        {props.title}
       </Link>
-    </div>
+    </li>
   );
 }
 

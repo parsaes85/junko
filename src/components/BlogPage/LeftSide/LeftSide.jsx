@@ -4,10 +4,12 @@ import LeftSideCommentBox from "../LeftSideCommentBox/LeftSideCommentBox";
 import LeftSideRecentBlogBox from "../LeftSideRecentBlogBox/LeftSideRecentBlogBox";
 
 import useGetBlogs from "../../../hooks/useGetBlogs";
+import useGetAllMenus from "../../../hooks/useGetAllMenus";
 import LeftSideCategoryBox from "../LeftSideCategoryBox/LeftSideCategoryBox";
 
 function LeftSide() {
   const { data: blogs } = useGetBlogs("allBlogs", "");
+  const { data: menus } = useGetAllMenus();
   const navigate = useNavigate();
 
   const [searchParams, setSearchParams] = useSearchParams();
@@ -80,11 +82,16 @@ function LeftSide() {
       <div>
         <h1 className="text-xl font-IRANSans mb-4 tracking-tighter">دسته ها</h1>
         <div>
-          <LeftSideCategoryBox name="صوت" />
-          <LeftSideCategoryBox name="شرکت" />
-          <LeftSideCategoryBox name="گالری" />
-          <LeftSideCategoryBox name="تصویر" />
-          <LeftSideCategoryBox name="فروشگاه" />
+          <ul>
+            <li className="block">
+              <Link to="/blog" className="block py-3 border-b text-[15px]">
+                تمام بلاگ ها
+              </Link>
+            </li>
+            {menus?.map((menu) => (
+              <LeftSideCategoryBox key={menu.id} {...menu} />
+            ))}
+          </ul>
         </div>
       </div>
 
