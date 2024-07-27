@@ -54,11 +54,9 @@ function Shop() {
       <main className="flex flex-col-reverse lg:flex-row gap-8 px-4 xs:px-24 mb-16">
         <RightSide
           filteredProductsState={filteredProductsState}
-          shownProducts={shownProducts}
           setShownProducts={setShownProducts}
         />
         <LeftSide
-          filteredProductsState={filteredProductsState}
           shownProducts={shownProducts}
         />
       </main>

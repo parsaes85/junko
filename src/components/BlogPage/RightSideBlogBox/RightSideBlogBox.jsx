@@ -11,7 +11,7 @@ function RightSideBlogBox(props) {
       <div className="mt-6 space-y-4">
         <Link
           to={`/blog-details/${props.shortName}`}
-          className="text-3xl transition duration-300 hover:text-primaryBlue"
+          className="text-3xl transition duration-300 hover:text-primaryBlue line-clamp-2"
         >
           {props.title}
         </Link>

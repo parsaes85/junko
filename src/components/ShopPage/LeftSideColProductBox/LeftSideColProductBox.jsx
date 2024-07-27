@@ -119,7 +119,7 @@ function LeftSideColProductBox(props) {
         </div>
         <Link
           to={`/product-details/${props.id}`}
-          className="text-[15px] hover:text-primaryBlue transition"
+          className="text-[15px] hover:text-primaryBlue transition line-clamp-2"
         >
           {props.name}
         </Link>

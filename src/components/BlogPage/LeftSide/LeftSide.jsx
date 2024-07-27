@@ -1,9 +1,34 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import LeftSideCommentBox from "../LeftSideCommentBox/LeftSideCommentBox";
 import LeftSideRecentBlogBox from "../LeftSideRecentBlogBox/LeftSideRecentBlogBox";
 
+import useGetBlogs from "../../../hooks/useGetBlogs";
+import LeftSideCategoryBox from "../LeftSideCategoryBox/LeftSideCategoryBox";
+
 function LeftSide() {
+  const { data: blogs } = useGetBlogs("allBlogs", "");
+  const navigate = useNavigate();
+
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [recentBlogs, setRecentBlogs] = useState([]);
+  const [searchBlogFormTitle, setSearchBlogFormTitle] = useState("");
+
+  const searchBlogHandler = () => {
+    if (searchBlogFormTitle) {
+      navigate(`/blog?blogSearch=${searchBlogFormTitle}`);
+    } else {
+      navigate(`/blog`);
+    }
+  };
+
+  useEffect(() => {
+    let blogSearchParam = searchParams.get("blogSearch");
+    setSearchBlogFormTitle(blogSearchParam);
+    let recentBlogsArr = blogs?.slice(blogs.length - 4, blogs.length);
+    setRecentBlogs(recentBlogsArr);
+  }, [blogs]);
+
   return (
     <div className="bg-[#f8f8f8] flex-1 py-12 px-5 space-y-14 h-fit border">
       {/* search */}
@@ -14,8 +39,13 @@ function LeftSide() {
             type="text"
             placeholder="جستجو ..."
             className="block border w-full pr-4 py-2 text-sm focus:outline-none mb-4"
+            value={searchBlogFormTitle}
+            onChange={(e) => setSearchBlogFormTitle(e.target.value)}
           />
-          <button className="bg-zinc-800 text-sm text-white py-1.5 px-5 rounded">
+          <button
+            className="bg-zinc-800 text-sm text-white py-1.5 px-5 rounded"
+            onClick={searchBlogHandler}
+          >
             جستجو
           </button>
         </div>
@@ -40,15 +70,26 @@ function LeftSide() {
           مطالب اخیر
         </h1>
         <div>
-          <LeftSideRecentBlogBox />
-          <LeftSideRecentBlogBox />
-          <LeftSideRecentBlogBox />
-          <LeftSideRecentBlogBox />
+          {recentBlogs?.map((blog) => (
+            <LeftSideRecentBlogBox key={blog.id} {...blog} />
+          ))}
+        </div>
+      </div>
+
+      {/* categories */}
+      <div>
+        <h1 className="text-xl font-IRANSans mb-4 tracking-tighter">دسته ها</h1>
+        <div>
+          <LeftSideCategoryBox name="صوت" />
+          <LeftSideCategoryBox name="شرکت" />
+          <LeftSideCategoryBox name="گالری" />
+          <LeftSideCategoryBox name="تصویر" />
+          <LeftSideCategoryBox name="فروشگاه" />
         </div>
       </div>
 
       {/* products lables */}
-      <div>
+      {/* <div>
         <h1 className="text-xl font-IRANSans mb-4 tracking-tighter">
           برچسب های محصولات
         </h1>
@@ -63,7 +104,7 @@ function LeftSide() {
             یورو
           </Link>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
