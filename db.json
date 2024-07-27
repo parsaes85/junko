@@ -12,7 +12,10 @@
       ],
       "categoryId": "3",
       "price": 34000000,
-      "colors": ["#000", "#bebebe"],
+      "colors": [
+        "#000",
+        "#bebebe"
+      ],
       "discount": 0,
       "score": 4,
       "count": 42,
@@ -32,7 +35,14 @@
       ],
       "categoryId": "4",
       "price": 31590000,
-      "colors": ["#000", "#bebebe", "#fe0000", ["#ffff01"]],
+      "colors": [
+        "#000",
+        "#bebebe",
+        "#fe0000",
+        [
+          "#ffff01"
+        ]
+      ],
       "discount": 20,
       "score": 3,
       "count": 3,
@@ -52,7 +62,14 @@
       ],
       "categoryId": "4",
       "price": 41120000,
-      "colors": ["#000", "#bebebe", "#fe0000", ["#ffff01"]],
+      "colors": [
+        "#000",
+        "#bebebe",
+        "#fe0000",
+        [
+          "#ffff01"
+        ]
+      ],
       "discount": 40,
       "score": 3,
       "count": 3,
@@ -72,7 +89,14 @@
       ],
       "categoryId": "4",
       "price": 32890000,
-      "colors": ["#000", "#bebebe", "#fe0000", ["#ffff01"]],
+      "colors": [
+        "#000",
+        "#bebebe",
+        "#fe0000",
+        [
+          "#ffff01"
+        ]
+      ],
       "discount": 0,
       "score": 3,
       "count": 3,
@@ -92,7 +116,14 @@
       ],
       "categoryId": "4",
       "price": 36540000,
-      "colors": ["#000", "#bebebe", "#fe0000", ["#ffff01"]],
+      "colors": [
+        "#000",
+        "#bebebe",
+        "#fe0000",
+        [
+          "#ffff01"
+        ]
+      ],
       "discount": 10,
       "score": 5,
       "count": 3,
@@ -112,7 +143,14 @@
       ],
       "categoryId": "4",
       "price": 21320000,
-      "colors": ["#000", "#bebebe", "#fe0000", ["#ffff01"]],
+      "colors": [
+        "#000",
+        "#bebebe",
+        "#fe0000",
+        [
+          "#ffff01"
+        ]
+      ],
       "discount": 40,
       "score": 2,
       "count": 9,
@@ -132,7 +170,14 @@
       ],
       "categoryId": "4",
       "price": 24980000,
-      "colors": ["#000", "#bebebe", "#fe0000", ["#ffff01"]],
+      "colors": [
+        "#000",
+        "#bebebe",
+        "#fe0000",
+        [
+          "#ffff01"
+        ]
+      ],
       "discount": 40,
       "score": 4,
       "count": 3,
@@ -152,7 +197,14 @@
       ],
       "categoryId": "4",
       "price": 19690000,
-      "colors": ["#000", "#bebebe", "#fe0000", ["#ffff01"]],
+      "colors": [
+        "#000",
+        "#bebebe",
+        "#fe0000",
+        [
+          "#ffff01"
+        ]
+      ],
       "discount": 40,
       "score": 3,
       "count": 3,
@@ -172,7 +224,14 @@
       ],
       "categoryId": "4",
       "price": 14500000,
-      "colors": ["#000", "#bebebe", "#fe0000", ["#299"]],
+      "colors": [
+        "#000",
+        "#bebebe",
+        "#fe0000",
+        [
+          "#299"
+        ]
+      ],
       "discount": 20,
       "score": 3,
       "count": 2,
@@ -192,7 +251,14 @@
       ],
       "categoryId": "4",
       "price": 52920000,
-      "colors": ["#000", "#bebebe", "#fe0000", ["#ffff01"]],
+      "colors": [
+        "#000",
+        "#bebebe",
+        "#fe0000",
+        [
+          "#ffff01"
+        ]
+      ],
       "discount": 20,
       "score": 3,
       "count": 2,
@@ -212,7 +278,14 @@
       ],
       "categoryId": "4",
       "price": 27000,
-      "colors": ["#000", "#bebebe", "#fe0000", ["#ffff01"]],
+      "colors": [
+        "#000",
+        "#bebebe",
+        "#fe0000",
+        [
+          "#ffff01"
+        ]
+      ],
       "discount": 0,
       "score": 3,
       "count": 4,
@@ -232,7 +305,14 @@
       ],
       "categoryId": "4",
       "price": 420290,
-      "colors": ["#000", "#bebebe", "#fe0000", ["#ffff01"]],
+      "colors": [
+        "#000",
+        "#bebebe",
+        "#fe0000",
+        [
+          "#ffff01"
+        ]
+      ],
       "discount": 0,
       "score": 3,
       "count": 4,
@@ -252,7 +332,14 @@
       ],
       "categoryId": "4",
       "price": 25500,
-      "colors": ["#000", "#bebebe", "#fe0000", ["#ffff01"]],
+      "colors": [
+        "#000",
+        "#bebebe",
+        "#fe0000",
+        [
+          "#ffff01"
+        ]
+      ],
       "discount": 0,
       "score": 5,
       "count": 4,
@@ -272,7 +359,14 @@
       ],
       "categoryId": "4",
       "price": 445000,
-      "colors": ["#000", "#bebebe", "#fe0000", ["#ffff01"]],
+      "colors": [
+        "#000",
+        "#bebebe",
+        "#fe0000",
+        [
+          "#ffff01"
+        ]
+      ],
       "discount": 0,
       "score": 3,
       "count": 4,
@@ -292,7 +386,14 @@
       ],
       "categoryId": "4",
       "price": 30500,
-      "colors": ["#000", "#bebebe", "#fe0000", ["#ffff01"]],
+      "colors": [
+        "#000",
+        "#bebebe",
+        "#fe0000",
+        [
+          "#ffff01"
+        ]
+      ],
       "discount": 0,
       "score": 3,
       "count": 4,
@@ -312,7 +413,14 @@
       ],
       "categoryId": "3",
       "price": 9990000,
-      "colors": ["#000", "#bebebe", "#fe0000", ["#ffff01"]],
+      "colors": [
+        "#000",
+        "#bebebe",
+        "#fe0000",
+        [
+          "#ffff01"
+        ]
+      ],
       "discount": 10,
       "score": 3,
       "count": 4,
@@ -332,7 +440,14 @@
       ],
       "categoryId": "3",
       "price": 7099000,
-      "colors": ["#000", "#bebebe", "#fe0000", ["#ffff01"]],
+      "colors": [
+        "#000",
+        "#bebebe",
+        "#fe0000",
+        [
+          "#ffff01"
+        ]
+      ],
       "discount": 0,
       "score": 4,
       "count": 4,
@@ -352,7 +467,14 @@
       ],
       "categoryId": "3",
       "price": 18190000,
-      "colors": ["#000", "#bebebe", "#fe0000", ["#ffff01"]],
+      "colors": [
+        "#000",
+        "#bebebe",
+        "#fe0000",
+        [
+          "#ffff01"
+        ]
+      ],
       "discount": 0,
       "score": 5,
       "count": 4,
@@ -372,7 +494,14 @@
       ],
       "categoryId": "3",
       "price": 21519230,
-      "colors": ["#000", "#bebebe", "#fe0000", ["#ffff01"]],
+      "colors": [
+        "#000",
+        "#bebebe",
+        "#fe0000",
+        [
+          "#ffff01"
+        ]
+      ],
       "discount": 0,
       "score": 4,
       "count": 24,
@@ -392,7 +521,14 @@
       ],
       "categoryId": "3",
       "price": 47810000,
-      "colors": ["#000", "#bebebe", "#fe0000", ["#ffff01"]],
+      "colors": [
+        "#000",
+        "#bebebe",
+        "#fe0000",
+        [
+          "#ffff01"
+        ]
+      ],
       "discount": 10,
       "score": 5,
       "count": 4,
@@ -412,7 +548,14 @@
       ],
       "categoryId": "3",
       "price": 27720000,
-      "colors": ["#000", "#bebebe", "#fe0000", ["#ffff01"]],
+      "colors": [
+        "#000",
+        "#bebebe",
+        "#fe0000",
+        [
+          "#ffff01"
+        ]
+      ],
       "discount": 0,
       "score": 4,
       "count": 4,
@@ -432,7 +575,14 @@
       ],
       "categoryId": "3",
       "price": 7920000,
-      "colors": ["#000", "#bebebe", "#fe0000", ["#ffff01"]],
+      "colors": [
+        "#000",
+        "#bebebe",
+        "#fe0000",
+        [
+          "#ffff01"
+        ]
+      ],
       "discount": 10,
       "score": 5,
       "count": 4,
@@ -452,7 +602,14 @@
       ],
       "categoryId": "3",
       "price": 4049000,
-      "colors": ["#000", "#bebebe", "#fe0000", ["#ffff01"]],
+      "colors": [
+        "#000",
+        "#bebebe",
+        "#fe0000",
+        [
+          "#ffff01"
+        ]
+      ],
       "discount": 10,
       "score": 2,
       "count": 4,
@@ -472,7 +629,14 @@
       ],
       "categoryId": "3",
       "price": 61899000,
-      "colors": ["#000", "#bebebe", "#fe0000", ["#ffff01"]],
+      "colors": [
+        "#000",
+        "#bebebe",
+        "#fe0000",
+        [
+          "#ffff01"
+        ]
+      ],
       "discount": 0,
       "score": 5,
       "count": 4,
@@ -492,7 +656,14 @@
       ],
       "categoryId": "3",
       "price": 18590000,
-      "colors": ["#000", "#bebebe", "#fe0000", ["#ffff01"]],
+      "colors": [
+        "#000",
+        "#bebebe",
+        "#fe0000",
+        [
+          "#ffff01"
+        ]
+      ],
       "discount": 10,
       "score": 5,
       "count": 4,
@@ -726,6 +897,20 @@
           "username": "reza_66"
         }
       ]
+    },
+    {
+      "id": "b0ad",
+      "blogId": "1",
+      "userId": "f8a0",
+      "body": "test comment",
+      "answers": []
+    },
+    {
+      "id": "0fc5",
+      "blogId": "1",
+      "userId": "f8a0",
+      "body": "test comment 2",
+      "answers": []
     }
   ],
   "blogs": [

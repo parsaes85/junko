@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import StarIcon from "@mui/icons-material/Star";
+import { useSelector } from "react-redux";
 
 import ProductCommentBox from "../ProductCommentBox/ProductCommentBox";
 import useGetProductComments from "../../../hooks/useGetProductComments";
-import { useSelector } from "react-redux";
 import useRegisterCommentForProduct from "../../../hooks/useRegisterCommentForProduct";
 
 function ProductComments(props) {

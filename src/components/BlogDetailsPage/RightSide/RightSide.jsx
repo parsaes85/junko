@@ -16,7 +16,7 @@ function RightSide() {
       {blogDetails && <RightSideMainDetails {...blogDetails[0]} />}
       {blogDetails && <RightSideRelatedBlogs {...blogDetails[0]} />}
       {blogDetails && <RightSideComments {...blogDetails[0]} />}
-      <RightSideCreateComment />
+      {blogDetails && <RightSideCreateComment {...blogDetails[0]} />}
     </div>
   );
 }
