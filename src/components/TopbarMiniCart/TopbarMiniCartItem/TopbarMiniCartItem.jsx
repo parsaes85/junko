@@ -17,7 +17,7 @@ function TopbarMiniCartItem(props) {
       <div className="space-y-2">
         <Link
           to={`/product-details/${props?.product?.id}`}
-          className="hover:text-primaryBlue transition duration-300"
+          className="hover:text-primaryBlue transition duration-300 line-clamp-2"
         >
           {props?.product?.name}
         </Link>

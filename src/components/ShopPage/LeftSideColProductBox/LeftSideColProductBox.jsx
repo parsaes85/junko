@@ -94,12 +94,16 @@ function LeftSideColProductBox(props) {
       </div>
       <div className="text-center mt-4">
         <div>
-          <p className="text-gray-500 line-through text-[15px]">
-            {Number(
-              props.price + props.price * (props.discount / 100)
-            ).toLocaleString("fa")}{" "}
-            تومان
-          </p>
+          {props.discount ? (
+            <p className="text-gray-500 line-through text-[15px]">
+              {Number(
+                props.price + props.price * (props.discount / 100)
+              ).toLocaleString("fa")}{" "}
+              تومان
+            </p>
+          ) : (
+            ""
+          )}
           <p className="text-primaryBlue text-[17px]">
             {Number(props.price).toLocaleString("fa")} تومان
           </p>

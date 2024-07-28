@@ -55,6 +55,7 @@ function Shop() {
         <RightSide
           filteredProductsState={filteredProductsState}
           setShownProducts={setShownProducts}
+          products={products}
         />
         <LeftSide
           shownProducts={shownProducts}

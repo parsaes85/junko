@@ -7,18 +7,27 @@ import useGetProducts from "../../../hooks/useGetProducts";
 
 import "./RightSide.css";
 
-function RightSide({ filteredProductsState, setShownProducts }) {
+function RightSide({ filteredProductsState, setShownProducts, products }) {
   const { data: menus } = useGetAllMenus();
 
   const [rangeInputMinValue, setRangeInputMinValue] = useState("0");
   const [rangeInputMaxValue, setRangeInputMaxValue] = useState("50000000");
+  const [recentProducts, setRecentProducts] = useState([])
 
   let priceGap = 5000000;
 
   const filterProductsByPrice = () => {
-    const filteredProducts = filteredProductsState.filter(product => product.price > rangeInputMinValue && product.price < rangeInputMaxValue)
-    setShownProducts(filteredProducts)
+    const filteredProducts = filteredProductsState.filter(
+      (product) =>
+        product.price > rangeInputMinValue && product.price < rangeInputMaxValue
+    );
+    setShownProducts(filteredProducts);
   };
+
+  useEffect(() => {
+    let recentProductsArr = products?.slice(products.length - 3, products.length);
+    setRecentProducts(recentProductsArr);
+  }, [products])
 
   useEffect(() => {
     const priceFilterRangeInputs =
@@ -128,18 +137,18 @@ function RightSide({ filteredProductsState, setShownProducts }) {
       {/* products comparison */}
       <div>
         <h1 className="text-xl font-IRANSans mb-4 tracking-tighter">
-          مقایسه محصولات
+          محصولات اخیر
         </h1>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-1 md:gap-6 lg:gap-0">
-          <RightSideProductBox />
-          <RightSideProductBox />
-          <RightSideProductBox />
+          {
+            recentProducts?.map(product => <RightSideProductBox key={product.id} {...product} />)
+          }
         </div>
       </div>
 
       {/* products lables */}
-      <div>
+      {/* <div>
         <h1 className="text-xl font-IRANSans mb-4 tracking-tighter">
           برچسب های محصولات
         </h1>
@@ -160,7 +169,7 @@ function RightSide({ filteredProductsState, setShownProducts }) {
             لپتاپ
           </Link>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

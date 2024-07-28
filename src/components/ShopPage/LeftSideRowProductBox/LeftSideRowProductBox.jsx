@@ -63,12 +63,16 @@ function LeftSideRowProductBox(props) {
           <p className="text-primaryBlue text-[17px]">
             {Number(props.price).toLocaleString("fa")} تومان
           </p>
-          <p className="text-gray-500 line-through text-[15px]">
-            {Number(
-              props.price + props.price * (props.discount / 100)
-            ).toLocaleString("fa")}{" "}
-            تومان
-          </p>
+          {props.discount ? (
+            <p className="text-gray-500 line-through text-[15px]">
+              {Number(
+                props.price + props.price * (props.discount / 100)
+              ).toLocaleString("fa")}{" "}
+              تومان
+            </p>
+          ) : (
+            ""
+          )}
         </div>
         <Link
           to={`/product-details/${props.id}`}
@@ -102,7 +106,10 @@ function LeftSideRowProductBox(props) {
           {isInCart() ? "موجود در سبد" : "افزودن به سبد"}
         </button>
         <div className="text-[15px] mt-5 space-y-2 [&>div]:transition [&>div]:cursor-pointer [&>div:hover]:text-primaryBlue [&>div]:flex [&>div]:gap-2">
-          <div className={`${isInFavorite() && "text-primaryBlue"}`} onClick={addOrRemoveFromFavorites}>
+          <div
+            className={`${isInFavorite() && "text-primaryBlue"}`}
+            onClick={addOrRemoveFromFavorites}
+          >
             <span>
               {isInFavorite() ? (
                 <FavoriteIcon fontSize="small" />
