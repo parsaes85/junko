@@ -31,11 +31,15 @@ function Topbar() {
   const [searchProductFormTitle, setSearchProductFormTitle] = useState("");
 
   const searchProductHandler = () => {
-    if (searchProductFormTitle) {
+    if (searchProductFormTitle && searchProductFormCategory)
       navigate(
-        `/shop?category=${searchProductFormCategory}&search=${searchProductFormTitle}`
+        `/shop?search=${searchProductFormTitle}&category=${searchProductFormCategory}`
       );
-    }
+    else if (searchProductFormTitle)
+      navigate(`/shop?search=${searchProductFormTitle}&category=`);
+    else if (searchProductFormCategory)
+      navigate(`/shop?category=${searchProductFormCategory}`);
+    else navigate("/shop");
   };
 
   useEffect(() => {

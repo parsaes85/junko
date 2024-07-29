@@ -18,6 +18,8 @@ function Shop() {
     let categorySearchParam = searchParams.get("category");
     let searchSearchParam = searchParams.get("search");
 
+    console.log(categorySearchParam)
+
     if (categorySearchParam || categorySearchParam == "") {
       if (searchSearchParam) {
         if (categorySearchParam) {

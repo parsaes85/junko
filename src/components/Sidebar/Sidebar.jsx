@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useHref } from "react-router-dom";
+import { Link, useHref, useNavigate } from "react-router-dom";
 import CloseIcon from "@mui/icons-material/Close";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
@@ -10,16 +10,49 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import RssFeedIcon from "@mui/icons-material/RssFeed";
 import PinterestIcon from "@mui/icons-material/Pinterest";
+import { useSelector } from "react-redux";
 
 import SidebarMiniCart from "../SidebarMiniCart/SidebarMiniCart";
 import useGetAllMenus from "../../hooks/useGetAllMenus";
 
 function Sidebar({ isSidebarShow, setIsSidebarShow }) {
+  const { userInfos, isLoggedIn } = useSelector((state) => state.auth);
+  const favoriteProducts = useSelector((state) => state.favoriteProducts);
+  const cartProducts = useSelector((state) => state.cartProducts);
+
   const [isSidebarMiniCartShow, setIsSidebarMiniCartShow] = useState(false);
+  const [
+    searchProductSidebarFormCategory,
+    setSearchProductSidebarFormCategory,
+  ] = useState("");
+  const [searchProductSidebarFormTitle, setSearchProductSidebarFormTitle] =
+    useState("");
 
   const { data: menus } = useGetAllMenus();
 
   const href = useHref();
+  const navigate = useNavigate();
+
+  const searchProductHandler = () => {
+    setIsSidebarShow(false);
+    if (searchProductSidebarFormTitle && searchProductSidebarFormCategory)
+      navigate(
+        `/shop?search=${searchProductSidebarFormTitle}&category=${searchProductSidebarFormCategory}`
+      );
+    else if (searchProductSidebarFormTitle)
+      navigate(`/shop?search=${searchProductSidebarFormTitle}&category=`);
+    else if (searchProductSidebarFormCategory)
+      navigate(`/shop?category=${searchProductSidebarFormCategory}`);
+    else navigate("/shop");
+  };
+
+  const sidebarCartIconClickHandler = () => {
+    if (isSidebarMiniCartShow) {
+      setIsSidebarMiniCartShow(false);
+    } else {
+      setIsSidebarMiniCartShow(true);
+    }
+  };
 
   useEffect(() => {
     const closeSidebar = (e) => {
@@ -33,14 +66,6 @@ function Sidebar({ isSidebarShow, setIsSidebarShow }) {
     };
   }, []);
   useEffect(() => setIsSidebarShow(false), [href]);
-
-  const sidebarCartIconClickHandler = () => {
-    if (isSidebarMiniCartShow) {
-      setIsSidebarMiniCartShow(false);
-    } else {
-      setIsSidebarMiniCartShow(true);
-    }
-  };
 
   return (
     <div
@@ -69,9 +94,15 @@ function Sidebar({ isSidebarShow, setIsSidebarShow }) {
           <div className="my-5 space-y-4 text-center">
             <p className="text-xs">تلفن تماس: ۷۸۹ ۴۵۶ ۱۲۳(۹۸)+</p>
 
-            <div className="flex justify-center items-center gap-4">
+            <div className="flex justify-center items-center gap-4 text-sm">
               <div className="transition hover:text-primaryBlue">
-                <Link to="/login">حساب کاربری</Link>
+                {isLoggedIn ? (
+                  <Link to="#" className="block overflow-hidden w-28">
+                    حساب کاربری ({userInfos.fullname})
+                  </Link>
+                ) : (
+                  <Link to="/login">ورود</Link>
+                )}
               </div>
               <div className="w-[1px] h-3 bg-black"></div>
               <div className="transition hover:text-primaryBlue">
@@ -84,15 +115,27 @@ function Sidebar({ isSidebarShow, setIsSidebarShow }) {
                 type="text"
                 className="w-full focus:outline-none rounded-r border pr-3 text-sm text-gray-500 placeholder:text-[13px] placeholder:text-gray-500"
                 placeholder="جستجوی محصول ..."
+                value={searchProductSidebarFormTitle}
+                onChange={(e) =>
+                  setSearchProductSidebarFormTitle(e.target.value)
+                }
               />
-              <button className="text-white text-sm bg-primaryBlue rounded-l px-5 py-2 hover:bg-zinc-800 transition duration-300">
+              <button
+                className="text-white text-sm bg-primaryBlue rounded-l px-5 py-2 hover:bg-zinc-800 transition duration-300"
+                onClick={searchProductHandler}
+              >
                 جستجو
               </button>
             </div>
 
             <div className="relative w-40 mx-auto border rounded py-0.5 z-20">
-              <select className="cursor-pointer text-[15px] w-full h-full text-center focus:outline-none appearance-none bg-transparent bg-opacity-0">
-                <option value="all">همه دسته ها</option>
+              <select
+                className="cursor-pointer text-[15px] w-full h-full text-center focus:outline-none appearance-none bg-transparent bg-opacity-0"
+                onChange={(e) =>
+                  setSearchProductSidebarFormCategory(e.target.value)
+                }
+              >
+                <option value="">همه دسته ها</option>
                 {menus?.map((menu) => (
                   <option key={menu.id} value={menu.name}>
                     {menu.title}
