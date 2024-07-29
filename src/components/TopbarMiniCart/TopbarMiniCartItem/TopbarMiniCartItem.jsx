@@ -31,7 +31,10 @@ function TopbarMiniCartItem(props) {
         </p>
       </div>
       <div>
-        <span className="border rounded-full text-gray-600 px-1 text-sm transition duration-300 cursor-pointer hover:bg-primaryBlue hover:text-white hover:border-primaryBlue" onClick={() => removeFromCart(props?.id)}>
+        <span
+          className="border rounded-full text-gray-600 px-1 text-sm transition duration-300 cursor-pointer hover:bg-primaryBlue hover:text-white hover:border-primaryBlue"
+          onClick={() => removeFromCart(props?.id)}
+        >
           <CloseIcon fontSize="" />
         </span>
       </div>

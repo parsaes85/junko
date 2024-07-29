@@ -152,7 +152,7 @@ function Sidebar({ isSidebarShow, setIsSidebarShow }) {
               <Link to="/wishlist">
                 <div className="relative">
                   <span className="absolute -top-2 -right-3 text-sm bg-primaryBlue text-white rounded-full w-5 flex justify-center">
-                    ۳
+                    {favoriteProducts?.products?.length.toLocaleString("fa")}
                   </span>
                   <span className="text-gray-800 cursor-pointer hover:text-primaryBlue transition-all duration-200">
                     <FavoriteBorderIcon />
@@ -162,7 +162,7 @@ function Sidebar({ isSidebarShow, setIsSidebarShow }) {
               <div className="relative group">
                 <div className="relative" onClick={sidebarCartIconClickHandler}>
                   <span className="absolute -top-2 -right-3 text-sm bg-primaryBlue text-white rounded-full w-5 flex justify-center">
-                    ۲
+                    {cartProducts?.products?.length.toLocaleString("fa")}
                   </span>
                   <span className="text-gray-800 cursor-pointer transition-all duration-200 group-hover:text-primaryBlue">
                     <ShoppingBagIcon />
@@ -172,6 +172,7 @@ function Sidebar({ isSidebarShow, setIsSidebarShow }) {
                   </span>
                 </div>
                 <SidebarMiniCart
+                  cartProducts={cartProducts?.products}
                   isSidebarMiniCartShow={isSidebarMiniCartShow}
                 />
               </div>

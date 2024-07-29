@@ -1040,11 +1040,18 @@
   ],
   "userCartProducts": [
     {
-      "id": "681c",
-      "productId": "2",
+      "id": "6441",
+      "productId": "1",
+      "userId": "f8a0",
+      "count": 2,
+      "price": 68000000
+    },
+    {
+      "id": "a978",
+      "productId": "17",
       "userId": "f8a0",
       "count": 1,
-      "price": 12000000
+      "price": 7099000
     }
   ],
   "userFavoriteProducts": [
