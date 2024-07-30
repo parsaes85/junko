@@ -3,32 +3,30 @@ import React, { useEffect } from "react";
 import SpecialProductBox from "../SpecialProductBox/SpecialProductBox";
 import useGetProducts from "../../../hooks/useGetProducts";
 
-import "./SpecialProductsSwiper.css";
-
 function SpecialProductsSwiper() {
   const { data: specialProducts } = useGetProducts("specialProducts", "isSpecialProduct=1");
 
   useEffect(() => {
     const swiperEl = document.querySelector(".specialProductsSwiper");
     Object.assign(swiperEl, {
-      slidesPerView: 3,
-      spaceBetween: 30,
+      slidesPerView: 1,
+      spaceBetween: 20,
       loop: true,
       breakpoints: {
-        960: {
-          slidesPerView: 3,
-
-          spaceBetween: 30,
+        864: {
+          slidesPerView: 2,
         },
+        1224: {
+          slidesPerView: 3
+        }
       },
     });
     swiperEl.initialize();
   }, []);
+  
   return (
     <swiper-container
       class="specialProductsSwiper"
-      space-between="30"
-      loop="true"
     >
       {specialProducts?.map((product) => (
         <swiper-slide key={product.id}>

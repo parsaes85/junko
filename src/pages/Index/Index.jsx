@@ -110,11 +110,15 @@ function Index() {
       <section className="px-4 xs:px-24 mt-16">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-11">
           <div className="space-y-4 text-center md:text-start">
-            <h1 className="text-xl xl:text-2xl">محبوب ترین دسته های این هفته</h1>
-            <p className="text-sm lg:text-base">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</p>
-            <Link className="block">
+            <h1 className="text-xl xl:text-2xl">
+              محبوب ترین دسته های این هفته
+            </h1>
+            <p className="text-sm lg:text-base">
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
+            </p>
+            <Link to="/shop" className="block">
               <button className="bg-primaryBlue px-3 py-2 rounded text-white">
-                نمایش همه دسته ها
+                رفتن به فروشگاه
               </button>
             </Link>
           </div>
@@ -129,7 +133,7 @@ function Index() {
         <div className="border-b pb-4 mb-6">
           <h1 className="text-2xl tracking-tight">محصولات ویژه</h1>
         </div>
-        <div className="h-96">
+        <div>
           <SpecialProductsSwiper />
         </div>
       </section>
