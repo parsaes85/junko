@@ -1,9 +1,11 @@
 import React from "react";
-import { useMutation } from "@tanstack/react-query";
 import Swal from "sweetalert2";
+import { useMutation } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 import { baseURL } from "../data/variables";
+import { login } from "../Redux/store/authSlice";
 
 const Toast = Swal.mixin({
   toast: true,
@@ -17,6 +19,7 @@ const Toast = Swal.mixin({
 });
 
 function useSignup(emptyInputsValue) {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   return useMutation({
@@ -32,14 +35,21 @@ function useSignup(emptyInputsValue) {
           profile: "",
           token: crypto.randomUUID(),
         }),
-      }),
-    onSuccess: () => {
-      emptyInputsValue();
-      navigate("/");
+      }).then((res) => res.json()),
+    onSuccess: (res) => {
+      localStorage.setItem("userToken", JSON.stringify(res.token));
+      dispatch(
+        login({
+          userInfos: res,
+          isLoggedIn: true,
+        })
+      );
+      // emptyInputsValue();
       Toast.fire({
         icon: "success",
         title: "ثبت نام با موفقیت انجام شد",
       });
+      navigate("/");
     },
   });
 }
