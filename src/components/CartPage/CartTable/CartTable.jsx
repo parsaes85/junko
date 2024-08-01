@@ -1,14 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
+import React from "react";
 import { useSelector } from "react-redux";
 
-import useRemoveFromCart from "../../../hooks/useRemoveFromCart";
+import CartTableProductBox from "../CartTableProductBox/CartTableProductBox";
 
 function CartTable() {
   const cartProducts = useSelector((state) => state.cartProducts);
-
-  const { mutate: removeFromCart } = useRemoveFromCart();
 
   return (
     <section className="px-4 xs:px-24 mb-16">
@@ -26,45 +22,7 @@ function CartTable() {
           </thead>
           <tbody>
             {cartProducts?.products.map((product) => (
-              <tr>
-                <td>
-                  <span
-                    className="cursor-pointer hover:text-primaryBlue transition duration-300"
-                    onClick={() => removeFromCart(product.id)}
-                  >
-                    <DeleteOutlineIcon />
-                  </span>
-                </td>
-                <td>
-                  <Link to={`/product-details/${product.productId}`}>
-                    <img
-                      src={product.product.images[0]}
-                      alt=""
-                      className="w-28 mx-auto"
-                    />
-                  </Link>
-                </td>
-                <td>
-                  <Link
-                    to={`/product-details/${product.productId}`}
-                    className="text-[15px] hover:text-primaryBlue transition duration-300"
-                  >
-                    {product.product.name}
-                  </Link>
-                </td>
-                <td>{product.product.price.toLocaleString("fa")} تومان</td>
-                <td>
-                  <div className="flex justify-center items-center gap-2">
-                    <p>تعداد: </p>
-                    <input
-                      type="number"
-                      className="focus:outline-none border w-14 px-1.5 py-2 text-sm"
-                      value={product.count}
-                    />
-                  </div>
-                </td>
-                <td>{product.price.toLocaleString("fa")} تومان</td>
-              </tr>
+              <CartTableProductBox key={product.id} {...product} />
             ))}
           </tbody>
         </table>
