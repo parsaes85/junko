@@ -6,7 +6,8 @@ import useGetCartProducts from "./useGetCartProducts";
 
 function useRemoveFromCart() {
   const queryClient = useQueryClient();
-  const { data } = useGetCartProducts();
+  const { mutate } = useGetCartProducts();
+  
 
   return useMutation({
     mutationKey: ["removeFromCart"],
@@ -16,6 +17,7 @@ function useRemoveFromCart() {
       }),
     onSuccess: () => {
       queryClient.invalidateQueries();
+      mutate()
     },
   });
 }

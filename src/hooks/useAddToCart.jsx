@@ -6,7 +6,7 @@ import useGetCartProducts from "./useGetCartProducts";
 
 function useAddToCart() {
   const queryClient = useQueryClient();
-  const { data } = useGetCartProducts();
+  const { mutate } = useGetCartProducts();
 
   return useMutation({
     mutationKey: ["addToCart"],
@@ -18,6 +18,7 @@ function useAddToCart() {
       }),
     onSuccess: (res) => {
       queryClient.invalidateQueries();
+      mutate();
     },
   });
 }

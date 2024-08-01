@@ -11,8 +11,8 @@ import Sidebar from "../Sidebar/Sidebar";
 import TopbarMiniCart from "../TopbarMiniCart/TopbarMiniCart";
 import useGetAllMenus from "../../hooks/useGetAllMenus";
 import useGetMe from "../../hooks/useGetMe";
-import useGetFavoriteProducts from "../../hooks/useGetFavoriteProducts";
 import useGetCartProducts from "../../hooks/useGetCartProducts";
+import useGetFavoriteProducts from "../../hooks/useGetFavoriteProducts";
 
 function Topbar() {
   const { userInfos, isLoggedIn } = useSelector((state) => state.auth);
@@ -21,7 +21,7 @@ function Topbar() {
 
   const { data: menus } = useGetAllMenus();
   const { data: favoriteProductsData } = useGetFavoriteProducts();
-  const { data: cartProductsData } = useGetCartProducts();
+  const { mutate: cartProductsData } = useGetCartProducts(); 
   const { mutate: getUserInfos } = useGetMe();
   const navigate = useNavigate();
 
@@ -47,6 +47,9 @@ function Topbar() {
 
     getUserInfos(localStorageUserToken);
   }, []);
+  useEffect(() => {
+    cartProductsData()
+  }, [userInfos])
 
   return (
     <>

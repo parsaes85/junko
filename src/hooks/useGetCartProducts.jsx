@@ -1,17 +1,18 @@
 import React from "react";
-import { useQuery } from "@tanstack/react-query";
-import { useDispatch } from "react-redux";
+import { useMutation } from "@tanstack/react-query";
+import { useDispatch, useSelector } from "react-redux";
 
 import { baseURL } from "../data/variables";
 import { setCartProducts } from "../Redux/store/cartProductsSlice";
 
 function useGetCartProducts() {
+  const { userInfos } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
-  return useQuery({
-    queryKey: ["cartProducts"],
-    queryFn: () =>
-      fetch(`${baseURL}/userCartProducts?_embed=product`)
+  return useMutation({
+    mutationKey: ["cartProducts"],
+    mutationFn: () =>
+      fetch(`${baseURL}/userCartProducts?userId=${userInfos.id}&_embed=product`)
         .then((res) => res.json())
         .then((data) => {
           dispatch(setCartProducts(data));

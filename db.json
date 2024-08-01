@@ -1036,22 +1036,47 @@
       "role": "USER",
       "profile": "",
       "token": "860dd41d-9ef3-4d93-8ede-4570886d6477"
+    },
+    {
+      "id": "55e8",
+      "fullname": "poria aminmehr",
+      "username": "bozpoori",
+      "email": "poori8585@gmail.com",
+      "password": "poori123456",
+      "phone": "09023456789",
+      "role": "USER",
+      "profile": "",
+      "token": "471f912e-6903-4a26-bb37-01ffca637523"
     }
   ],
   "userCartProducts": [
     {
-      "id": "6441",
-      "productId": "1",
-      "userId": "f8a0",
-      "count": 3,
-      "price": 102000000
-    },
-    {
-      "id": "a978",
-      "productId": "17",
+      "id": "2d09",
+      "productId": "10",
       "userId": "f8a0",
       "count": 1,
+      "price": 52920000
+    },
+    {
+      "id": "4dd2",
+      "productId": "17",
+      "userId": "55e8",
+      "count": 1,
       "price": 7099000
+    },
+    {
+      "id": "c9eb",
+      "productId": "18",
+      "userId": "55e8",
+      "count": 1,
+      "price": 18190000
+    },
+    {
+      "id": "5ed7",
+      "productId": "19",
+      "userId": "55e8",
+      "count": 1,
+      "price": 21519230
     }
   ],
   "userFavoriteProducts": [
@@ -1064,6 +1089,16 @@
       "id": "640e",
       "productId": "9",
       "userId": "f8a0"
+    },
+    {
+      "id": "7df2",
+      "productId": "20",
+      "userId": "55e8"
+    },
+    {
+      "id": "7873",
+      "productId": "11",
+      "userId": "7478"
     }
   ]
 }
