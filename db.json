@@ -1051,13 +1051,6 @@
   ],
   "userCartProducts": [
     {
-      "id": "2d09",
-      "productId": "10",
-      "userId": "f8a0",
-      "count": 1,
-      "price": 52920000
-    },
-    {
       "id": "4dd2",
       "productId": "17",
       "userId": "55e8",
@@ -1080,16 +1073,6 @@
     }
   ],
   "userFavoriteProducts": [
-    {
-      "id": "4302",
-      "productId": "3",
-      "userId": "f8a0"
-    },
-    {
-      "id": "640e",
-      "productId": "9",
-      "userId": "f8a0"
-    },
     {
       "id": "7df2",
       "productId": "20",

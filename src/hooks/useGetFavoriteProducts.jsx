@@ -1,5 +1,5 @@
 import React from "react";
-import { useQuery } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import { useDispatch, useSelector } from "react-redux";
 
 import { baseURL } from "../data/variables";
@@ -9,9 +9,9 @@ function useGetFavoriteProducts() {
   const { userInfos } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
-  return useQuery({
-    queryKey: ["favoriteProducts"],
-    queryFn: () =>
+  return useMutation({
+    mutationKey: ["favoriteProducts"],
+    mutationFn: () =>
       fetch(`${baseURL}/userFavoriteProducts?userId=${userInfos.id}&_embed=product`)
         .then((res) => res.json())
         .then((data) => {

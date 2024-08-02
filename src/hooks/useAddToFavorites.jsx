@@ -6,7 +6,7 @@ import useGetFavoriteProducts from "./useGetFavoriteProducts";
 
 function useAddToFavorites() {
   const queryClient = useQueryClient()
-  const { data } = useGetFavoriteProducts();
+  const { mutate } = useGetFavoriteProducts();
   
   return useMutation({
     mutationKey: ["addToFavorites"],
@@ -18,6 +18,7 @@ function useAddToFavorites() {
       }),
     onSuccess: () => {
       queryClient.invalidateQueries()
+      mutate()
     },
   });
 }

@@ -6,7 +6,7 @@ import useGetFavoriteProducts from "./useGetFavoriteProducts";
 
 function useRemoveFromFavorites() {
   const queryClient = useQueryClient();
-  const { data } = useGetFavoriteProducts();
+  const { mutate } = useGetFavoriteProducts();
 
   return useMutation({
     mutationKey: ["removeFromFavorites"],
@@ -16,6 +16,7 @@ function useRemoveFromFavorites() {
       }),
     onSuccess: () => {
       queryClient.invalidateQueries();
+      mutate()
     },
   });
 }

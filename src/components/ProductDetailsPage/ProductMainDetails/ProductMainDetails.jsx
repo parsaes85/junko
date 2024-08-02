@@ -109,12 +109,14 @@ function ProductMainDetails(props) {
               <p className="text-primaryBlue tracking-tighter text-[20px] sm:text-[24px]">
                 {Number(props.price).toLocaleString("fa")} تومان
               </p>
-              <p className="text-gray-500 tracking-tighter line-through text-[18px] sm:text-[22px]">
-                {Number(
-                  props.price + props.price * (props.discount / 100)
-                ).toLocaleString("fa")}{" "}
-                تومان
-              </p>
+              {props.discount ? (
+                <p className="text-gray-500 tracking-tighter line-through text-[18px] sm:text-[22px]">
+                  {Number(
+                    props.price + props.price * (props.discount / 100)
+                  ).toLocaleString("fa")}{" "}
+                  تومان
+                </p>
+              ): ("")}
             </div>
             <p className="text-[15px] leading-7">{props.shortDesc}</p>
           </div>

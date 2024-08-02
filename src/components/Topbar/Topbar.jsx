@@ -20,7 +20,7 @@ function Topbar() {
   const cartProducts = useSelector((state) => state.cartProducts);
 
   const { data: menus } = useGetAllMenus();
-  const { data: favoriteProductsData } = useGetFavoriteProducts();
+  const { mutate: favoriteProductsData } = useGetFavoriteProducts();
   const { mutate: cartProductsData } = useGetCartProducts(); 
   const { mutate: getUserInfos } = useGetMe();
   const navigate = useNavigate();
@@ -49,6 +49,7 @@ function Topbar() {
   }, []);
   useEffect(() => {
     cartProductsData()
+    favoriteProductsData()
   }, [userInfos])
 
   return (
