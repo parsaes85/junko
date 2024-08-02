@@ -94,19 +94,15 @@ function Sidebar({ isSidebarShow, setIsSidebarShow }) {
           <div className="my-5 space-y-4 text-center">
             <p className="text-xs">تلفن تماس: ۷۸۹ ۴۵۶ ۱۲۳(۹۸)+</p>
 
-            <div className="flex justify-center items-center gap-4 text-sm">
+            <div className="flex justify-center items-center text-sm">
               <div className="transition hover:text-primaryBlue">
                 {isLoggedIn ? (
-                  <Link to="#" className="block overflow-hidden w-28">
+                  <Link to="#" className="block overflow-hidden">
                     حساب کاربری ({userInfos.fullname})
                   </Link>
                 ) : (
                   <Link to="/login">ورود</Link>
                 )}
-              </div>
-              <div className="w-[1px] h-3 bg-black"></div>
-              <div className="transition hover:text-primaryBlue">
-                <Link to="/checkout">پرداخت</Link>
               </div>
             </div>
 

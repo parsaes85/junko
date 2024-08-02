@@ -62,17 +62,13 @@ function Topbar() {
         <div className="hidden py-3 lg:flex justify-between text-sm bg-gray-100 px-4 xs:px-24">
           <p>تلفن تماس: ۷۸۹ ۴۵۶ ۱۲۳(۹۸)+</p>
 
-          <div className="flex items-center gap-5">
+          <div>
             <div className="transition hover:text-primaryBlue">
               {isLoggedIn ? (
                 <Link to="#">حساب کاربری ({userInfos.fullname})</Link>
               ) : (
                 <Link to="/login">ورود</Link>
               )}
-            </div>
-            <div className="w-[1px] h-3 bg-black"></div>
-            <div className="transition hover:text-primaryBlue">
-              <Link to="/checkout">پرداخت</Link>
             </div>
           </div>
         </div>

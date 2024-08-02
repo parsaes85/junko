@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 
 function DiscountCodeBox() {
+  const cartProducts = useSelector((state) => state.cartProducts);
+
   const [isDiscountCodeBoxOpen, setIsDiscountCodeBoxOpen] = useState(false);
 
   const openAndCloseBoxHandler = () => {
@@ -12,7 +15,7 @@ function DiscountCodeBox() {
   };
 
   return (
-    <section className="px-4 xs:px-24 mb-8">
+    cartProducts?.products?.length ? (<section className="px-4 xs:px-24 mb-8">
       <div>
         <div className="px-3 py-4 border-t-4 border-t-primaryBlue bg-gray-100 text-sm lg:text-base">
           <div>
@@ -45,7 +48,8 @@ function DiscountCodeBox() {
           </div>
         </div>
       </div>
-    </section>
+    </section>) : ("")
+    
   );
 }
 
