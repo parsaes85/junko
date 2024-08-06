@@ -4,7 +4,7 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useQueryClient } from "@tanstack/react-query";
 
 import Sidebar from "../Sidebar/Sidebar";
@@ -13,6 +13,7 @@ import useGetAllMenus from "../../hooks/useGetAllMenus";
 import useGetMe from "../../hooks/useGetMe";
 import useGetCartProducts from "../../hooks/useGetCartProducts";
 import useGetFavoriteProducts from "../../hooks/useGetFavoriteProducts";
+import { logout } from "../../Redux/store/authSlice";
 
 function Topbar() {
   const { userInfos, isLoggedIn } = useSelector((state) => state.auth);
@@ -21,9 +22,11 @@ function Topbar() {
 
   const { data: menus } = useGetAllMenus();
   const { mutate: favoriteProductsData } = useGetFavoriteProducts();
-  const { mutate: cartProductsData } = useGetCartProducts(); 
+  const { mutate: cartProductsData } = useGetCartProducts();
   const { mutate: getUserInfos } = useGetMe();
+
   const navigate = useNavigate();
+  const dispatch = useDispatch()
 
   const [isSidebarShow, setIsSidebarShow] = useState(false);
   const [searchProductFormCategory, setSearchProductFormCategory] =
@@ -42,15 +45,20 @@ function Topbar() {
     else navigate("/shop");
   };
 
+  const logoutHandler = () => {
+    localStorage.removeItem("userToken");
+    dispatch(logout())
+  };
+
   useEffect(() => {
     const localStorageUserToken = JSON.parse(localStorage.getItem("userToken"));
 
     getUserInfos(localStorageUserToken);
   }, []);
   useEffect(() => {
-    cartProductsData()
-    favoriteProductsData()
-  }, [userInfos])
+    cartProductsData();
+    favoriteProductsData();
+  }, [userInfos]);
 
   return (
     <>
@@ -62,14 +70,27 @@ function Topbar() {
         <div className="hidden py-3 lg:flex justify-between text-sm bg-gray-100 px-4 xs:px-24">
           <p>تلفن تماس: ۷۸۹ ۴۵۶ ۱۲۳(۹۸)+</p>
 
-          <div>
+          <div className="flex items-center gap-4">
             <div className="transition hover:text-primaryBlue">
               {isLoggedIn ? (
                 <Link to="#">حساب کاربری ({userInfos.fullname})</Link>
               ) : (
-                <Link to="/login">ورود</Link>
+                <Link to="/login">ثبت نام / ورود</Link>
               )}
             </div>
+            {isLoggedIn ? (
+              <>
+                <div className="w-[1px] h-3 bg-black"></div>
+                <div
+                  className="transition hover:text-primaryBlue"
+                  onClick={logoutHandler}
+                >
+                  <Link to="">خروج</Link>
+                </div>
+              </>
+            ) : (
+              ""
+            )}
           </div>
         </div>
 

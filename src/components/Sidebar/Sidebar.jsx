@@ -10,10 +10,11 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import RssFeedIcon from "@mui/icons-material/RssFeed";
 import PinterestIcon from "@mui/icons-material/Pinterest";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 import SidebarMiniCart from "../SidebarMiniCart/SidebarMiniCart";
 import useGetAllMenus from "../../hooks/useGetAllMenus";
+import { logout } from "../../Redux/store/authSlice";
 
 function Sidebar({ isSidebarShow, setIsSidebarShow }) {
   const { userInfos, isLoggedIn } = useSelector((state) => state.auth);
@@ -32,6 +33,7 @@ function Sidebar({ isSidebarShow, setIsSidebarShow }) {
 
   const href = useHref();
   const navigate = useNavigate();
+  const dispatch = useDispatch()
 
   const searchProductHandler = () => {
     setIsSidebarShow(false);
@@ -53,6 +55,11 @@ function Sidebar({ isSidebarShow, setIsSidebarShow }) {
       setIsSidebarMiniCartShow(true);
     }
   };
+
+  const logoutHandler = () => {
+    localStorage.removeItem("userToken");
+    dispatch(logout())
+  }
 
   useEffect(() => {
     const closeSidebar = (e) => {
@@ -94,16 +101,26 @@ function Sidebar({ isSidebarShow, setIsSidebarShow }) {
           <div className="my-5 space-y-4 text-center">
             <p className="text-xs">تلفن تماس: ۷۸۹ ۴۵۶ ۱۲۳(۹۸)+</p>
 
-            <div className="flex justify-center items-center text-sm">
+            <div className="flex justify-center items-center gap-3 text-sm">
               <div className="transition hover:text-primaryBlue">
                 {isLoggedIn ? (
-                  <Link to="#" className="block overflow-hidden">
+                  <Link to="#" className="block overflow-hidden w-32">
                     حساب کاربری ({userInfos.fullname})
                   </Link>
                 ) : (
-                  <Link to="/login">ورود</Link>
+                  <Link to="/login">ثبت نام / ورود</Link>
                 )}
               </div>
+              {isLoggedIn ? (
+                <>
+                  <div className="w-[1px] h-3 bg-black"></div>
+                  <div className="transition hover:text-primaryBlue" onClick={logoutHandler}>
+                    <Link to="">خروج</Link>
+                  </div>
+                </>
+              ) : (
+                ""
+              )}
             </div>
 
             <div className="flex">
