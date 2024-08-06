@@ -1070,6 +1070,13 @@
       "userId": "55e8",
       "count": 1,
       "price": 21519230
+    },
+    {
+      "id": "5b04",
+      "productId": "2",
+      "userId": "f8a0",
+      "count": 1,
+      "price": 31590000
     }
   ],
   "userFavoriteProducts": [
@@ -1082,6 +1089,11 @@
       "id": "7873",
       "productId": "11",
       "userId": "7478"
+    },
+    {
+      "id": "25c2",
+      "productId": "1",
+      "userId": "f8a0"
     }
   ]
 }

@@ -7,7 +7,10 @@ import LeftSide from "../../components/ShopPage/LeftSide/LeftSide";
 import useGetProducts from "../../hooks/useGetProducts";
 
 function Shop() {
-  const { data: products } = useGetProducts("allProducts", "");
+  const { data: products, isPending: isProductsPending } = useGetProducts(
+    "allProducts",
+    ""
+  );
   const [searchParams, setSearchParams] = useSearchParams();
 
   const [filteredProductsState, setFilteredProductsState] = useState([]);
@@ -18,7 +21,7 @@ function Shop() {
     let categorySearchParam = searchParams.get("category");
     let searchSearchParam = searchParams.get("search");
 
-    console.log(categorySearchParam)
+    console.log(categorySearchParam);
 
     if (categorySearchParam || categorySearchParam == "") {
       if (searchSearchParam) {
@@ -59,9 +62,7 @@ function Shop() {
           setShownProducts={setShownProducts}
           products={products}
         />
-        <LeftSide
-          shownProducts={shownProducts}
-        />
+        <LeftSide shownProducts={shownProducts} isProductsPending={isProductsPending} />
       </main>
     </>
   );

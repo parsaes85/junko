@@ -7,7 +7,7 @@ import useGetBlogs from "../../hooks/useGetBlogs";
 import { useSearchParams } from "react-router-dom";
 
 function Blog() {
-  const { data: blogs } = useGetBlogs("allBlogs", "");
+  const { data: blogs, isPending:isBlogsPending } = useGetBlogs("allBlogs", "");
 
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -45,7 +45,7 @@ function Blog() {
       <Breadcrumb page="بلاگ" />
 
       <main className="flex flex-col lg:flex-row gap-8 px-4 xs:px-24 mb-16">
-        <RightSide currentItems={currentItems} />
+        <RightSide currentItems={currentItems} shownBlogs={shownBlogs} isBlogsPending={isBlogsPending} />
         <LeftSide />
       </main>
 
