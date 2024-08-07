@@ -1,3 +1,3 @@
-let baseURL = 'https://junko-back.onrender.com/'
+let baseURL = 'https://junko-back.onrender.com'
 
 export { baseURL }
