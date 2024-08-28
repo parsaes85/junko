@@ -21,7 +21,8 @@ function CartTableProductBox(props) {
         productId: props.productId,
         userId: props.userId,
         count: Number(event.target.value),
-        price: Number(event.target.value) * props.product.price
+        price: Number(event.target.value) * props.product.price,
+        product: props
       },
     });
   };
