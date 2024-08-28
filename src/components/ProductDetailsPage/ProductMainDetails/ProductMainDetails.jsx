@@ -41,7 +41,7 @@ function ProductMainDetails(props) {
 
   const addOrRemoveFromFavorites = () => {
     if (!isInFavorite()) {
-      addToFavorites({ productId: props.id, userId: userInfos.id });
+      addToFavorites({ productId: props.id, userId: userInfos.id, product: props });
     } else {
       removeFromFavorites(isInFavorite().id);
     }
