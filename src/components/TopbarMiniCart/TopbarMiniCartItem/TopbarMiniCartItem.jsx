@@ -11,7 +11,7 @@ function TopbarMiniCartItem(props) {
     <div className="flex gap-2 border-b py-2">
       <div className="border border-transparent hover:border-primaryBlue">
         <Link to={`/product-details/${props?.product?.id}`}>
-          <img src={props?.product?.images[0]} alt="" className="w-28" />
+          <img src={props?.product?.images ? props?.product?.images[0] : ""} alt="" className="w-28" />
         </Link>
       </div>
       <div className="space-y-2">

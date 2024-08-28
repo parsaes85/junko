@@ -12,7 +12,7 @@ function useGetCartProducts() {
   return useMutation({
     mutationKey: ["cartProducts"],
     mutationFn: () =>
-      fetch(`${baseURL}/userCartProducts?userId=${userInfos.id}&_embed=product`)
+      fetch(`${baseURL}/userCartProducts?userId=${userInfos.id}`)
         .then((res) => res.json())
         .then((data) => {
           dispatch(setCartProducts(data));

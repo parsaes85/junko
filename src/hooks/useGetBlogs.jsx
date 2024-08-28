@@ -7,7 +7,7 @@ function useGetBlogs(queryKey, condition) {
   return useQuery({
     queryKey: [queryKey],
     queryFn: () =>
-      fetch(`${baseURL}/blogs?${condition}&_embed=category`).then((res) =>
+      fetch(`${baseURL}/blogs?${condition}`).then((res) =>
         res.json()
       ),
   });

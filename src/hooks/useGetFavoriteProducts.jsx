@@ -12,7 +12,7 @@ function useGetFavoriteProducts() {
   return useMutation({
     mutationKey: ["favoriteProducts"],
     mutationFn: () =>
-      fetch(`${baseURL}/userFavoriteProducts?userId=${userInfos.id}&_embed=product`)
+      fetch(`${baseURL}/userFavoriteProducts?userId=${userInfos.id}`)
         .then((res) => res.json())
         .then((data) => {
           dispatch(setFavoriteProducts(data))

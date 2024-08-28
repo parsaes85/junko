@@ -8,7 +8,7 @@ function useGetBlogComments(blogId) {
     queryKey: ["blogComments", blogId],
     queryFn: () =>
       fetch(
-        `${baseURL}/blogComments?_embed=user&blogId=${blogId}`
+        `${baseURL}/blogComments?blogId=${blogId}`
       ).then((res) => res.json()),
   });
 }
