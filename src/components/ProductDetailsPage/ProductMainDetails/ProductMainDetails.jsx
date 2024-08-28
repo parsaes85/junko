@@ -53,6 +53,7 @@ function ProductMainDetails(props) {
       userId: userInfos.id,
       count: Number(productNumber),
       price: productNumber * props.price,
+      product: props
     });
   };
 

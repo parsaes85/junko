@@ -45,6 +45,7 @@ function LeftSideColProductBox(props) {
       userId: userInfos.id,
       count: 1,
       price: props.price,
+      product: props
     });
   };
 
