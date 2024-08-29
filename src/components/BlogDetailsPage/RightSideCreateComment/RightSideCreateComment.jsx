@@ -17,6 +17,7 @@ function RightSideCreateComment(props) {
         userId: userInfos.id,
         body: blogCommentBody,
         answers: [],
+        user: userInfos
       });
     }
 

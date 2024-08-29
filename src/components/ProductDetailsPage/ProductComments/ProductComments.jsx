@@ -29,6 +29,7 @@ function ProductComments(props) {
         body: productCommentBody,
         score: Number(productCommentScore),
         answers: [],
+        user: userInfos
       });
     }
 

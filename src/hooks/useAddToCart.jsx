@@ -13,7 +13,9 @@ function useAddToCart() {
     mutationFn: (data) =>
       fetch(`${baseURL}/userCartProducts`, {
         method: "POST",
-        "Content-Type": "application/json",
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(data),
       }),
     onSuccess: (res) => {

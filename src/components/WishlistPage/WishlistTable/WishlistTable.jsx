@@ -21,7 +21,7 @@ function WishlistTable() {
       userId: productInfos.userId,
       count: 1,
       price: productInfos.product.price,
-      product: productInfos
+      product: productInfos.product
     });
   };
 

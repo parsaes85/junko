@@ -5,20 +5,22 @@ import { baseURL } from "../data/variables";
 import useGetFavoriteProducts from "./useGetFavoriteProducts";
 
 function useAddToFavorites() {
-  const queryClient = useQueryClient()
+  const queryClient = useQueryClient();
   const { mutate } = useGetFavoriteProducts();
-  
+
   return useMutation({
     mutationKey: ["addToFavorites"],
     mutationFn: (data) =>
       fetch(`${baseURL}/userFavoriteProducts`, {
         method: "POST",
-        "Content-Type": "application/json",
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(data),
       }),
     onSuccess: () => {
-      queryClient.invalidateQueries()
-      mutate()
+      queryClient.invalidateQueries();
+      mutate();
     },
   });
 }

@@ -12,17 +12,15 @@ function CartTableProductBox(props) {
   const [productCount, setProductCount] = useState(1);
 
   const changeProductCountHandler = (event) => {
-    console.log(props)
     setProductCount(event.target.value);
     changeProductCount({
       id: props.id,
       newInfos: {
-        id: props.id,
         productId: props.productId,
         userId: props.userId,
         count: Number(event.target.value),
         price: Number(event.target.value) * props.product.price,
-        product: props
+        product: props.product
       },
     });
   };
