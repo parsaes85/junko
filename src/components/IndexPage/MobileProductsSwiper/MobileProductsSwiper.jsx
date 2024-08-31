@@ -16,7 +16,7 @@ function MobileProductsSwiper() {
       spaceBetween: 20,
       loop: true,
       breakpoints: {
-        460: {
+        350: {
           slidesPerView: 2,
         },
         768: {

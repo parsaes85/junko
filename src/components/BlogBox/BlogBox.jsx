@@ -13,7 +13,7 @@ function BlogBox(props) {
         </p>
         <Link
           to={`/blog-details/${props.shortName}`}
-          className="block text-lg hover:text-primaryBlue transition duration-300 line-clamp-2"
+          className="block sm:text-lg hover:text-primaryBlue transition duration-300 line-clamp-2"
         >
           {props.title}
         </Link>

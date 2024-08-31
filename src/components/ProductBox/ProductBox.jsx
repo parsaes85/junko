@@ -32,9 +32,9 @@ function ProductBox(props) {
   return (
     <div className="p-4 rounded border border-transparent transition hover:border-gray-300 group/item">
       <div className="relative">
-        <span className="absolute top-3 left-4 text-gray-100 bg-[#5fa403] px-1.5 py-[11px] rounded-full text-xs">
+        {/* <span className="absolute top-3 left-4 text-gray-100 bg-[#5fa403] px-1.5 py-[11px] rounded-full text-xs">
           فروش
-        </span>
+        </span> */}
         <Link to={`/product-details/${props.id}`}>
           <img src={props?.images[0]} alt="" />
         </Link>
@@ -63,7 +63,7 @@ function ProductBox(props) {
             </div>
           </div> */}
         </div>
-        <div className="absolute bottom-0 left-0 bg-primaryBlue flex justify-between w-full text-center rounded px-3 pb-1 text-white">
+        {/* <div className="absolute bottom-0 left-0 bg-primaryBlue flex justify-between w-full text-center rounded px-3 pb-1 text-white">
           <div>
             <p>۲۰</p>
             <p className="text-xs">ثانیه</p>
@@ -80,7 +80,7 @@ function ProductBox(props) {
             <p>۶۸</p>
             <p className="text-xs">روز</p>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="text-center mt-4 space-y-3">
         <div>

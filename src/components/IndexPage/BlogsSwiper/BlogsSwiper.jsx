@@ -13,7 +13,7 @@ function BlogsSwiper() {
       spaceBetween: 20,
       loop: true,
       breakpoints: {
-        660: {
+        350: {
           slidesPerView: 2,
         },
         768: {

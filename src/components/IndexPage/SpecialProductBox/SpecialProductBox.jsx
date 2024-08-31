@@ -5,9 +5,9 @@ function SpecialProductBox(props) {
   return (
     <div className="border border-transparent flex bg-white w-fit group hover:border-gray-200 h-[185px]">
       <div className="relative p-2">
-        <span className="absolute top-3 left-0 text-gray-100 bg-[#5fa403] px-1.5 py-[11px] rounded-full text-xs">
+        {/* <span className="absolute top-3 left-0 text-gray-100 bg-[#5fa403] px-1.5 py-[11px] rounded-full text-xs">
           فروش
-        </span>
+        </span> */}
         <Link to={`/product-details/${props.id}`}>
           <img src={props?.images[0]} className="max-w-40" alt="" />
         </Link>

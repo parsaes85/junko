@@ -9,7 +9,7 @@ function BrandsSwiper() {
       slidesPerView: 1,
       loop: true,
       breakpoints: {
-        460: {
+        350: {
           slidesPerView: 2,
         },
         768: {
