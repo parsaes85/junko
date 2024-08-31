@@ -23,7 +23,7 @@ function Index() {
 
       {/* features */}
       <section className="px-4 xs:px-24 mt-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  gap-4">
           <FeatureBox
             img={"/images/shipping1.png"}
             title="ارسال رایگان"
@@ -53,21 +53,21 @@ function Index() {
           <div className="overflow-hidden">
             <img
               src="/images/banner1.jpg"
-              className="w-full transition duration-500 hover:scale-105"
+              className="w-full transition duration-500 hover:scale-105 h-56 sm:h-60 md:h-auto"
               alt=""
             />
           </div>
           <div className="overflow-hidden">
             <img
               src="/images/banner2.jpg"
-              className="w-full transition duration-500 hover:scale-105"
+              className="w-full transition duration-500 hover:scale-105 "
               alt=""
             />
           </div>
           <div className="overflow-hidden">
             <img
               src="/images/banner3.jpg"
-              className="w-full transition duration-500 hover:scale-105"
+              className="w-full transition duration-500 hover:scale-105 h-56 sm:h-60 md:h-auto"
               alt=""
             />
           </div>
@@ -155,14 +155,14 @@ function Index() {
             <img
               src="/images/banner6.jpg"
               alt=""
-              className="w-full transition duration-500 hover:scale-105"
+              className="w-full transition duration-500 h-32 sm:h-auto hover:scale-105"
             />
           </div>
           <div className="overflow-hidden">
             <img
               src="/images/banner7.jpg"
               alt=""
-              className="w-full transition duration-500 hover:scale-105"
+              className="w-full transition duration-500 h-64 sm:h-80 md:h-auto hover:scale-105"
             />
           </div>
         </div>
