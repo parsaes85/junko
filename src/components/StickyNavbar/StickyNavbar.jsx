@@ -33,7 +33,7 @@ function StickyNavbar() {
         scrollPosition > 100
           ? "top-0 visible opacity-100 transition-all duration-[400ms]"
           : "-top-8 opacity-0 invisible"
-      } left-0 z-[99] w-full bg-white bg-opacity-95 shadow hidden lg:flex items-center justify-between  px-4 py-3 xs:px-24`}
+      } left-0 z-[98] w-full bg-white bg-opacity-95 shadow hidden lg:flex items-center justify-between  px-4 py-3 xs:px-24`}
     >
       <Link to="/">
         <img src="/images/logo.png" alt="" className="max-w-32 md:max-w-40" />

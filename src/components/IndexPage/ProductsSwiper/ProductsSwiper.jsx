@@ -2,9 +2,13 @@ import React, { useEffect } from "react";
 
 import ProductBox from "../../ProductBox/ProductBox";
 import useGetProducts from "../../../hooks/useGetProducts";
+import LoadingModal from "../../LoadingModal/LoadingModal";
 
 function ProductsSwiper() {
-  const { data: specialOffers } = useGetProducts("specialOffers", "isSpecialOffer=1");
+  const { data: specialOffers, isPending } = useGetProducts(
+    "specialOffers",
+    "isSpecialOffer=1"
+  );
 
   useEffect(() => {
     const swiperEl = document.querySelector(".productsSwiper");
@@ -31,15 +35,17 @@ function ProductsSwiper() {
   }, []);
 
   return (
-    <swiper-container class="productsSwiper" init="false">
-      {specialOffers?.map((product) => (
-        <swiper-slide key={product.id}>
-          <ProductBox {...product} />
-        </swiper-slide>
-      ))}
+    <>
+      {isPending && <LoadingModal />}
 
-
-    </swiper-container>
+      <swiper-container class="productsSwiper" init="false">
+        {specialOffers?.map((product) => (
+          <swiper-slide key={product.id}>
+            <ProductBox {...product} />
+          </swiper-slide>
+        ))}
+      </swiper-container>
+    </>
   );
 }
 
