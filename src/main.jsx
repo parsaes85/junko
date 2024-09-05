@@ -7,7 +7,7 @@ import "./index.css";
 import "./styles/fonts.css"
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
+  <BrowserRouter basename="/">
     <App />
   </BrowserRouter>
 );
